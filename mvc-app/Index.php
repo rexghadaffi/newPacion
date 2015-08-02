@@ -21,7 +21,7 @@
             <h3 class="text-light">Sign In to STI Alumni</h3>
             <hr class="thin">
                          
-                  <input type="text" name="username" id="txtUsername">
+                <input type="text" name="username" id="txtUsername">
                 <input type="password"  name="password" id="txtPassword">
                 <button type="submit" name="btnlogin">signin</button>
         </form>

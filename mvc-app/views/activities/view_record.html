@@ -1,0 +1,48 @@
+<?php
+include '../shared-layouts/_layout.php';
+include '../views/modals/activity.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>Employee List</strong></h5>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-wrench fa-fw"></span>&nbsp;Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#activityModal">Add Record</a></li>
+                    <li><a href="#">Import Records</a></li>
+                    <li><a href="#">Export Records</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>                      
+                        <th>Title</th>
+                        <th>Description</th>						
+                        <th>Image Directory</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+<?php 
+ foreach($cont as $c)
+	{
+		echo '<tr>';
+		echo '<td> '.$c["activityTitle"].' </td>';
+		echo '<td> '.$c["activityDescription"].' </td>';
+		echo '<td> '.$c["activityImage"].' </td>';		
+	//	echo '<td><a href="edit_admin.php?control=admin_edit_record&func=edit&id='.$c["activityID"].'">Edit</a></td>';	
+		echo '</tr>';		
+	}
+?>
+                </tbody>
+            </table>
+            <!-- End Data Table-->
+        </div>
+    </div>
+</div>

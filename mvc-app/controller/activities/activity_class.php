@@ -3,9 +3,10 @@
 /**
 * 
 */
-include_once "../views/view_class.php";
 
-class userClass
+include_once "../views/activities_view_class.php";
+
+class activityClass
 {	
 	public function __construct()
 	{
