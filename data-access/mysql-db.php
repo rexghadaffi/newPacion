@@ -468,40 +468,15 @@ class DataAccessLayer
     }
 
 
-    // public function selectLogin($table, $username, $postuser, $password, $postpass)
-    // {
-    //     $sql = 'select count(*) from'
-    //     . $table
-    //     . 'where'
-    //     .  $username . ' = ' . $postuser
-    //     . 'AND'
-    //     .  $password . ' = ' . $postpass;
-
-    //        $result = $this->_conn->query($sql);      
-    //         return $result;
-
-
-    // }
-
-     public function tryLogin($table, $username, $postuser)
+    public function GetUserDetails($username, $password, $tableName)
     {
-        // $sql = 'select count(*) from'
-        // . $table
-        // . 'where'
-        // .  $username . ' = ' . $postuser
-        // . 'AND'
-        // .  $password . ' = ' . $postpass;
+        $sql = "SELECT userID, userName, userPassword FROM " 
+        . $tableName . " where userName = '" . $username . "' AND userPassword = '" . $password . "' ";
 
-        $querysql = "select * from "
-        . $table
-        . " where "
-        .  $username . " = " . $postuser;
+        $userArray =  $this->query($sql)->fetch_row();  
 
-           $result = $this->_conn->query($querysql);      
-           return $result;
-
-
-
+        return $userArray; 
     }
+
 }
 ?>

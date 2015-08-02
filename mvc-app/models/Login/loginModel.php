@@ -7,59 +7,36 @@ class Login
 
 	private $username;
 	private $password;
+	private $tableName;
 	private $db;
 
 function __construct()
 
-{
-	$this->setData();
-	$this->connectDB();
-
-	
+{	
+	$this->ConnectDB();
 
 }
 
-private function setData()
+public function SetData($user_name, $user_password, $table_name)
 {
 
-// $this->username = $username;
-//$this->passowrd = $password;
-
+ $this->username = $user_name;
+ $this->password = $user_password;
+ $this->tableName = $table_name;
 }
 
-private function connectDB()
+private function ConnectDB()
 {
 
 	include_once "../../../data-access/mysql-db.php";
-		$this->db = new DataAccessLayer;
-
-
+    $this->db = new DataAccessLayer;
 }
 
-function getData()
+function GetData()
 {
-	
-   //return $this->db->selectLogin("tblcompanyuser", "adminUsername", $this->username, "adminPassword", $this->password);
+   
 
-return $result = $this->db->select("tblcompanyuser");
-	
-//	return $this->db->totalRows("*", tblcompanyuser);
-	// $query = "SELECT * FROM tbladminaccounts WHERE adminUsername = '$this->username' AND adminPassword = '$this->password'";
-	// $sql = $this->db->mysqli_query($query);
-	// if (mysqli_num_rows($sql) > 0)
-	// {
-
-	// 	return true;
-
-	// }
-
-	// else
-	// {
-
-	// 	throw new Exception("Invalid");
-	// }
-
-
+return $this->db->GetUserDetails($this->username, $this->password, $this->tableName);	
 
 }
 
