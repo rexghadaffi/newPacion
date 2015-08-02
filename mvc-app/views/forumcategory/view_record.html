@@ -1,0 +1,57 @@
+﻿<?php 
+include '../shared-layouts/_layout.php'; 
+//include '../views/modals/forum_category.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>Employee List</strong></h5>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-wrench fa-fw"></span>&nbsp;Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#clientModal">Add Record</a></li>
+                    <li><a href="#">Import Records</a></li>
+                    <li><a href="#">Export Records</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Category Title</th>
+                        <th>Description</th>
+						<th>Date Created</th>
+						<th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Category Title</th>
+                        <th>Description</th>
+						<th>Date Created</th>
+						<th>Action</th> 
+					</tr>
+                </tfoot>
+                <tbody>
+<?php 
+ foreach($forumcategory as $cat)
+	{
+		echo '<tr>';
+		echo '<td> '.$cat["forumCatTitle"].' </td>';
+		echo '<td> '.$cat["forumCatDesc"].' </td>';
+		echo '<td> '.$cat["dateCreated"].' </td>';
+		echo '<td><a href="edit_forum_category.php?control=edit_category&func=edit&id='.$cat["forumCatID"].'"><big>Edit</a></td>';	
+		echo '</tr>';		
+	}
+?>
+                </tbody>
+            </table>
+            <!-- End Data Table-->
+        </div>
+    </div>
+</div>

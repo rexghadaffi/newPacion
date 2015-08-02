@@ -1,0 +1,46 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/addusertype.php';
+?>
+<div class="col-md-7">
+    <div class="panel panel-default">
+        <div class="panel-body">
+<form method="post">
+<!-- BS FORM -->
+		<div class="modal-body">
+<?php foreach($clientinfo as $client)
+ {	?>		
+	    	<div class="form-group">
+				<label for="txttypename">User Type name</label>
+				<input type="hidden" class="form-control" name="txttypeid" value="<?php echo $client["typeID"]; ?>" />
+				<input type="text" class="form-control" name="txttypename" value="<?php echo $client["typeName"]; ?>" />
+			</div>
+		    
+	    	<div class="form-group">
+				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
+			</div>				
+			
+		</div>	
+<?php } ?>
+		
+
+<?php
+ if(isset($_POST["btnedit"]))
+ {		
+		include_once '../controller/usertype/usertype_edit_record.php';
+		$array = array(
+		"typeName" => $_POST["txttypename"]
+		);
+		$obj = new usertype_edit_record;
+		$obj->updateinfo($array, "typeID", $_POST["txttypeid"]);
+		
+ }
+?>
+              
+</form>			
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

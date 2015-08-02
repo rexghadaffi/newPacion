@@ -1,0 +1,62 @@
+﻿<?php include '../shared-layouts/_Layout.php'; ?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">		  
+			<legend><h3>Edit Category</h2></legend>
+<form method="post">
+<!-- BS FORM -->		
+<?php foreach($forumcategory as $category)
+ {	?>		
+			<input type="hidden" class="form-control" name="txtid" value="<?php echo $category["forumCatID"]; ?>" />
+	    	<div class="form-group col-md-8">				
+				<label for="txtcattitle">Title</label>				
+				<input type="text" class="form-control" name="txtcattitle" value="<?php echo $category["forumCatTitle"]; ?>" />
+			</div>	
+			
+	    	<div class="form-group col-md-8">
+				<label for="txtcatdesc">Deccription</label>			
+				<textarea rows="4" name="txtcatdesc" class="form-control">
+				<?php echo $category["forumCatDesc"]; ?>
+				</textarea>
+			</div>	
+				
+<!--
+			<div class="form-group col-md-4">
+				<label for="cbousertype">User Type</label>
+				<select type="" class="form-control" name="cbousertype">
+					<option><?php // echo $client["userTypeID"]; ?></option>
+					<option value="0">Company User</option>
+					<option value="1">Alumni</option>
+				</select>
+			</div>				
+-->
+<?php } ?>
+
+                </tbody>
+            </table>
+		
+            <!-- End Data Table-->
+        </div>
+		 <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btn-edit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+    </div><?php
+ if(isset($_POST["btn-edit"]))
+ {		
+		include_once '../controller/forumcategory/edit_category.php';
+		$array = array(
+		"forumCatTitle" => $_POST["txtcattitle"],
+		"forumCatDesc" => $_POST["txtcatdesc"]
+		);
+		$obj = new edit_category;
+		$obj->updateinfo($array, "forumCatID", $_POST["txtid"]);	
+ }
+?>
+</form>	

@@ -1,0 +1,56 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/addusertype.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>User Type List</strong></h5>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-wrench fa-fw"></span>&nbsp; Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#usertypeModal">Add Record</a></li>
+                    <li><a href="#">Import Records</a></li>
+                    <li><a href="#">Export Records</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>User Type ID</th>
+                        <th>User Type Name</th>
+                        <th>Action</th>						
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>User Type ID</th>
+                        <th>User Type Name</th>
+                        <th>Action</th>
+					</tr>
+                </tfoot>
+                <tbody>
+<?php 
+ foreach($cont as $c)
+	{
+		echo '<tr>';
+		echo '<td> '.$c["typeID"].' </td>';
+		echo '<td> '.$c["typeName"].' </td>';
+		echo '<td><a href="edit_usertype.php?control=usertype_edit_record&func=edit&id='.$c["typeID"].'"><big>Edit</a></td>';	
+		echo '</tr>';		
+	}
+?>
+                </tbody>
+            </table>
+            <!-- End Data Table-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

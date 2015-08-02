@@ -1,0 +1,57 @@
+﻿<?php 
+include '../shared-layouts/_layout.php'; 
+//include '../views/modals/.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>User Post(s)</strong></h5>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-wrench fa-fw"></span>&nbsp;Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#">Add Record</a></li>
+                    <li><a href="#">Import Records</a></li>
+                    <li><a href="#">Export Records</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Post ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Post ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+<?php 
+ foreach($post as $post)
+	{
+		echo '<tr>';
+		echo '<td> '.$post["postID"].' </td>';
+		echo '<td> '.$post["postTitle"].' </td>';
+		echo '<td> '.$post["postDesc"].' </td>';
+		echo '<td><a href="edit_post.php?control=edit_post&func=edit&id='.$post["postID"].'"><big>Edit</a></td>';	
+		echo '</tr>';		
+	}
+?>
+                </tbody>
+            </table>
+            <!-- End Data Table-->
+        </div>
+    </div>
+</div>

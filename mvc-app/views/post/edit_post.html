@@ -1,0 +1,49 @@
+﻿<?php include '../shared-layouts/_Layout.php'; ?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">		  
+			<legend><h3>Post</h2></legend>
+<form method="post">
+<!-- BS FORM -->		
+<?php foreach($clientinfo as $client)
+ {	?>		
+			<input type="hidden" class="form-control" name="txtid" value="<?php echo $client["postID"]; ?>" />
+	    	<div class="form-group col-md-4">				
+				<label for="txttitle">Title</label>				
+				<input type="text" class="form-control" name="txttitle" value="<?php echo $client["postTitle"]; ?>" />
+			</div>			
+	    	<div class="form-group col-md-4">
+				<label for="txtdesc">Description</label>
+				<input type="text" class="form-control" name="txtdesc" value="<?php echo $client["postDesc"]; ?>">
+			</div>		
+
+<?php } ?>
+
+                </tbody>
+            </table>
+		
+            <!-- End Data Table-->
+        </div>
+		 <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btn-edit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+    </div><?php
+ if(isset($_POST["btn-edit"]))
+ {		
+		include_once '../controller/post/edit_post.php';
+		$array = array(
+		"postTitle" => $_POST["txttitle"],
+		"postDesc" => $_POST["txtdesc"]
+		);
+		$obj = new user_edit_record;
+		$obj->updateinfo($array, "postID", $_POST["txtid"]);	
+ }
+?>
+</form>	

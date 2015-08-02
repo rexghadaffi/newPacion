@@ -1,0 +1,99 @@
+﻿<?php include '../shared-layouts/_Layout.php'; ?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">		  
+			<legend><h3>Create New Client</h2></legend>
+<form method="post">
+<!-- BS FORM -->		
+<?php foreach($clientinfo as $client)
+ {	?>		
+			<input type="hidden" class="form-control" name="txtid" value="<?php echo $client["userID"]; ?>" />
+	    	<div class="form-group col-md-4">				
+				<label for="txtusername">Username</label>				
+				<input type="text" class="form-control" name="txtusername" value="<?php echo $client["userName"]; ?>" />
+			</div>			
+	    	<div class="form-group col-md-4">
+				<label for="txtpassword">Password</label>
+				<input type="text" class="form-control" name="txtpassword" value="<?php echo $client["userPassword"]; ?>">
+			</div>		
+
+	    	<div class="form-group col-md-4">
+				<label for="txtfname">First Name</label>
+				<input type="text" class="form-control" name="txtfname" value="<?php echo $client["userFirstName"]; ?>">
+			</div>	
+
+	    	<div class="form-group col-md-4">
+				<label for="txtlname">Last Name</label>
+				<input type="text" class="form-control" name="txtlname" value="<?php echo $client["userLastName"]; ?>">
+			</div>
+
+	    	<div class="form-group col-md-4">
+				<label for="txtcontact">Contact Number</label>
+				<input type="text" class="form-control" name="txtcontact" value="<?php echo $client["userContactNum"]; ?>">
+			</div>	
+
+	    	<div class="form-group col-md-4">
+				<label for="txtaddress">Address</label>
+				<input type="text" class="form-control" name="txtaddress" value="<?php echo $client["userAddress"]; ?>">
+			</div>		
+
+	    	<div class="form-group col-md-4">
+				<label for="txtemail">E-mail</label>
+				<input type="text" class="form-control" name="txtemail" value="<?php echo $client["userEmail"]; ?>">
+			</div>
+
+			<div class="form-group col-md-4">
+				<label for="cbousertype">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option><?php echo $client["userStatus"]; ?></option>
+					<option value="0">Active</option>
+					<option value="1">Inactive</option>
+				</select>
+			</div>	
+
+			<div class="form-group col-md-4">
+				<label for="cbousertype">User Type</label>
+				<select type="" class="form-control" name="cbousertype">
+					<option><?php echo $client["userTypeID"]; ?></option>
+					<option value="0">Company User</option>
+					<option value="1">Alumni</option>
+				</select>
+			</div>				
+		
+<?php } ?>
+
+                </tbody>
+            </table>
+		
+            <!-- End Data Table-->
+        </div>
+		 <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btn-edit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+    </div><?php
+ if(isset($_POST["btn-edit"]))
+ {		
+		include_once '../controller/client/user_edit_record.php';
+		$array = array(
+		"userName" => $_POST["txtusername"],
+		"userPassword" => $_POST["txtpassword"],
+		"userFirstName" => $_POST["txtfname"],
+		"userLastName" => $_POST["txtlname"],
+		"userContactNum" => $_POST["txtcontact"],
+		"userAddress" => $_POST["txtaddress"],
+		"userEmail" => $_POST["txtemail"],
+		"userStatus" => $_POST["cbostatus"],
+		"userTypeID" => $_POST["cbousertype"]
+		);
+		$obj = new user_edit_record;
+		$obj->updateinfo($array, "userID", $_POST["txtid"]);	
+ }
+?>
+</form>	
