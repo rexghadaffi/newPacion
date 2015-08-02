@@ -9,20 +9,21 @@ class Login
 	private $password;
 	private $db;
 
-function __construct($username, $password)
+function __construct()
 
 {
-	$this->setData($username, $password);
+	$this->setData();
 	$this->connectDB();
-	$this->getData();
+
+	
 
 }
 
-private function setData($username, $password)
+private function setData()
 {
 
-$this->username = $username;
-$this->passowrd = $password;
+// $this->username = $username;
+//$this->passowrd = $password;
 
 }
 
@@ -30,16 +31,19 @@ private function connectDB()
 {
 
 	include_once "../../../data-access/mysql-db.php";
-		$this->db = new DataAccessLayer();
+		$this->db = new DataAccessLayer;
 
 
 }
 
 function getData()
 {
-
-$this->db->selectLogin("tbladminaccounts", "adminUsername", $this->username, "adminPassword", $this->password);
 	
+   //return $this->db->selectLogin("tblcompanyuser", "adminUsername", $this->username, "adminPassword", $this->password);
+
+return $result = $this->db->select("tblcompanyuser");
+	
+//	return $this->db->totalRows("*", tblcompanyuser);
 	// $query = "SELECT * FROM tbladminaccounts WHERE adminUsername = '$this->username' AND adminPassword = '$this->password'";
 	// $sql = $this->db->mysqli_query($query);
 	// if (mysqli_num_rows($sql) > 0)
