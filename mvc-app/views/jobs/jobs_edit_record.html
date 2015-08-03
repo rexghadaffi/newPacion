@@ -1,0 +1,58 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/add_jobs.php';
+?>
+<div class="col-md-7">
+    <div class="panel panel-default">
+        <div class="panel-body">
+<form method="post">
+<!-- BS FORM -->
+		<div class="modal-body">
+<?php foreach($jobs as $job)
+ {	?>		
+	    	<div class="form-group">
+				<label for="txttypename">Job Title</label>
+				<input type="hidden" class="form-control" name="txtjobid" value="<?php echo $job["jobID"]; ?>" />
+				<input type="text" class="form-control" name="txtjobtitle" value="<?php echo $job["jobTitle"]; ?>" />
+			</div>
+
+			<div class="form-group">
+				<label for="txtjobtitle">Job Description</label>
+				<input type="text" class="form-control" name="txtjobdesc" value="<?php echo $job["jobDesc"]; ?>" />
+			</div>
+
+			<div class="form-group">
+				<label for="txtdate">Date</label>
+				<input type="text" class="form-control" name="txtdate" value="<?php echo $job["datePosted"]; ?>" />
+			</div>
+		    
+	    	<div class="form-group">
+				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
+			</div>				
+			
+		</div>	
+<?php } ?>
+		
+
+<?php
+ if(isset($_POST["btnedit"]))
+ {		
+		include_once '../controller/jobs/jobs_edit_record.php';
+		$array = array(
+		"jobTitle" => $_POST["txtjobtitle"],
+		"jobDesc" => $_POST["txtjobdesc"],
+		"datePosted" => $_POST["txtdate"]
+		);
+		$obj = new jobs_edit_record;
+		$obj->updateinfo($array, "jobID", $_POST["txtjobid"]);
+		
+ }
+?>
+              
+</form>			
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
