@@ -470,7 +470,7 @@ class DataAccessLayer
 
     public function GetUserDetails($username, $password, $tableName)
     {
-        $sql = "SELECT userID, userName, userPassword FROM " 
+        $sql = "SELECT userID, userName, userPassword, userTypeID FROM " 
         . $tableName . " where userName = '" . $username . "' AND userPassword = '" . $password . "' ";
 
         $userArray =  $this->query($sql)->fetch_row();  

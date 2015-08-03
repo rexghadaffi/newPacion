@@ -29,7 +29,7 @@
                         <li><a href="#">Account Settings</a></li>
                         <li><a href="#">System Settings</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="../shared-layouts/logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
