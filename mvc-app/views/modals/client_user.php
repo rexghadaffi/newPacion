@@ -9,8 +9,9 @@
 	   <form method="post">
 		  <div class="modal-body">
 	    	<div class="form-group">
-				<label for="txtusername">Username</label>
-				<input type="text"  class="form-control" name="txtusername" onkeypress="Numeric(event);" placeholder="Username">
+				<label for="txtusername">Username</label>				
+				<input type="text"  class="form-control" name="txtusername" placeholder="Username">
+				<!-- onkeypress="Numeric(event);" -->
 			</div>
 			
 			<div class="form-group">
@@ -48,17 +49,17 @@
 				<label for="cbousertype">User Type</label>
 				<select type="" class="form-control" name="cbousertype">
 					<option>Select</option>
-					<option value="1">Admin</option>
-					<option value="0">Faculty</option>
+					<option value="1">Alumni</option>
+					<option value="2">Tambay</option>
 				</select>
-			</div>						
-		  </div>
+			</div>	
+			
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-			<button type="submit" class="btn btn-success" name="btn-add">Add New</button>
+			<button type="submit" class="btn btn-success" name="btnadd">Add New</button>
 		  </div>
 <?php		  
- if(isset($_POST["btn-add"]))
+ if(isset($_POST["btnadd"]))
  {		
 		include_once '../controller/client/user_edit_record.php';
 		$array = array(
@@ -73,12 +74,13 @@
 		"userStatus" => 1,
 		"userTypeID" => $_POST["cbousertype"]
 		);
-		echo $array;
-		$obj = new user_edit_record.php;
+		$obj = new user_edit_record;
 		$obj->create($array);			
  }
-?>		  
+?>	
+		</div>  
 	  </form>
     </div>
   </div>
 </div>
+	

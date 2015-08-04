@@ -3,7 +3,7 @@
 /**
 * 
 */
-include_once "../views/view_class.php";
+include_once "../views/user_view_class.php";
 
 class userClass
 {	
