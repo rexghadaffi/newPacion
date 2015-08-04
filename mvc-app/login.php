@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -19,7 +20,7 @@
     <h2 class="text-light" align="center">Sign In to STI Alumni</h2>
         <hr class="thick btn-primary">
         <form method="POST" action="controller/Login/login_controller.php">
-   <!--  <?php $url = "http://$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]";?> -->
+   <?php $url = "http://$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]";?> 
  <div class="row">
     <div class="col-md-3"></div>
   <div class="col-md-6">
