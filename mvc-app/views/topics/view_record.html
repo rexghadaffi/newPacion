@@ -1,0 +1,62 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/add_topics.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>Topics List</strong></h5>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-wrench fa-fw"></span>&nbsp; Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#topicsModal">Add Record</a></li>
+                    <li><a href="#">Import Records</a></li>
+                    <li><a href="#">Export Records</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Topic ID</th>
+                        <th>Topic Title</th>
+                        <th>Topic Description</th>
+                        <th>Date Created</th>
+                        <th>Action</th>						
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                       <th>Topic ID</th>
+                       <th>Topic Title</th>
+                       <th>Topic Description</th>
+                       <th>Date Created</th>
+                       <th>Action</th>
+					</tr>
+                </tfoot>
+                <tbody>
+<?php 
+ foreach($cont as $c)
+	{
+		echo '<tr>';
+		echo '<td> '.$c["topicID"].' </td>';
+		echo '<td> '.$c["topicTitle"].' </td>';
+        echo '<td> '.$c["topicDesc"].' </td>';
+        echo '<td> '.$c["dateCreated"].' </td>';
+		echo '<td><a href="edit_topics.php?control=topics_edit_record&func=edit&id='.$c["topicID"].'"><big>Edit</a></td>';	
+		echo '</tr>';		
+	}
+?>
+                </tbody>
+            </table>
+            <!-- End Data Table-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

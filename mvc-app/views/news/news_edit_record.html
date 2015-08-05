@@ -1,0 +1,59 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/add_news.php';
+?>
+<div class="col-md-7">
+    <div class="panel panel-default">
+        <div class="panel-body">
+<form method="post">
+<!-- BS FORM -->
+		<div class="modal-body">
+<?php foreach($news as $n)
+ {	?>		
+	    	<div class="form-group">
+				<label for="txtnewstitle">News Title</label>
+				<input type="hidden" class="form-control" name="txtnewsid" value="<?php echo $n["newsID"]; ?>" />
+				<input type="text" class="form-control" name="txtnewstitle" value="<?php echo $n["newsTitle"]; ?>" />
+			</div>
+
+			<div class="form-group">
+				<label for="txtnewsdesc">News Description</label>
+				<input type="text" class="form-control" name="txtnewsdesc" value="<?php echo $n["newsDesc"]; ?>" />
+			</div>
+
+			
+			<div class="form-group">
+				<label for="txtdate">Date Posted</label>
+				<input type="text" class="form-control" name="txtdate" value="<?php echo $n["datePosted"]; ?>" />
+			</div>
+		    
+	    	<div class="form-group">
+				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
+			</div>				
+			
+		</div>	
+<?php } ?>
+		
+
+<?php
+ if(isset($_POST["btnedit"]))
+ {		
+		include_once '../controller/news/news_edit_record.php';
+		$array = array(
+		"newsTitle" => $_POST["txtnewstitle"],
+		"newsDesc" => $_POST["txtnewsdesc"],
+		"datePosted" => $_POST["txtdate"]
+		);
+		$obj = new news_edit_record;
+		$obj->updateinfo($array, "newsID", $_POST["txtnewsid"]);
+		
+ }
+?>
+              
+</form>			
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

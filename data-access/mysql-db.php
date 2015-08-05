@@ -81,7 +81,8 @@ class DataAccessLayer
        
         return $this->query($sql);
     }
- 
+
+   
     public function selectFields($table, $parameters) {
         $sql = 'select ';
  

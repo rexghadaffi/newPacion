@@ -1,0 +1,59 @@
+﻿<?php 
+include '../shared-layouts/_layout.php';
+include '../views/modals/add_topics.php';
+?>
+<div class="col-md-7">
+    <div class="panel panel-default">
+        <div class="panel-body">
+<form method="post">
+<!-- BS FORM -->
+		<div class="modal-body">
+<?php foreach($topics as $t)
+ {	?>		
+	    	<div class="form-group">
+				<label for="txttopictitle">Topic Title</label>
+				<input type="hidden" class="form-control" name="txttopicid" value="<?php echo $t["topicID"]; ?>" />
+				<input type="text" class="form-control" name="txttopictitle" value="<?php echo $t["topicTitle"]; ?>" />
+			</div>
+
+			<div class="form-group">
+				<label for="txttopicdesc">Topic Description</label>
+				<input type="text" class="form-control" name="txttopicdesc" value="<?php echo $t["topicDesc"]; ?>" />
+			</div>
+
+			
+			<div class="form-group">
+				<label for="txtdate">Date Created</label>
+				<input type="text" class="form-control" name="txtdate" value="<?php echo $t["dateCreated"]; ?>" />
+			</div>
+		    
+	    	<div class="form-group">
+				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
+			</div>				
+			
+		</div>	
+<?php } ?>
+		
+
+<?php
+ if(isset($_POST["btnedit"]))
+ {		
+		include_once '../controller/topics/topics_edit_record.php';
+		$array = array(
+		"topicTitle" => $_POST["txttopictitle"],
+		"topicDesc" => $_POST["txttopicdesc"],
+		"dateCreated" => $_POST["txtdate"]
+		);
+		$obj = new topics_edit_record;
+		$obj->updateinfo($array, "topicID", $_POST["txttopicid"]);
+		
+ }
+?>
+              
+</form>			
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
