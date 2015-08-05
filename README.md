@@ -1,16 +1,16 @@
 # ---- TASK ALLOCATION ----
 
 # REGGIE
-   - tblactivity, tbljoboffer, tbljob, tblcompanyadmin, tblusertype ADD/EDIT/FETCH
+   - Test and Debug All Entites ADD/EDIT/FETCH
 
 # DANIEL
-   - LOGIN, HTACCESS. 
+   - LOGIN, HTACCESS, SESSION (Authorization and Authentication) . 
 
 # JHUN
-   - tblcompanyuser, tblpost, tbltopic, tblforumcategory ADD/EDIT/FETCH
+   - Real Time Notification (NodeJS / Socket.IO)
 
 # REX
-   - UI/UX, client side validation, notify me
+   - UI/UX (notifications) , Login replicate to client-side, user-profile(client).
 
 # PLEASE FOLLOW NAMING CONVENTION:
 
@@ -49,7 +49,7 @@
     
 4.) Database Naming Convention: (incase of database changes)
 
-    For columns or fields user camel casing:
+    For columns or fields use camel casing:
     userID -> notice that ID is 2 caps since ID is an abbreviation and compose of 2 diff words.
     userType
     userName
