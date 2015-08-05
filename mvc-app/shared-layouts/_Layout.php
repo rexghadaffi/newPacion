@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Hey</title>
+    <title>STI Alumni Information System</title>
    <?php 
     include '../shared-scripts/_css.php';
     include '../shared-scripts/_js.php';
@@ -16,6 +16,10 @@
 	   font-style:calibri;
 	   font-size:11px;
 	   }
+     .custom-header {
+      background-color: #ece9e9;
+     color: #7f7f80;
+     }
 	</style>
   </head>
   <body>

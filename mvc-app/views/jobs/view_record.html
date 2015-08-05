@@ -4,8 +4,7 @@ include '../views/modals/add_jobs.php';
 ?>
 <div class="col-md-10">
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>User Type List</strong></h5>
+        <div class="panel-heading clearfix">          
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-wrench fa-fw"></span>&nbsp; Action <span class="caret"></span>
@@ -22,29 +21,18 @@ include '../views/modals/add_jobs.php';
             <!-- Data Table Goes Here-->
             <table id="example" class="display" cellspacing="0" width="100%">
                 <thead>
-                    <tr>
-                        <th>Job ID</th>
+                    <tr>                      
                         <th>Job Title</th>
                         <th>Job Description</th>
                         <th>Date Posted</th>
                         <th>Action</th>				
                     </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Job ID</th>
-                        <th>Job Title</th>
-                        <th>Job Description</th>
-                        <th>Date Posted</th>
-                        <th>Action</th>
-					</tr>
-                </tfoot>
+                </thead>               
                 <tbody>
 <?php 
  foreach($cont as $c)
 	{
-		echo '<tr>';
-		echo '<td> '.$c["jobID"].' </td>';
+		echo '<tr>';	
 		echo '<td> '.$c["jobTitle"].' </td>';
         echo '<td> '.$c["jobDesc"].' </td>';
         echo '<td> '.$c["datePosted"].' </td>';

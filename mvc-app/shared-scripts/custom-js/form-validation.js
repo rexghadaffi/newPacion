@@ -53,3 +53,10 @@ function Alphabet(e) {
     e.preventDefault();
     return false;
 }
+
+function ResetValues()
+{
+    $("form :text").each(function() {
+        $(this).val('');
+    });   
+}

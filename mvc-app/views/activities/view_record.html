@@ -4,8 +4,7 @@ include '../views/modals/activity.php';
 ?>
 <div class="col-md-10">
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>Employee List</strong></h5>
+        <div class="panel-heading clearfix">           
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-wrench fa-fw"></span>&nbsp;Action <span class="caret"></span>
@@ -25,7 +24,8 @@ include '../views/modals/activity.php';
                     <tr>                      
                         <th>Title</th>
                         <th>Description</th>						
-                        <th>Image Directory</th>                       
+                        <th>Image Directory</th>    
+                        <th></th>                          
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@ include '../views/modals/activity.php';
 		echo '<td> '.$c["activityTitle"].' </td>';
 		echo '<td> '.$c["activityDescription"].' </td>';
 		echo '<td> '.$c["activityImage"].' </td>';		
-	//	echo '<td><a href="edit_admin.php?control=admin_edit_record&func=edit&id='.$c["activityID"].'">Edit</a></td>';	
+    echo '<td><a href="edit_activity.php?control=admin_edit_record&func=edit&id='.$c["activityID"].'"><big>Edit</a></td>'; 
 		echo '</tr>';		
 	}
 ?>

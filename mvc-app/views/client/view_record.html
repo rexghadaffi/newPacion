@@ -4,8 +4,7 @@ include '../views/modals/client_user.php';
 ?>
 <div class="col-md-10">
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-            <h5 class="pull-left"><span class="fa fa-users"></span>&nbsp;<strong>Employee List</strong></h5>
+        <div class="panel-heading clearfix">           
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-wrench fa-fw"></span>&nbsp;Action <span class="caret"></span>
@@ -22,48 +21,23 @@ include '../views/modals/client_user.php';
             <!-- Data Table Goes Here-->
             <table id="example" class="display" cellspacing="0">
                 <thead>
-                    <tr>
-                        <th>User ID</th>
-                        <th>Username</th>
-                        <th>Password</th>
+                    <tr>                    
+                        <th>Username</th>                        
 						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Contact Number</th>
-						<th>Address</th>
-						<th>E-mail</th>
+						<th>Last Name</th>							
                         <th>Status</th>
                         <th>User type</th>
                         <th>Action</th>
                     </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>User ID</th>
-                        <th>Username</th>
-                        <th>Password</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Contact Number</th>
-						<th>Address</th>
-						<th>E-mail</th>
-                        <th>Status</th>
-                        <th>User type</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
+                </thead>               
                 <tbody>
 <?php 
  foreach($cont as $c)
 	{
-		echo '<tr>';
-		echo '<td> '.$c["userID"].' </td>';
-		echo '<td> '.$c["userName"].' </td>';
-		echo '<td> '.$c["userPassword"].' </td>';
+		echo '<tr>';		
+		echo '<td> '.$c["userName"].' </td>';		
 		echo '<td> '.$c["userFirstName"].' </td>';
-		echo '<td> '.$c["userLastName"].' </td>';
-		echo '<td> '.$c["userContactNum"].' </td>';
-		echo '<td> '.$c["userAddress"].' </td>';
-		echo '<td> '.$c["userEmail"].' </td>';
+		echo '<td> '.$c["userLastName"].' </td>';	
 		echo '<td> '.$c["userStatus"].' </td>';		
 		echo '<td> '.$c["userTypeID"].' </td>';
 		echo '<td><a href="edit_info.php?control=user_edit_record&func=edit&id='.$c["userID"].'"><big>Edit</a></td>';	

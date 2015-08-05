@@ -1,12 +1,21 @@
 ﻿<?php include '../shared-layouts/_Layout.php'; ?>
 <div class="col-md-10">
     <div class="panel panel-default">
-        <div class="panel-body">		  
-			<legend><h3>Create New Client</h2></legend>
+        <div class="panel-body">	  
+		
 <form method="post">
 <!-- BS FORM -->		
 <?php foreach($clientinfo as $client)
  {	?>		
+ 		    <legend><h3>Update Alumni:  <strong>
+ 		     	<?php
+ 		     	echo $client["userFirstName"] . " " . $client["userLastName"];
+ 		     	?>
+ 		     </strong> 
+ 		 </h3>
+
+ 		    </legend>
+
 			<input type="hidden" class="form-control" name="txtid" value="<?php echo $client["userID"]; ?>" />
 	    	<div class="form-group col-md-4">				
 				<label for="txtusername">Username</label>				

@@ -2,9 +2,9 @@
 <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: #87CEFA">
+      <div class="modal-header custom-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create New User Record</h4>
+        <h4 class="modal-title" id="myModalLabel">Create New Admin Record</h4>
       </div>
 	   <form method="post">
 		  <div class="modal-body">
