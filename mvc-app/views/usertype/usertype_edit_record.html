@@ -2,28 +2,31 @@
 include '../shared-layouts/_layout.php';
 include '../views/modals/addusertype.php';
 ?>
-<div class="col-md-7">
+<div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-body">
 <form method="post">
 <!-- BS FORM -->
-		<div class="modal-body">
+		    
 <?php foreach($clientinfo as $client)
  {	?>		
-	    	<div class="form-group">
+ 			 <legend><h4>Update Record:  <strong>
+ 		     	<?php
+ 		     	echo $client["typeName"];;
+ 		     	?>
+ 		     </strong> 
+ 		     </h4>
+
+ 		    </legend>
+	    	<div class="form-group col-md-5">
 				<label for="txttypename">User Type name</label>
 				<input type="hidden" class="form-control" name="txttypeid" value="<?php echo $client["typeID"]; ?>" />
 				<input type="text" class="form-control" name="txttypename" value="<?php echo $client["typeName"]; ?>" />
-			</div>
-		    
-	    	<div class="form-group">
-				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
-			</div>				
-			
-		</div>	
+			</div>		        		
+
 <?php } ?>
 		
-
+         
 <?php
  if(isset($_POST["btnedit"]))
  {		
@@ -37,10 +40,22 @@ include '../views/modals/addusertype.php';
  }
 ?>
               
-</form>			
+		
             
         </div>
+        <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btnedit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+		     </form>	
     </div>
+
 </div>
 </body>
 </html>
