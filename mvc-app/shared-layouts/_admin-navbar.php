@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Maintenance <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="Home.php">Reports</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -31,9 +31,9 @@
 					<i class="fa fa-cog fa-fw"></i> Settings 
 					<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Account Settings</a></li>
-                        <li><a href="#">System Settings</a></li>
+                        <li><a href="Home.php">Profile</a></li>
+                        <li><a href="Home.php">Account Settings</a></li>
+                        <li><a href="Home.php">System Settings</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="../shared-layouts/logout.php">Logout</a></li>
                     </ul>

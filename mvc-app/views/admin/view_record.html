@@ -35,8 +35,14 @@ include '../views/modals/admin_user.php';
 	{
 		echo '<tr>';		
 		echo '<td> '.$c["userName"].' </td>';
-		echo '<td> '.$c["userPassword"].' </td>';
-		echo '<td> '.$c["userStatus"].' </td>';		
+		echo '<td> '.$c["userPassword"].' </td>';	
+        // View-Logic
+        if ($c["userStatus"] == 1) {
+        echo '<td><label class="label label-success">Active</label></td>';  
+        }
+        else {
+        echo '<td><label class="label label-danger">InActive</label></td>';             
+        }
 		echo '<td> '.$c["typeName"].' </td>';
 		echo '<td><a href="edit_admin.php?control=admin_edit_record&func=edit&id='.$c["userID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		

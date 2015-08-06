@@ -32,10 +32,12 @@ include '../views/modals/add_jobs.php';
 <?php 
  foreach($cont as $c)
 	{
+        $time = strtotime($c["datePosted"]);
+        $newDate = date("F d, Y", $time); 
 		echo '<tr>';	
 		echo '<td> '.$c["jobTitle"].' </td>';
         echo '<td> '.$c["jobDesc"].' </td>';
-        echo '<td> '.$c["datePosted"].' </td>';
+        echo '<td> '. $newDate .' </td>';
 		echo '<td><a href="edit_jobs.php?control=jobs_edit_record&func=edit&id='.$c["jobID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		
 	}

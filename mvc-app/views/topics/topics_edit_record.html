@@ -2,36 +2,37 @@
 include '../shared-layouts/_layout.php';
 include '../views/modals/add_topics.php';
 ?>
-<div class="col-md-7">
+<div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-body">
 <form method="post">
-<!-- BS FORM -->
-		<div class="modal-body">
+	<!-- BS FORM -->		
 <?php foreach($topics as $t)
  {	?>		
-	    	<div class="form-group">
+
+ 			<legend><h4>Update Record:  <strong>
+ 		     	<?php
+ 		     	echo $t["topicDesc"];;
+ 		     	?>
+ 		     </strong> 
+ 		     </h4>
+ 		    </legend>
+	    	<div class="form-group col-md-4">
 				<label for="txttopictitle">Topic Title</label>
 				<input type="hidden" class="form-control" name="txttopicid" value="<?php echo $t["topicID"]; ?>" />
 				<input type="text" class="form-control" name="txttopictitle" value="<?php echo $t["topicTitle"]; ?>" />
 			</div>
 
-			<div class="form-group">
+			<div class="form-group col-md-4">
 				<label for="txttopicdesc">Topic Description</label>
 				<input type="text" class="form-control" name="txttopicdesc" value="<?php echo $t["topicDesc"]; ?>" />
 			</div>
 
 			
-			<div class="form-group">
+			<div class="form-group col-md-4">
 				<label for="txtdate">Date Created</label>
 				<input type="text" class="form-control" name="txtdate" value="<?php echo $t["dateCreated"]; ?>" />
-			</div>
-		    
-	    	<div class="form-group">
-				<button type="submit" class="btn btn-primary" name="btnedit">Edit</button>
-			</div>				
-			
-		</div>	
+			</div>	    	    				
 <?php } ?>
 		
 
@@ -50,9 +51,20 @@ include '../views/modals/add_topics.php';
  }
 ?>
               
-</form>			
+	
             
         </div>
+        <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btnedit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+        </form>		
     </div>
 </div>
 </body>
