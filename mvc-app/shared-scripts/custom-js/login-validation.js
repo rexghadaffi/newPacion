@@ -1,24 +1,72 @@
-﻿function ValidateLoginFields(e) {
-
-    var checker = 0;
-
-    $(".textclear").each(function () {        
-        if ($(this).val().trim() == "") {
-            $(this).parent().addClass("error");
-            $(this).popover('show');
-            $("#txtUsername").focus();
-            e.preventDefault();
-            checker++;
-        }
-    });
-
-    if (checker == 0)
-    {
-        alert('pano mag redirect?');
-    }
-    
+﻿function inactiveStatus(){
+ var message = 'Your Account is been deactivated';
+        $.Notify({
+            caption: 'Error',
+            content: message,
+            type: 'alert'
+        });
+		
+  
 }
 
-$(".textclear").change(function () {
-    $(this).parent().removeClass("error");    
-});
+function missingInputs(){
+ var message = 'This field can not be empty!';
+        $.Notify({
+            caption: 'Error',
+            content: message,
+            type: 'alert'
+        });
+		
+  $('#username').focus();
+  
+  
+}
+
+
+function loadingBar(){
+	
+	$('#loadingBar').fadeIn("milliseconds");
+	
+}
+
+function stoploadingBar(){
+	
+	$('#loadingBar').fadeOut("milliseconds");
+	
+}
+/* 
+function ajax()
+{
+	
+	 $.get("demo_test.asp", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+	
+}
+
+function ajaxRedirect()
+{
+$.ajax({	
+           type: "POST",
+           url: "../../models/Login/ajaxRedirect.php",
+           data: {  
+		   username:	$('#username').val(),
+           password: 	$('#password').val(),
+           },
+           dataType: "text",
+           success: function(server_response){
+
+			   if(server_response == 1)
+						{
+						
+							alert('oops');
+						}
+						else if (server_response == 0)
+						{
+						alert('oops1');
+
+						}
+
+
+		   },
+		   }); 		   		   		
+} */

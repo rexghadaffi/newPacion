@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['id']))
 {
     
-include "../login.php";
+echo "<script>window.location.href='backend.php';</script>";
 die();
 
 }

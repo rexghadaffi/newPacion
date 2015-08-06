@@ -1,6 +1,4 @@
 <?php
-
-
 class Login 
 
 {
@@ -9,15 +7,18 @@ class Login
 	private $password;
 	private $tableName;
 	private $db;
+	
 
-function __construct()
+function __construct($user_name, $user_password, $table_name)
 
 {	
+	$this->SetData($user_name, $user_password, $table_name);
 	$this->ConnectDB();
+	$this->GetData();
 
 }
 
-public function SetData($user_name, $user_password, $table_name)
+private function SetData($user_name, $user_password, $table_name)
 {
 
  $this->username = $user_name;
@@ -28,14 +29,13 @@ public function SetData($user_name, $user_password, $table_name)
 private function ConnectDB()
 {
 
-	include_once "../../../data-access/mysql-db.php";
+	include_once "../../data-access/mysql-db.php";
     $this->db = new DataAccessLayer;
 }
 
-function GetData()
+public function GetData()
 {
    
-
 return $this->db->GetUserDetails($this->username, $this->password, $this->tableName);	
 
 }
