@@ -40,7 +40,16 @@
 		"datePosted" => $_POST["txtdate"]	
 		);
 		$obj = new jobs_edit_record;
-		$obj->create($array);			
+		$obj->create($array);	
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='job_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";		
  }
 ?>			 
 		</div>  

@@ -28,7 +28,17 @@
 		"typeName" => $_POST["txttypename"]	
 		);
 		$obj = new usertype_edit_record;
-		$obj->create($array);			
+		$obj->create($array);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='usertype_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";	
+					
  }
 ?>			 
 		</div>  

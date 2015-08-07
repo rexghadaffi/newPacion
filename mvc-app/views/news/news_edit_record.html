@@ -51,6 +51,15 @@ include '../views/modals/add_news.php';
 		);
 		$obj = new news_edit_record;
 		$obj->updateinfo($array, "newsID", $_POST["txtnewsid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='news_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 		
  }
 ?>

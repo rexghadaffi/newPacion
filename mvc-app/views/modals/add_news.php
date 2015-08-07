@@ -42,7 +42,16 @@
 		"datePosted" => $_POST["txtdate"]	
 		);
 		$obj = new news_edit_record;
-		$obj->create($array);			
+		$obj->create($array);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='news_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";			
  }
 ?>			 
 		</div>  

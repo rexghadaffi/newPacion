@@ -47,6 +47,15 @@ include '../views/modals/add_topics.php';
 		);
 		$obj = new topics_edit_record;
 		$obj->updateinfo($array, "topicID", $_POST["txttopicid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='topics_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";	
 		
  }
 ?>

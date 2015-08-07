@@ -42,6 +42,15 @@
 		
 		$obj = new activities_edit_record;
 		$obj->create($array);	
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='activities_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 }
 ?>		  
 	  </form>

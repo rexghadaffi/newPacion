@@ -56,7 +56,16 @@
 		"forumCatDesc" => $_POST["txtcatdesc"]
 		);
 		$obj = new edit_category;
-		$obj->updateinfo($array, "forumCatID", $_POST["txtid"]);	
+		$obj->updateinfo($array, "forumCatID", $_POST["txtid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='user_record.php.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";		
  }
 ?>
 </form>	

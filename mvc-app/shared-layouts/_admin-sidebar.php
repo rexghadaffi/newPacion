@@ -8,6 +8,6 @@
 		<a id="navActivity" class="list-group-item" href="activities_record.php?control=view_record&func=listall"><i class="fa fa-connectdevelop fa-fw"></i>&nbsp; Activities</a>
 		<a id="navJob" class="list-group-item" href="job_record.php?control=view_record&func=listall"><i class="fa fa-briefcase fa-fw"></i>&nbsp; Jobs</a>		
 		<a id="navTopics" class="list-group-item" href="topics_record.php?control=view_record&func=listall"><i class="fa fa-info fa-fw"></i>&nbsp; Topics</a>	
-        <a id="navNews" class="list-group-item" href="news_record.php?control=view_record&func=listall"><i class="fa fa-newspaper-o fa-fw"></i>&nbsp; News</a> 	  
+        <a id="navNews" class="list-group-item" href="news_record.php?control=view_record&func=listall"><i class="fa fa-newspaper-o fa-fw"></i>&nbsp; News</a>
     </div>
 </div>

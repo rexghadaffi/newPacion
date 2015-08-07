@@ -42,7 +42,16 @@
 		"dateCreated" => $_POST["txtdate"]	
 		);
 		$obj = new topics_edit_record;
-		$obj->create($array);			
+		$obj->create($array);	
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='topics_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";			
  }
 ?>			 
 		</div>  

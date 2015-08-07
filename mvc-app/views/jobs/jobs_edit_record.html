@@ -46,6 +46,15 @@ include '../views/modals/add_jobs.php';
 		);
 		$obj = new jobs_edit_record;
 		$obj->updateinfo($array, "jobID", $_POST["txtjobid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='job_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 		
  }
 ?>

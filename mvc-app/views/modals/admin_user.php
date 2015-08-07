@@ -53,6 +53,15 @@
 		
 		$obj = new admin_edit_record;
 		$obj->create($array);	
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='admin_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 		
  }
 ?>		  

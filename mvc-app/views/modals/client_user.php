@@ -76,6 +76,15 @@
 		);
 		$obj = new user_edit_record;
 		$obj->create($array);			
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='user_record.php.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";	
  }
 ?>	
 		</div>  

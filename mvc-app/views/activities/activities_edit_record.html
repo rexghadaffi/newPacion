@@ -45,6 +45,15 @@ include '../shared-layouts/_Layout.php';
 		);
 		$obj = new activities_edit_record;
 		$obj->updateinfo($array, "activityID", $_POST["txtid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='activities_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 		
  }
 ?>             

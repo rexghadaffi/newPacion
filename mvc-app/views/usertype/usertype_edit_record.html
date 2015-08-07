@@ -36,6 +36,15 @@ include '../views/modals/addusertype.php';
 		);
 		$obj = new usertype_edit_record;
 		$obj->updateinfo($array, "typeID", $_POST["txttypeid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='usertype_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";	
 		
  }
 ?>

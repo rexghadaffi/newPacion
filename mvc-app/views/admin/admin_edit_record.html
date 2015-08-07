@@ -56,6 +56,14 @@ include '../shared-layouts/_Layout.php';
 		);
 		$obj = new admin_edit_record;
 		$obj->updateinfo($array, "userID", $_POST["txtid"]);
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='admin_record.php?control=view_record&func=listall';
+											
+		
+												  }
+	 												   </script>";
 		
  }
 ?>             
