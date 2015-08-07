@@ -5,7 +5,7 @@ $count = mysqli_num_rows($notifquery);
 $row = array();
 while ($r = mysqli_fetch_array($notifquery))
 {
-	$row['result'][] = array('id' => $r["userID"],
+	$row['data'][] = array('id' => $r["userID"],
 				   'username' => $r["userName"]);	
 }
 echo json_encode($row);					  
