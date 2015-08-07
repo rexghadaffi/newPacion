@@ -1,6 +1,6 @@
 <?php 
-{
-	class ActivityViewClass
+
+class ActivityViewClass
 {
 	public $arr=array();
 	
@@ -21,5 +21,4 @@
 	}
 }
 
-}
 ?>

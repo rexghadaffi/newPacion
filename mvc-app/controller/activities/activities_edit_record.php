@@ -1,22 +1,22 @@
 <?php
-class ActivityEditRecord extends ActivityViewClass
+class activities_edit_record extends ActivityViewClass
 {
 
 	function edit()
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;	
-		$this->assign("clientinfo", $obj->selectById("tblcompanyuser", "userID", $_GET["id"]));		
+		$this->assign("activities", $obj->selectById("tblactivity", "activityID", $_GET["id"]));		
 	}
 	
 	public function updateinfo($clientarr, $column, $id)
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;		
-		$obj->updateWhere("tblcompanyuser", $clientarr, $column, $id);	
+		$obj->updateWhere("tblactivity", $clientarr, $column, $id);	
 	}
 	
-	public function create($clientarr)
+	public function create($activityarr)
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;		

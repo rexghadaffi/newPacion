@@ -32,19 +32,17 @@
  if(isset($_POST["btnadd"]))
  {		
 
-		include_once '../controller/admin/activity_edit_record.php';
+		include_once '../controller/activities/activities_edit_record.php';
 		$array = array(
-		"userID" => "null",
-		"userName" => $_POST["txtusername"],
-		"userPassword" => $_POST["txtpassword"],
-		"userStatus" => 1,
-		"userTypeID" => $_POST["cbousertype"]
+		"activityID" => "null",
+		"activityDescription" => $_POST["txtDescription"],
+		"activityTitle" => $_POST["txtTitle"],
+		"activityImage" => "none"
 		);
 		
-		$obj = new ActivityEditRecord;
+		$obj = new activities_edit_record;
 		$obj->create($array);	
-		
- }
+}
 ?>		  
 	  </form>
     </div>

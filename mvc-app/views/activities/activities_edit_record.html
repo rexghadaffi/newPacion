@@ -1,0 +1,64 @@
+﻿<?php
+include '../shared-layouts/_Layout.php';
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">
+<form method="post">
+<!-- BS FORM -->
+		
+<?php foreach($activities as $act)
+ {	?>		
+ 			 <legend><h4>Update Record:  <strong>
+ 		     	<?php
+ 		     	echo $act["activityDescription"];;
+ 		     	?>
+ 		     </strong> 
+ 		     </h4>
+
+ 		    </legend>
+	    	<div class="form-group col-md-6">
+				<label for="txtactdesc">Description</label>
+				<input type="hidden" class="form-control" name="txtid" value="<?php echo $act["activityID"]; ?>" />
+				<input type="text" class="form-control" name="txtactdesc" value="<?php echo $act["activityDescription"]; ?>" />
+			</div>
+			
+	    	<div class="form-group col-md-6">
+				<label for="txtacttitle">Title</label>
+				<input type="text" class="form-control" name="txtacttitle" value="<?php echo $act["activityTitle"]; ?>">
+			</div>		
+
+	    	<div class="form-group col-md-6">
+				<label for="txtactimg">Image name</label>
+				<input type="text" class="form-control" name="txtactimg" value="<?php echo $act["activityImage"]; ?>">
+			</div>	
+<?php } ?>	
+
+<?php
+ if(isset($_POST["btnedit"]))
+ {		
+		include_once '../controller/activities/activities_edit_record.php';
+		$array = array(
+		"activityDescription" => $_POST["txtactdesc"],
+		"activityTitle" => $_POST["txtacttitle"],
+		"activityImage" => $_POST["txtactimg"]
+		);
+		$obj = new activities_edit_record;
+		$obj->updateinfo($array, "activityID", $_POST["txtid"]);
+		
+ }
+?>             
+   </div>
+         <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<button type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
+                </button> 				
+                <button type="submit" name="btnedit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+    </div>
+    </form>	
+</div>
