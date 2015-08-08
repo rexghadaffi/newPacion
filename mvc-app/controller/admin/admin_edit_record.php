@@ -22,7 +22,8 @@ class admin_edit_record extends AdminViewClass
 		$obj=new DataAccessLayer;		
 		$obj->insert("tblcompanyuser", $clientarr);	
 	}
-	
+
+		
 }
 
 ?>

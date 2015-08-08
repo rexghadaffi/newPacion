@@ -21,9 +21,17 @@
 			<div class="form-group">
 				<label for="cbousertype">User Type</label>
 				<select type="" class="form-control" name="cbousertype">
-					<option>Select</option>
-					<option>1</option>
-					<option>2</option>
+				
+				<?php 
+                foreach($type as $t)
+                {?>
+
+				 <option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
+				 <?php 
+				}
+				?>
+
+					
 				</select>
 			</div>						
 		
@@ -43,12 +51,14 @@
  {		
 
 		include_once '../controller/admin/admin_edit_record.php';
+        		
+
 		$array = array(
 		"userID" => "null",
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => 1,
-		"userTypeID" => $_POST["cbousertype"]
+		"userTypeID" =>  $_POST["cbousertype"]
 		);
 		
 		$obj = new admin_edit_record;
