@@ -20,18 +20,12 @@
 						
 			<div class="form-group">
 				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">
-				
+				<select type="" class="form-control" name="cbousertype">				
 				<?php 
                 foreach($type as $t)
-                {?>
-
-				 <option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
-				 <?php 
-				}
-				?>
-
-					
+                { ?>
+				<option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
+				<?php } ?>	
 				</select>
 			</div>						
 		

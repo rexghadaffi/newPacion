@@ -44,15 +44,18 @@
 				<input type="email" class="form-control" name="txtemail" placeholder="E-mail">
 
 			</div>
-			
+
 			<div class="form-group">
 				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">
-					<option>Select</option>
-					<option value="1">Alumni</option>
-					<option value="2">Tambay</option>
+				<select type="" class="form-control" name="cbousertype">				
+				<?php 
+                foreach($type as $t)
+                { ?>
+				<option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
+				<?php } ?>	
 				</select>
-			</div>	
+			</div>
+
 			
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
