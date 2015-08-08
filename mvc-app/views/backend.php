@@ -93,6 +93,9 @@
                         <div id="loadingBar"  data-role="preloader" data-type="ring" data-style="dark" style="margin: auto"></div>
                     </div>
         
+        <?php 
+include "../controller/Login/login_controller.php";
+?>
 
     <div class="login-form padding20 block-shadow">
         <form method="POST">
@@ -128,9 +131,7 @@
 	
 <script>$('#loadingBar').hide();</script>
 	
-<?php 
-include "../controller/Login/login_controller.php";
-?>
+
 
 </body>
 </html>
