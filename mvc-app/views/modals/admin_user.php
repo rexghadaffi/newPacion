@@ -61,7 +61,7 @@
 		echo "<script>					
 												  { 
 										 			    						
-	 													window.location.href='admin_record.php?control=view_record&func=listall';
+	 													window.location.href='admin_record.php?control=view_record&func=listall&notif=true';
 											
 		
 												  }
