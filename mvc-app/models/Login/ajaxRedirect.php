@@ -1,8 +1,8 @@
 <?php
 $con = mysqli_connect("localhost","root","","db_alumni");
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = "admin";
+$password = "admin";
 
 
 $sql = mysqli_query($con, "SELECT * FROM tblcompanyuser where userName = '".$username."' AND userPassword = '".$password."' ");

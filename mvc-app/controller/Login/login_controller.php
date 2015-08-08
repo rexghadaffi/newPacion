@@ -4,8 +4,9 @@
 	include "user_controller.php";
 
 	if (isset($_POST['btnlogin']))
-		{
-			echo "<script>loadingBar();</script>";
+		{	
+
+		echo "<script>loadingBar();</script>";
 			$userController = new UserController;
 			$rooturl = $userController->getUrl();
 
@@ -52,11 +53,10 @@
 
 								if ($array[4] == 1)
 									{
-										
 											echo "<script>stoploadingBar();</script>";
-	session_start();
-	$_SESSION['id'] = $array[0];
-	$_SESSION['user'] = $username;
+											session_start();
+											$_SESSION['id'] = $array[0];
+											$_SESSION['user'] = $username;
 										echo '<script type="text/javascript">window.location="home.php"</script>';
 										/* echo '<script>ajaxRedirect();</script>'; */
 										die();

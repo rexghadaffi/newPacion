@@ -45,6 +45,10 @@ function stoploadingBar(){
 	$('#loadingBar').fadeOut("milliseconds");
 	
 }
+
+
+
+
 /* 
 function ajax()
 {
@@ -60,7 +64,7 @@ $.ajax({
            type: "POST",
            url: "../../models/Login/ajaxRedirect.php",
            data: {  
-		   username:	$('#username').val(),
+		        username:	$('#username').val(),
            password: 	$('#password').val(),
            },
            dataType: "text",

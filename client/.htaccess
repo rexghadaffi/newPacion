@@ -10,4 +10,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteRule ^(.+)$ home.php [QSA,L]
+RewriteRule ^(.+)$ index.php [QSA,L]

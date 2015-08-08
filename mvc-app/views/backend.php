@@ -89,8 +89,8 @@
 </head>
 <body class="bg-white" >
   
-   <div class="cell padding20" style="width: 10%; z-index: 1000; position: absolute; top: 250px; left: 560px">
-                        <div id="loadingBar"  data-role="preloader" data-type="ring" data-style="dark" style="margin: auto"></div>
+   <div id="loadingBar" class="cell padding20" style="width: 10%; z-index: 1000; position: absolute; top: 250px; left: 560px">
+                        <div   data-role="preloader" data-type="ring" data-style="dark" style="margin: auto"></div>
                     </div>
         
         <?php 
