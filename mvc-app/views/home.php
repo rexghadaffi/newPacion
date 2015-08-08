@@ -1,13 +1,6 @@
 <?php
-session_start();
-if(!isset($_SESSION['id']))
-{
-    
-echo "<script>window.location.href='backend.php';</script>";
-die();
-
-}
-
+include "../core/init.php";
+redirect();
 ?>
 
 <?php include '../shared-layouts/_Layout.php'; ?>
