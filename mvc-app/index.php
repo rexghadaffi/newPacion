@@ -3,3 +3,4 @@
 header('Location: views/');
 
 die();
+?>

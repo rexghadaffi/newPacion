@@ -10,7 +10,7 @@
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
-    <title>Login form :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
+    <title>STI College Cubao</title>
 
     <link href="../shared-resources/Metro-UI/build/css/metro.css" rel="stylesheet">
     <link href="../shared-resources/Metro-UI/build/css/metro-icons.css" rel="stylesheet">
@@ -96,10 +96,10 @@
 
     <div class="login-form padding20 block-shadow">
         <form method="POST">
-            <!--<h3 >Sign In to STI Alumni</h3>-->
+            <h3 >Sign In to STI Alumni</h3>
             <hr class="thin">
             
-            <br />
+            <br>
             <div class="input-control text full-size" data-role="input">
 			
                 <input type="text"  name="username" id="username" placeholder="Enter Username">

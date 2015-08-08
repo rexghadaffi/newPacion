@@ -22,6 +22,17 @@ function missingInputs(){
   
 }
 
+function wrongInputs(){
+ var message = 'Username and Password doesnt match!';
+        $.Notify({
+            caption: 'Error',
+            content: message,
+            type: 'alert'
+        });
+
+  
+}
+
 
 function loadingBar(){
 	

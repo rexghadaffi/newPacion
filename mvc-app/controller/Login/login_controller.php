@@ -1,31 +1,33 @@
 
 <?php
-
+	include "../models/Login/loginModel.php";
+	include "user_controller.php";
 
 	if (isset($_POST['btnlogin']))
 		{
 			echo "<script>loadingBar();</script>";
-			$rooturl =  $_SERVER['HTTP_REFERER'];
-		    $urlclient =  "http://localhost/newPacion/mvc-app/login.php";
-	 		$urladmin = "http://localhost/newPacion/mvc-app/views/backend.php";
+			$userController = new UserController;
+			$rooturl = $userController->getUrl();
+
  			$username = $_POST['username'];
  			$password = $_POST['password'];
- 			include "../models/Login/loginModel.php";
  		
- 			if ($rooturl == $urlclient)
+ 		
+ 			if ($rooturl == $userController->urlclient)
  				{
 					$login =  new Login($username, $password, "tblclientuser");
 					$array = $login->GetData();			
 				}
 
 
-			else if ($rooturl == $urladmin)
+			else if ($rooturl == $userController->urladmin)
  				{
+
+
  					if ($username == "" || $password == "")
 					{
 						
-					  echo "   <script>missingInputs();</script>";
-					  	echo "<script>stoploadingBar();</script>";
+					  	$userController->missingInputs();
 												
 					}
 					else 
@@ -33,10 +35,16 @@
 						$login = new Login($username, $password, "tblcompanyuser");
 						$array = $login->GetData();
 
-						if ($array[3] == 0)
+						if ($array[1] != $username || $array[2] != $password)
+						{
+							$userController->wrongInputs();
+
+
+						}
+
+						else if ($array[3] == 0)
 							{
-								echo "<script>inactiveStatus();</script>";
-									echo "<script>stoploadingBar();</script>";
+								$userController->inactiveStatus();
 
 							}
 						else if ($array[3] == 1)
@@ -44,10 +52,7 @@
 
 								if ($array[4] == 1)
 									{
-										echo "<script>stoploadingBar();</script>";
-										session_start();
-										$_SESSION['id'] = $array[0];
-										$_SESSION['user'] = $username;
+										
 										echo '<script type="text/javascript">window.location="home.php"</script>';
 										/* echo '<script>ajaxRedirect();</script>'; */
 										die();
