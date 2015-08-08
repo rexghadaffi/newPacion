@@ -53,6 +53,10 @@
 								if ($array[4] == 1)
 									{
 										
+											echo "<script>stoploadingBar();</script>";
+	session_start();
+	$_SESSION['id'] = $array[0];
+	$_SESSION['user'] = $username;
 										echo '<script type="text/javascript">window.location="home.php"</script>';
 										/* echo '<script>ajaxRedirect();</script>'; */
 										die();

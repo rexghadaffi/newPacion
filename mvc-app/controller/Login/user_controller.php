@@ -31,10 +31,7 @@ public function inactiveStatus ()
 
 public function passSession()
 {
-	echo "<script>stoploadingBar();</script>";
-	session_start();
-	$_SESSION['id'] = $array[0];
-	$_SESSION['user'] = $username;
+
 }
 
 
