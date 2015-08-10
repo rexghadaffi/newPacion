@@ -6,7 +6,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Create New Alumni Record</h4>
       </div>
-	   <form method="post">
+	   <form method="post" enctype="multipart/form-data">
 		  <div class="modal-body">
 	    	<div class="form-group">
 				<label for="txtusername">Username</label>				
@@ -42,7 +42,6 @@
 			<div class="form-group">
 				<label for="txtemail">E-mail Address</label>
 				<input type="email" class="form-control" name="txtemail" placeholder="E-mail">
-
 			</div>
 
 			<div class="form-group">
@@ -56,38 +55,61 @@
 				</select>
 			</div>
 
-			
+			<div class="form-group">
+				<label for="fileToUpload">Profile Picture</label>
+    			<input type="file" name="fileToUpload" id="fileToUpload">			
+			</div>
+
+
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			<button type="submit" class="btn btn-success" name="btnadd">Add New</button>
 		  </div>
 <?php		  
  if(isset($_POST["btnadd"]))
- {		
-		include_once '../controller/client/user_edit_record.php';
-		$array = array(
-		"userID" => "null",
-		"userName" => $_POST["txtusername"],
-		"userPassword" => $_POST["txtpassword"],
-		"userFirstName" => $_POST["txtfname"],
-		"userLastName" => $_POST["txtlname"],
-		"userContactNum" => $_POST["txtcontact"],	
-		"userAddress" => $_POST["txtaddress"],
-		"userEmail" => $_POST["txtemail"],	
-		"userStatus" => 1,
-		"userTypeID" => $_POST["cbousertype"]
-		);
-		$obj = new user_edit_record;
-		$obj->create($array);			
-
-		echo "<script>					
-												  { 
-										 			    						
-	 													window.location.href='user_record.php.php?control=view_record&func=listall';
-											
-		
-												  }
-	 												   </script>";	
+ {		 				
+	if(!empty($_FILES['fileToUpload']['tmp_name']))
+		{
+		$target_dir = "../../client/shared-resources/img/";										
+		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+		$uploadOk = 1;
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+		if($check !== false) 
+			{
+				echo "File is an image - " . $check["mime"] . ".";
+				$uploadOk = 1;
+				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+			} 
+			else
+				{
+		       		echo "File is not an image.";
+		        	$uploadOk = 0;
+		    	}	    							
+				include_once '../controller/client/user_edit_record.php';
+				$name = basename($_FILES["fileToUpload"]["name"]);
+				$array = array(
+				"userID" => "null",
+				"userName" => $_POST["txtusername"],
+				"userPassword" => $_POST["txtpassword"],
+				"userFirstName" => $_POST["txtfname"],
+				"userLastName" => $_POST["txtlname"],
+				"userContactNum" => $_POST["txtcontact"],	
+				"userAddress" => $_POST["txtaddress"],
+				"userEmail" => $_POST["txtemail"],	
+				"userStatus" => 1,
+				"userTypeID" => $_POST["cbousertype"],
+				"userImage" => $name
+				);				
+					$obj = new user_edit_record;
+					$obj->create($array);			
+/*		echo "<script>					
+				{ 				 			    						
+					window.location.href='user_record.php.php?control=view_record&func=listall';									
+				}
+			</script>";	
+*/
+			}
  }
 ?>	
 		</div>  

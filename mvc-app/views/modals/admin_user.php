@@ -9,7 +9,7 @@
 	   <form method="post">
 		  <div class="modal-body">
 	    	<div class="form-group">
-				<label for="txtusername">Username</label>
+				<label for="txtusername">Userdasdasdasdas</label>
 				<input type="text" class="form-control" name="txtusername" placeholder="Username">
 			</div>
 			
