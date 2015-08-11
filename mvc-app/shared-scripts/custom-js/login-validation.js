@@ -46,42 +46,52 @@ function stoploadingBar(){
 	
 }
 
-
-
-
-/* 
-function ajax()
-{
+// function getData()
+// {
 	
-	 $.get("demo_test.asp", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
+	 // $.post("http://localhost/newPacion/mvc-app/views/backend.php",
+        // {
+          // username: $('username').val(),
+          // city: $('password').val()
+        // },
+        // function(data,status){
+          // alert('oops');
+        // });
 	
-}
+	
+// }
 
-function ajaxRedirect()
-{
-$.ajax({	
-           type: "POST",
-           url: "../../models/Login/ajaxRedirect.php",
-           data: {  
-		        username:	$('#username').val(),
-           password: 	$('#password').val(),
-           },
-           dataType: "text",
-           success: function(server_response){
+// function ajaxRedirect()
+// {
+	// $.post("jquery_post.php",data,callback);
 
-			   if(server_response == 1)
-						{
+// $.ajax({	
+           // type: "POST",
+           // url: "http://localhost/newPacion/mvc-app/shared-scripts/custom-js/ajaxRedirect.php",
+           // data: {  
+		   // username :	$('#username').val(),
+           // password : 	$('#password').val(),
+           // },
+           // dataType: "text",
+           // success: function(server_response){
+
+			   // if(server_response == 1)
+						// {
 						
-							alert('oops');
-						}
-						else if (server_response == 0)
-						{
-						alert('oops1');
+							// alert('oops');
+						// }
+						// else if (server_response == 0)
+						// {
+						// alert('oops1');
 
-						}
+						// }
+						// else
+						// {
+							// alert('oops11');
+							
+						// }
 
 
-		   },
-		   }); 		   		   		
-} */
+		   // },
+		   // }); 		   		   		
+// } 

@@ -1,3 +1,5 @@
+<?php include "core/init.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
 <link href="shared-resources/css/jcarousel.css" rel="stylesheet" />
 <link href="shared-resources/css/flexslider.css" rel="stylesheet" />
 <link href="shared-resources/css/style.css" rel="stylesheet" />
-
+<script src="shared-resources/js/sweetalert.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="shared-resources/css/sweetalert.css">
+<script src="custom-js/login-validation.js"></script>
 
 <!-- Theme skin -->
 <link href="skins/default.css" rel="stylesheet" />

@@ -58,7 +58,7 @@
 											$_SESSION['id'] = $array[0];
 											$_SESSION['user'] = $username;
 										echo '<script type="text/javascript">window.location="home.php"</script>';
-										/* echo '<script>ajaxRedirect();</script>'; */
+									// echo '<script>getData();</script>'; 
 										die();
 									}
 								else if ($array[4] == 2)

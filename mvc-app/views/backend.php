@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -27,7 +28,7 @@
     <script src="../shared-resources/Metro-UI/build/js/docs.js"></script>
     <script src="../shared-resources/Metro-UI/build/js/run_prettify.js"></script>
     <script src="../shared-resources/Metro-UI/build/js/js/ga.js"></script>
-<script src="../shared-scripts/custom-js/login-validation.js"></script>
+	<script src="../shared-scripts/custom-js/login-validation.js"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
@@ -88,14 +89,14 @@
     </script>
 </head>
 <body class="bg-white" >
-  
+     <?php 
+include "../controller/Login/login_controller.php";
+?>
    <div id="loadingBar" class="cell padding20" style="width: 10%; z-index: 1000; position: absolute; top: 250px; left: 560px">
                         <div   data-role="preloader" data-type="ring" data-style="dark" style="margin: auto"></div>
                     </div>
         
-        <?php 
-include "../controller/Login/login_controller.php";
-?>
+     
 
     <div class="login-form padding20 block-shadow">
         <form method="POST">
@@ -129,7 +130,13 @@ include "../controller/Login/login_controller.php";
         </form>
     </div>
 	
-<script>$('#loadingBar').hide();</script>
+<script>$('#loadingBar').hide();
+
+
+
+
+
+</script>
 	
 
 

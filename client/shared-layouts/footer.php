@@ -28,9 +28,9 @@
 				<div class="widget">
 					<h5 class="widgetheading">Get in touch with us</h5>
 					<address>
-					<strong>Moderna company Inc</strong><br>
-					 Modernbuilding suite V124, AB 01<br>
-					 Someplace 16425 Earth </address>
+					<strong>STI College Cubao Alumni</strong><br>
+					 P. Tuazon<br>
+					 Cubao, Quezon City, Philippines </address>
 					<p>
 						<i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
 						<i class="icon-envelope-alt"></i> email@domainname.com
@@ -41,9 +41,10 @@
 				<div class="widget">
 					<h5 class="widgetheading">Pages</h5>
 					<ul class="link-list">
-						<li><a href="#">Press release</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Gallery</a></li>
+						<li><a href="#">Forum</a></li>
 						<li><a href="#">Career center</a></li>
 						<li><a href="#">Contact us</a></li>
 					</ul>
