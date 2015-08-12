@@ -36,7 +36,10 @@
 						<?php
 						if (logged_in() === false)
 							{
-								echo '  <li><a href="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">Signin</a></li>';
+								echo '  <li><a href="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">Signin</a></li>
+										<li><a href="">SignUp</a></li>
+								
+								';
 							}
 						else
 							{

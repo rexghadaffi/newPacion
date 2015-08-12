@@ -1,5 +1,4 @@
 <?php include "core/init.php";?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
 <meta name="author" content="http://bootstraptaste.com" />
 <!-- css -->
 <link href="shared-resources/css/bootstrap.min.css" rel="stylesheet" />
+
 <link href="shared-resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="shared-resources/css/jcarousel.css" rel="stylesheet" />
 <link href="shared-resources/css/flexslider.css" rel="stylesheet" />

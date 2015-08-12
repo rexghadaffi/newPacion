@@ -2,9 +2,9 @@
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: #87CEFA">
+      <div class="modal-header btn-custom" >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Registration</h4>
+        <h4 class="modal-title" id="myModalLabel" style="color:white;font-size:24px" align="center">Signin</h4>
       </div>
 	   <form method="POST" >
 		  <div class="modal-body">
