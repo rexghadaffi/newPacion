@@ -4,7 +4,9 @@
 
 	<!-- start header -->
 	<?php 	
-	include "modal/login.php";?>
+	include "modal/login.php";
+	include "modal/registration.php";
+	?>
 	 <?php		  
  include "controller/Login_Controller.php";
  ?>	
@@ -37,7 +39,7 @@
 						if (logged_in() === false)
 							{
 								echo '  <li><a href="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">Signin</a></li>
-										<li><a href="">SignUp</a></li>
+										<li><a href="#registrationModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">SignUp</a></li>
 								
 								';
 							}

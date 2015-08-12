@@ -10,12 +10,12 @@
 		  <div class="modal-body">
 	    	<div class="form-group">
 				<label for="txtusername">Username</label>				
-				<input type="text"  class="form-control" name="username" placeholder="Username">
+				<input type="text"  class="form-control" name="username" placeholder="Enter Username">
 						</div>
 			
 			<div class="form-group">
 				<label for="txtpassword">Password</label>
-				<input type="password" class="form-control" name="password" placeholder="Password">
+				<input type="password" class="form-control" name="password" placeholder="Enter Password">
 			</div>
 			
 			
