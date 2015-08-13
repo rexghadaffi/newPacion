@@ -5,7 +5,7 @@
 	<!-- start header -->
 	<?php 	
 	include "modal/login.php";
-	include "modal/registration.php";
+	include "modal/profile.php";
 	?>
 	 <?php		  
  include "controller/Login_Controller.php";
@@ -39,7 +39,7 @@
 						if (logged_in() === false)
 							{
 								echo '  <li><a href="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">Signin</a></li>
-										<li><a href="#registrationModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">SignUp</a></li>
+										<li><a href="registration.php" >SignUp</a></li>
 								
 								';
 							}
@@ -48,7 +48,7 @@
 								echo '<li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><i class="fa fa-cog"></i><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="">My Profile</a></li>
+                                <li><a href="#profileModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">My Profile</a></li>
 								 <li><a href="controller/logout.php">Logout</a></li>
                           
 						                            </ul>
