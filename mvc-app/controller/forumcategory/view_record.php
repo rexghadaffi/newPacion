@@ -5,7 +5,14 @@ class view_record extends CategoryViewClass
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("forumcategory", $obj->select("tblforumcategory f right join tbltopic t on f.forumCatID= t.forumCatID"));		
+		$this->assign("forumcategory", $obj->select("tblforumcategory"));			
+	}
+	
+	public function subquery($name,$catid)
+	{
+		include_once "../../data-access/mysql-db.php";
+		$result=new DataAccessLayer;
+		$this->assign("topic", $result->selectColumnWhere($name, "forumCatID", $catid));				
 	}
 }
 ?>

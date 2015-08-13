@@ -21,9 +21,15 @@ include '../shared-layouts/_layout.php';
 		</h3>
 	</div>
 	<div class="panel-body">
-		
-		<p class="col-md-10"><?php echo $cat["topicTitle"] ?></p>	
-		<p class="col-md-2"><?php echo $cat["dateCreated"] ?></p>		
+		<?php
+		include_once "../controller/forumcategory/view_record.php";
+		$subquery = new view_record;
+		$subquery->subquery("tbltopic",$cat["forumCatID"]);
+		?>
+<?php foreach($topic as $tpc) { ?> 		
+		<p class="col-md-10"><?php echo $tpc["topicTitle"] ?></p>	
+		<p class="col-md-2"><?php echo $tpc["dateCreated"] ?></p>
+<?php } ?>		
 	</div>
 	</div>
 	</div>

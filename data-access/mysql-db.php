@@ -126,6 +126,16 @@ class DataAccessLayer
             return $this->query($sql);
     }
  
+    public function selectColumnWhere($table, $idName, $idValue) {
+            $sql = 'select * from '
+            . $table
+            . ' where '
+            . $idName
+            . ' = '
+            . $idValue;   
+            return $this->query($sql);
+    }
+	
     public function selectWhere($table, $parameters, $where) {
             $sql = 'select ';
  
