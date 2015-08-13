@@ -10,9 +10,19 @@
 		  <div class="modal-body">
 		  <div class="row">
 		  <div class="col-lg-12">
-			<div class="col-md-5">
-				<img src="shared-resources/img/default.gif" class="img-responsive" alt="">
-			</div>
+						<ul id="thumbs" class="portfolio">
+						<!-- Item Project and Filter Name -->
+						<li class="col-lg-5 design" data-id="id-0" data-type="web">
+						<div class="item-thumbs">
+						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+						<a class="hover-wrap fancybox" style=""  title="Profile Picture" href="shared-resources/img/default.gif">
+						<span class="overlay-img"></span>
+						<span class="overlay-img-thumb font-icon-plus"></span>
+						</a>
+						<img src="shared-resources/img/default.gif" alt="">
+						</div>
+						</li>
+						</ul>
 			<div class="col-md-7">
 				<label>Firstname</label>
 				<input type="text" class="form-control" required>
