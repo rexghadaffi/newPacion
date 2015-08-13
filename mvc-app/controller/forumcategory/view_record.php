@@ -5,7 +5,7 @@ class view_record extends CategoryViewClass
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("forumcategory", $obj->select("tblforumcategory"));		
+		$this->assign("forumcategory", $obj->select("tblforumcategory f right join tbltopic t on f.forumCatID= t.forumCatID"));		
 	}
 }
 ?>
