@@ -24,7 +24,7 @@ include '../shared-layouts/_layout.php';
 		<?php
 		include_once "../controller/forumcategory/view_record.php";
 		$subquery = new view_record;
-		$subquery->subquery("tbltopic",$cat["forumCatID"]);
+		$subquery->subquery("tbltopic", $cat["forumCatID"]);
 		?>
 <?php foreach($topic as $tpc) { ?> 		
 		<p class="col-md-10"><?php echo $tpc["topicTitle"] ?></p>	
