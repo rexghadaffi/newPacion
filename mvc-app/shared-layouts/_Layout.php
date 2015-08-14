@@ -20,6 +20,14 @@
       background-color: #ece9e9;
      color: #7f7f80;
      }
+	 
+	hr 
+	{
+		height: 1px;  
+		width: 100%;
+		margin-bottom: 2px;
+	}
+
 	</style>
   </head>
   <body>

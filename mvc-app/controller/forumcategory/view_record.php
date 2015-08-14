@@ -5,14 +5,15 @@ class view_record extends CategoryViewClass
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("forumcategory", $obj->select("tblforumcategory"));	
+		$this->assign("forumcategory", $obj->select("tblforumcategory"));
+		$this->assign("topic", $obj->select("tbltopic"));
 	}
 	
-	public function subquery($name, $catid)
+	function subquery($name, $catid)
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("topic", $obj->selectColumnWhere("tbltopic", "forumCatID", 1));				
+		$this->assign("topic", $obj->selectColumnWhere("tbltopic", "forumCatID", 1));
 	}
 }
 ?>

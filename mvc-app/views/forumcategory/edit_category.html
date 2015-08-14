@@ -2,24 +2,23 @@
 <div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-body">		  
-			<legend><h3>Edit Category</h2></legend>
+			<legend><h3>Edit Category Title</h2></legend>
 <form method="post">
 <!-- BS FORM -->		
 <?php foreach($forumcategory as $category)
  {	?>		
 			<input type="hidden" class="form-control" name="txtid" value="<?php echo $category["forumCatID"]; ?>" />
 	    	<div class="form-group col-md-8">				
-				<label for="txtcattitle">Title</label>				
 				<input type="text" class="form-control" name="txtcattitle" value="<?php echo $category["forumCatTitle"]; ?>" />
 			</div>	
-			
+<!--			
 	    	<div class="form-group col-md-8">
 				<label for="txtcatdesc">Deccription</label>			
 				<textarea rows="4" name="txtcatdesc" class="form-control">
-				<?php echo $category["forumCatDesc"]; ?>
+				<?php // echo $category["forumCatDesc"]; ?>
 				</textarea>
 			</div>	
-				
+-->				
 <!--
 			<div class="form-group col-md-4">
 				<label for="cbousertype">User Type</label>

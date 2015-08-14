@@ -3,13 +3,11 @@ include '../shared-layouts/_layout.php';
 //include '../views/modals/forum_category.php';
 ?>
 <div class="col-md-10">
-<div class="panel panel-default">
-	<div class="row">
-	<button class="btn btn-success">Create New Discussion</button>
-	</div>
-	
-	<div class="panel-heading">
-		<h3 class="panel-title">General Discussion</h3>
+<div class="panel panel-success">
+
+	<div class="panel-heading clearfix">
+		<h1 class="panel-title pull-left"><big><big><big><b>STI Alumni Forum</b></big></big></big></h1>
+		<button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus fa-fw"></i>New</button>
 	</div>
 <?php foreach($forumcategory as $cat) { ?> 
 	<div class="panel-body">	
@@ -25,11 +23,25 @@ include '../shared-layouts/_layout.php';
 		include_once "../controller/forumcategory/view_record.php";
 		$subquery = new view_record;
 		$subquery->subquery("tbltopic", $cat["forumCatID"]);
-		?>
-<?php foreach($topic as $tpc) { ?> 		
-		<p class="col-md-10"><?php echo $tpc["topicTitle"] ?></p>	
-		<p class="col-md-2"><?php echo $tpc["dateCreated"] ?></p>
-<?php } ?>		
+		?>	
+		
+<p class="col-md-6"><b>Topic Title</p>
+<p class="col-md-2"><i class="fa fa-thumb-tack fa-fw"></i>Added by</p>
+<p class="col-md-2"><i class="fa fa-reply fa-fw"></i>Replies</p>
+<p class="col-md-2"><i class="fa fa-calendar fa-fw"></i>Date Created</b></p>
+
+<?php foreach($topic as $tpc) 
+{
+if($cat["forumCatID"] == $tpc["forumCatID"])
+	{
+		echo '<hr/>';
+		echo '<p class="col-md-6"><a href="?control=edit_category&func=edit&id='.$tpc["topicID"].'">'.$tpc["topicTitle"].'</p></a>';	
+		echo '<p class="col-md-2">|&nbsp; </p>';
+		echo '<p class="col-md-2">|&nbsp; </p>';
+		echo '<p class="col-md-2">|&nbsp;'.$tpc["dateCreated"].'</p>';
+	}
+	} 
+?>		
 	</div>
 	</div>
 	</div>
