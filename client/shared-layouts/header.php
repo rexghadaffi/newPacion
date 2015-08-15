@@ -1,5 +1,18 @@
 
 <body>
+    <section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2><span>STI</span> College Cubao</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
 <div id="wrapper">
 
 	<!-- start header -->
@@ -19,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><span>STI</span> Alumni</a>
+                   
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
