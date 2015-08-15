@@ -68,7 +68,7 @@ include "shared-layouts/header.php";
 	
 	<div class="panel-body">
 	<?php foreach($latest as $latest) { ?> 	
-	<p class="col-md-12">&nbsp;<?php echo $latest["topicTitle"] ?><span class="label label-danger pull-right">New</span></p>
+	<p class="col-md-12">&nbsp;<a href="forum.php?page=topic&action=display&topicid=<?php echo $latest["topicID"] ?>"><?php echo $latest["topicTitle"] ?><span class="label label-danger pull-right">New</span></a></p>
 	<?php } ?>
 	</div>	
 </div>
@@ -104,7 +104,7 @@ include "shared-layouts/header.php";
 if($cat["forumCatID"] == $tpc["forumCatID"])
 	{
 		echo '';
-		echo '<p class="col-md-5"><a href="?page=edit_category&action=edit&id='.$tpc["topicID"].'"><i class="fa fa-link fa-fw"></i>'.$tpc["topicTitle"].'</p></a>';	
+		echo '<p class="col-md-5"><a href="?page=topic&action=display&topicid='.$tpc["topicID"].'"><i class="fa fa-link fa-fw"></i>'.$tpc["topicTitle"].'</p></a>';	
 		echo '<p class="col-md-2">&nbsp; </p>';
 		echo '<p class="col-md-2">&nbsp; </p>';
 		echo '<p class="col-md-3">&nbsp;'.$tpc["dateCreated"].'</p>';

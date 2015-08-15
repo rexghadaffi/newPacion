@@ -9,7 +9,7 @@
 	function show()
 	{
 		extract($this->arr);
-		include_once "forum.html";
+		include_once "".$_GET["page"].".html";
 	}
 
 	function assign($name, $value)

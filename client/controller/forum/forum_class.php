@@ -12,7 +12,7 @@ class forumClass
 	{
 		# code...
 		$name=$_GET["page"];
-		include "page.php";
+		include "$name.php";
 		$obj= new $name;
 		$obj->$_GET["action"]();
 		
