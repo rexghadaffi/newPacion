@@ -1,4 +1,8 @@
 <?php
+include "../core/init.php";
+redirect();
+?>
+<?php
 include '../controller/jobs/jobs_class.php';
 new jobsClass();
 ?>

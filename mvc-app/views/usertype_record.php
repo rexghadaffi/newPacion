@@ -1,4 +1,9 @@
 <?php
+include "../core/init.php";
+redirect();
+?>
+
+<?php
 include '../controller/usertype/usertype_class.php';
 new userTypeClass();
 ?>
