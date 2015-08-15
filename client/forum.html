@@ -1,0 +1,96 @@
+<?php
+include "shared-layouts/html.php";
+include "shared-layouts/header.php";
+?>
+
+
+	<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+		
+			</div>
+		</div>
+	</div>	
+		</section>
+<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-md-offset-1">
+	<!-- Slider -->
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+              <li>
+                <img src="shared-resources/img/slides/." alt="" />
+              </li>
+              <li>
+                <img src="shared-resources/img/slides/4.jpg" alt="" />
+              </li>
+              <li>
+                <img src="shared-resources/img/slides/6.jpg" alt="" />
+              </li>
+            </ul>
+        </div>
+	<!-- end slider -->
+			</div>
+		</div>
+	</div>	
+</section>
+
+	
+<div class="col-md-3">
+<div class="col-md-12">
+<div class="panel panel-info">
+	<div class="panel-heading clearfix">
+		<h1 class="panel-title pull-left"><big><big><big><b>Latest Posts</b></big></big></big></h1>
+	</div>
+</div>
+</div>
+</div>	
+	
+<div class="col-md-9">
+<div class="panel panel-info">
+	<div class="panel-heading clearfix">
+		<h1 class="panel-title pull-left"><big><big><big><b>STI Alumni Forum</b></big></big></big></h1>
+	</div>	
+	
+	
+<?php foreach($forumcategory as $cat) { ?> 
+	<div class="panel-body">	
+	<div class="panel panel-default">
+	
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php echo $cat["forumCatTitle"] ?>
+
+		</h3>
+	</div>
+	
+<div class="panel-body">
+
+<p class="col-md-5"><i class="fa fa-tablet fa-fw"></i><b>Topic Title</p>
+<p class="col-md-2"><i class="fa fa-thumb-tack fa-fw"></i>Added by</p>
+<p class="col-md-2"><i class="fa fa-reply fa-fw"></i>Replies</p>
+<p class="col-md-3"><i class="fa fa-calendar fa-fw"></i>Date Created</b></p>
+
+<?php foreach($topic as $tpc) 
+{
+if($cat["forumCatID"] == $tpc["forumCatID"])
+	{
+		echo '';
+		echo '<p class="col-md-5"><a href="?page=edit_category&action=edit&id='.$tpc["topicID"].'"><i class="fa fa-link fa-fw"></i>'.$tpc["topicTitle"].'</p></a>';	
+		echo '<p class="col-md-2">&nbsp; </p>';
+		echo '<p class="col-md-2">&nbsp; </p>';
+		echo '<p class="col-md-3">&nbsp;'.$tpc["dateCreated"].'</p>';
+	}
+} 
+?>		
+	</div>
+	</div>
+	</div>
+<?php } ?>			
+</div>
+</div>
+	
+<?php include 'shared-layouts\footer.php'; ?>
