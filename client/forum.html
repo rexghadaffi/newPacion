@@ -23,7 +23,7 @@ include "shared-layouts/header.php";
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
-                <img src="shared-resources/img/slides/." alt="" />
+                <img src="shared-resources/img/slides/4.jpg" alt="" />
               </li>
               <li>
                 <img src="shared-resources/img/slides/4.jpg" alt="" />
@@ -39,6 +39,25 @@ include "shared-layouts/header.php";
 	</div>	
 </section>
 
+
+<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="breadcrumb">
+					<li><a href="index.php"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+					<li class="active"><a href="forum.php">Forum</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<section id="content">
+	<!-- start slider -->
+	<div class="container">
+		<div class="row">
+
 	
 <div class="col-md-3">
 <div class="col-md-12">
@@ -46,6 +65,12 @@ include "shared-layouts/header.php";
 	<div class="panel-heading clearfix">
 		<h1 class="panel-title pull-left"><big><big><big><b>Latest Posts</b></big></big></big></h1>
 	</div>
+	
+	<div class="panel-body">
+	<?php foreach($latest as $latest) { ?> 	
+	<p class="col-md-12">&nbsp;<?php echo $latest["topicTitle"] ?><span class="label label-danger pull-right">New</span></p>
+	<?php } ?>
+	</div>	
 </div>
 </div>
 </div>	
@@ -92,5 +117,7 @@ if($cat["forumCatID"] == $tpc["forumCatID"])
 <?php } ?>			
 </div>
 </div>
+</div></div>
+</section>
 	
 <?php include 'shared-layouts\footer.php'; ?>

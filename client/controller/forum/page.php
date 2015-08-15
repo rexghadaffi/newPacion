@@ -7,6 +7,7 @@ class page extends ForumViewClass
 		$obj=new DataAccessLayer;
 		$this->assign("forumcategory", $obj->select("tblforumcategory"));
 		$this->assign("topic", $obj->select("tbltopic"));
+		$this->assign("latest",$obj->select("tbltopic limit 8"));
 	}      
 }
 ?>
