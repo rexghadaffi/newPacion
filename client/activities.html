@@ -1,0 +1,42 @@
+<?php
+include "shared-layouts/html.php";
+include "shared-layouts/header.php";
+?>
+	<!-- end header -->
+	<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+
+
+
+
+				<?php
+
+				foreach($activities as $c)
+					{
+				?> 
+     				  	<div class="panel panel-danger">
+  						<div class="panel-heading"><h3><?php  echo  $c["activityTitle"]; ?></h3></div>
+  						<div class="panel-body"><h4><?php  echo  $c["activityDescription"]; ?> </br> 
+  							</div>
+						</div>
+
+     				  
+				<?php	   
+                      
+	                }
+
+				?>
+		
+			</div>
+		</div>
+	</div>	
+	
+	
+
+	</section>
+	<?php
+include "shared-layouts/footer.php";
+	?>
