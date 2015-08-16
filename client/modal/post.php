@@ -11,24 +11,19 @@
 		  <div class="col-lg-12">
 
 			<div class="col-md-11">
-				<label>Firstname</label>
-				<input type="text" class="form-control" required>
+				<label>Post Title</label>
+				<input type="text" class="form-control" name="title" required>
 			</div>
 			<div class="col-md-11">
-				<label>Lastname</label>
-				<input type="text" class="form-control" required>
+				<label>Content</label>
+				<textarea class="form-control" rows="3" name="desc"></textarea>
 			</div>
-			<div class="col-md-11">
-				<label>Email Adress</label>
-				<input type="text" class="form-control" required>
-			</div>
-
 		 
 </div>
   </div>
    <div class="modal-footer">
 			<button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">Cancel</button>
-			<button type="submit" class="btn btn-success btn-lg" name="btnupdate">Post</button>
+			<button type="submit" class="btn btn-success btn-lg" name="btnpost">Post</button>
 		  </div>
 		</div>  
 	  </form>
