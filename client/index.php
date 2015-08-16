@@ -12,28 +12,34 @@ include "shared-layouts/header.php";
             <ul class="slides">
               <li>
                 <img src="shared-resources/img/slides/1.jpg" alt="" />
+<!--				
                 <div class="flex-caption">
                     <h3>Modern Design</h3> 
 					<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p> 
 					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
+				</div>
+-->				
               </li>
               <li>
                 <img src="shared-resources/img/slides/2.jpg" alt="" />
+<!--
                 <div class="flex-caption">
-                    <h3>Fully Responsive</h3> 
+				<h3>Fully Responsive</h3> 
 					<p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p> 
 					<a href="#" class="btn btn-theme">Learn More</a>
                 </div>
-              </li>
+-->
+				</li>
               <li>
                 <img src="shared-resources/img/slides/3.jpg" alt="" />
+<!--
                 <div class="flex-caption">
                     <h3>Clean & Fast</h3> 
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p> 
 					<a href="#" class="btn btn-theme">Learn More</a>
                 </div>
-              </li>
+-->
+				</li>
             </ul>
         </div>
 	<!-- end slider -->
@@ -62,71 +68,80 @@ include "shared-layouts/header.php";
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter">
-								<h4>New Topics</h4>
+								<h4>News</h4>
 								<div class="icon">
 								<i class="fa fa-desktop fa-3x"></i>
 								</div>
 								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								 
 								</p>
 									
 							</div>
 							<div class="box-bottom">
-								<a href="#">Learn more</a>
+								<a href="#">View more News</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter">
-								<h4>Modern Style</h4>
+								<h4>Events</h4>
 								<div class="icon">
-								<i class="fa fa-pagelines fa-3x"></i>
+								<i class="fa fa-calendar fa-3x"></i>
 								</div>
 								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								 
 								</p>
 									
 							</div>
 							<div class="box-bottom">
-								<a href="#">Learn more</a>
+								<a href="#">View more Events</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+			
+		<!-- divider -->
+		<div class="row">
+			<div class="col-lg-12">
+
+			</div>
+		</div>
+		<!-- end divider -->
+			
+					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter">
-								<h4>Customizable</h4>
+								<h4>Job offers</h4>
 								<div class="icon">
-								<i class="fa fa-edit fa-3x"></i>
+								<i class="fa fa-briefcase fa-3x"></i>
 								</div>
 								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								
 								</p>
 									
 							</div>
 							<div class="box-bottom">
-								<a href="#">Learn more</a>
+								<a href="#">View jobs</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter">
-								<h4>Valid HTML5</h4>
+								<h4>Latest Post</h4>
 								<div class="icon">
-								<i class="fa fa-code fa-3x"></i>
+								<i class="fa fa-thumb-tack fa-3x"></i>
 								</div>
 								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								 
 								</p>
 									
 							</div>
 							<div class="box-bottom">
-								<a href="#">Learn more</a>
+								<a href="#">View forums</a>
 							</div>
 						</div>
 					</div>

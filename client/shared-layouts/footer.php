@@ -77,7 +77,7 @@
 				<div class="col-lg-6">
 					<div class="copyright">
 						<p>
-							<span>&copy; STI College Cubao Pacion pogi</span>
+							<span>&copy; STI College Cubao</span>
 						</p>
 					</div>
 				</div>

@@ -26,12 +26,13 @@
                         <li class="active"><a href="index.php">Home</a></li>
                             <li><a href="">About Us</a></li>
                         <li class="dropdown">
-                            <a href="" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Forum<b class=" icon-angle-down"></b></a>
+                            <a href="forum.php?page=page&action=display">Forum<b class=" icon-angle-down"></b></a>
+                     <!--   <a href="forum.php?page=page&action=display" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Forum<b class=" icon-angle-down"></b></a>	-->										
                             <ul class="dropdown-menu">
                                 <li><a href="">Chat</a></li>
 							</ul>
                         </li>
-                        <li><a href="forum.php?page=page&action=display">Gallery</a></li>
+                        <li><a href="">Gallery</a></li>
                     
                         <li><a href="">Contact</a></li>
 						<?php

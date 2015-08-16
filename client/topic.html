@@ -1,6 +1,7 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
+include "modal/post.php";
 ?>
 
 
@@ -68,14 +69,32 @@ include "shared-layouts/header.php";
 	
 		<div class="panel-body">
 			<div class="col-md-3">
-			<p><center>Date Added: <?php echo $t["dateCreated"] ?></p>
-			<p><img src="sadsdsadsadd.jpg" style="width: 150px; height: 150px;"></center></p>
+			<b>Added by: Admin</b>
+			</div>		
+			<div class="col-md-6">
+			<p><b><?php echo $t["topicDesc"] ?></b></p>
 			</div>
-			
-			<div class="col-md-9">
-			
+			<div class="col-md-3">
+			<p class="pull-right"><b><?php echo $t["dateCreated"] ?></b></p>
 			</div>
+			<div class="col-md-12">
+			<p class="col-md-12 col-md-offset-5"><b>Posts</b></p>
+			</div>
+<?php foreach($posts as $p) 
+{
+if($t["topicID"] == $p["topicID"])
+	{
+		echo '<p class="col-md-3">Posted by: Babawakie';	
+		echo '<p class="col-md-6">&nbsp;<a href="?page=topic&action=display&topicid='.$p["postID"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
+		echo '<p class="col-md-3 pull-right">&nbsp;'.$p["datePosted"].'</p>';
+	}		
+} 
+?>
 		</div>	
+		
+		<div class="panel-footer clearfix">
+		<button class="btn btn-info pull-right" data-toggle="modal" data-target="#postModal"><i class="fa fa-plus-square"></i> &nbsp;New Post</button>
+		</div>
 	</div>
 </div>	
 <?php } ?>	
