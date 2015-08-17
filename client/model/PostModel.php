@@ -12,7 +12,6 @@ class InsertTopic
 	
 
 function __construct($title, $description, $uid, $tid)
-
 {	
 	$this->SetData($title, $description, $uid, $tid);
 	$this->ConnectDB();
@@ -47,6 +46,7 @@ public function InsertData()
 {
 $this->db->insert("tblpost", $this->param);	
 }
+
 }
 
 ?>

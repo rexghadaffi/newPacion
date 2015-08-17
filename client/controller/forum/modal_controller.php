@@ -9,6 +9,7 @@
 			$uid = $_SESSION['id'];
 			$tid = $_GET['topicid'];					
 						$insert = new InsertTopic($title, $desc, $uid, $tid);
-						$insert->InsertData();					
+						$insert->InsertData();
+						echo '<script type="text/javascript">window.location=""</script>';
 		}		
 ?>

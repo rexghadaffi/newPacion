@@ -52,7 +52,6 @@
 		include_once '../controller/forumcategory/edit_category.php';
 		$array = array(
 		"forumCatTitle" => $_POST["txtcattitle"],
-		"forumCatDesc" => $_POST["txtcatdesc"]
 		);
 		$obj = new edit_category;
 		$obj->updateinfo($array, "forumCatID", $_POST["txtid"]);
@@ -60,7 +59,7 @@
 		echo "<script>					
 												  { 
 										 			    						
-	 													window.location.href='user_record.php.php?control=view_record&func=listall';
+	 													window.location.href='forum_record.php?control=view_record&func=listall';
 											
 		
 												  }
