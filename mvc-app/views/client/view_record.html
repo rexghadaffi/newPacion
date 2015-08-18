@@ -44,9 +44,13 @@ include '../views/modals/client_user.php';
         else {
         echo '<td><label class="label label-danger">InActive</label></td>';             
         }
-		echo '<td> '.$c["typeName"].' </td>';
+ foreach($type as $t)	
+{ 		if($c["userTypeID"] == $t["typeID"]){
+		echo '<td> '.$t["typeName"].' </td>'; }
+}		
 		echo '<td><a href="edit_info.php?control=user_edit_record&func=edit&id='.$c["userID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		
+	
 	}
 ?>
                 </tbody>

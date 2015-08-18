@@ -52,18 +52,21 @@
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="cbousertype">Status</label>
+				<label for="cbostatus">Status</label>
 				<select type="" class="form-control" name="cbostatus" >
-					<option value="0">Active</option>
-					<option value="1">Inactive</option>
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
 				</select>
 			</div>	
 
 			<div class="form-group col-md-4">
 				<label for="cbousertype">User Type</label>
 				<select type="" class="form-control" name="cbousertype">
-					<option value="1">Company User</option>
-					<option value="2">Alumni</option>
+				<?php foreach($type as $t)
+				{
+					echo '<option value="'.$t["typeID"].'">'.$t["typeName"].'</option>';
+				}	
+				?>
 				</select>
 			</div>				
 		
@@ -94,7 +97,8 @@
 		"userAddress" => $_POST["txtaddress"],
 		"userEmail" => $_POST["txtemail"],
 		"userStatus" => $_POST["cbostatus"],
-		"userTypeID" => $_POST["cbousertype"]
+		"userTypeID" => $_POST["cbousertype"],
+		"userImage" => ""
 		);
 		$obj = new user_edit_record;
 		$obj->updateinfo($array, "userID", $_POST["txtid"]);

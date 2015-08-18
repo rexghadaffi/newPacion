@@ -7,7 +7,7 @@ class user_edit_record extends ClientViewClass
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;	
 		$this->assign("clientinfo", $obj->selectById("tblclientuser", "userID", $_GET["id"]));
-		
+		$this->assign("type", $obj->select("tblusertype"));			
 	}
 	
 	public function updateinfo($clientarr, $column, $id)
