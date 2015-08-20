@@ -13,14 +13,21 @@ class admin_edit_record extends AdminViewClass
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;		
-		$obj->updateWhere("tblcompanyuser", $clientarr, $column, $id);	
+		$obj->updateWhere("tblcompanyuser", $clientarr, $column, $id);
+/*		
+		if($_GET["notif"] == "true")
+		{
+			echo "<script>SuccessfulSave();</script>";
+		}		
+*/
 	}
 	
 	public function create($clientarr)
 	{
 		include_once "../../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;		
-		$obj->insert("tblcompanyuser", $clientarr);	
+		$obj->insert("tblcompanyuser", $clientarr);
+		
 	}
 
 		

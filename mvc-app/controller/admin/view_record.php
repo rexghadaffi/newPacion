@@ -7,10 +7,6 @@ class view_record extends AdminViewClass
 		$obj=new DataAccessLayer;
 		$this->assign("cont", $obj->select("tblcompanyuser join tblusertype on userTypeID=typeID"));
 		$this->assign("type", $obj->select("tblusertype"));	
-		if($_GET["notif"] == "true")
-		{
-			echo "<script>SuccessfulSave();</script>";
-		}	
 	}           
 }
 ?>

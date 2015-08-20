@@ -1,15 +1,18 @@
 
 <?php
-	include "model/PostModel.php";
-
+	include_once "post.php";
 	if (isset($_POST['btnpost']))
 		{	
-			$title = $_POST['title'];
- 			$desc = $_POST['desc']; 
-			$uid = $_SESSION['id'];
-			$tid = $_GET['topicid'];					
-						$insert = new InsertTopic($title, $desc, $uid, $tid);
-						$insert->InsertData();
-						echo '<script type="text/javascript">window.location=""</script>';
+		$param = array(
+				"postID" => "null",
+				"postTitle" => $_POST['title'],
+				"postDesc" => $_POST['desc'],
+				"userID" => $_SESSION['id'],
+				"topicID" => $_GET['topicid'],
+				"datePosted" => "",
+				"postStatus" => 1,
+				);		
+				$query = new post;
+				$query->create("tblpost", $param);
 		}		
 ?>
