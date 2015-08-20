@@ -105,8 +105,14 @@ if($cat["forumCatID"] == $tpc["forumCatID"])
 	{
 		echo '';
 		echo '<p class="col-md-5"><a href="?page=topic&action=display&topicid='.$tpc["topicID"].'"><i class="fa fa-link fa-fw"></i>'.$tpc["topicTitle"].'</p></a>';	
-		echo '<p class="col-md-2">&nbsp; </p>';
-		echo '<p class="col-md-2">&nbsp; </p>';
+		include_once "controller/forum/queries.php";
+		$q = new query;
+		$post = $tpc["topicID"];
+		$post = $q->posts($post);
+		$reply = $tpc["topicID"];
+		$reply = $q->replies($reply);
+		echo '<p class="col-md-2" ><i class="fa fa-thumb-tack fa-fw"></i>&nbsp;&nbsp;&nbsp;'.$post.' </p>';
+		echo '<p class="col-md-2"><i class="fa fa-reply fa-fw"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$reply.'</p>';
 		echo '<p class="col-md-3">&nbsp;'.$tpc["dateCreated"].'</p>';
 	}
 } 

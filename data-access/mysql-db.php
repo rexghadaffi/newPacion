@@ -489,6 +489,12 @@ class DataAccessLayer
         return $userArray; 
     }
 	
+	public function CountRow($table, $columnparam, $id)
+	{
+		$sql = "SELECT * from ".$table." where ".$columnparam." = ".$id." ";
+		$count = $this->query($sql)->num_rows;
+		return $count;
+	}
 	
 	
 

@@ -14,7 +14,7 @@ class post extends ForumViewClass
 		include_once "../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
 		$obj->insert($tablename, $param);	
-		echo '<script></script>';
+		echo '<script type="text/javascript">window.location="forum.php?page=topic&action=display&topicid='.$_GET["topicid"].'"</script>';
 	}
 }
 ?>
