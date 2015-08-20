@@ -60,8 +60,22 @@ include "controller/forum/modal_controller.php";
 	<!-- end breadcrumb -->
 	
 <section id="content">
+<div class="col-md-12">
+<div class="">
 
+<div class="col-md-4">
+<?php foreach($user as $u)
+{
+	echo '<img src="shared-resources/img/'.$u["userImage"].'">';
+}
+?>
+</div>
 
+<div class="col-md-8">
+</div>
+
+</div>
+</div>
 </section>
 	
 <?php include 'shared-layouts\footer.php'; ?>

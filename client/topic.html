@@ -86,7 +86,7 @@ include "modal/post.php";
 if($t["topicID"] == $p["topicID"])
 	{
 		echo '<p class="col-md-3">Posted by: Babawakie';	
-		echo '<p class="col-md-6">&nbsp;<a href="?page=post&action=display&topicid='.$p["postID"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
+		echo '<p class="col-md-6">&nbsp;<a href="?page=post&action=display&postid='.$p["postID"].'&uid='.$_SESSION["id"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
 		echo '<p class="col-md-3 pull-right">&nbsp;'.$p["datePosted"].'</p>';
 	}		
 } 
