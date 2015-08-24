@@ -1,0 +1,58 @@
+<?php include '../shared-layouts/_Layout.php'; ?>
+
+	<!-- start slider -->
+	<div class="container">
+		<div class="row">
+	
+<div class="col-md-10">
+<div class="panel panel-info">
+	<div class="panel-heading clearfix">
+		<h1 class="panel-title pull-left"><big><big><big><b>STI Alumni Forum</b></big></big></big></h1>
+	</div>	
+	
+	
+<?php foreach($forumcategory as $cat) { ?> 
+	<div class="panel-body">	
+	<div class="panel panel-default">
+	
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php echo $cat["forumCatTitle"] ?>
+
+		</h3>
+	</div>
+	
+<div class="panel-body">
+
+<p class="col-md-5"><i class="fa fa-tablet fa-fw"></i><b>Topic Title</p>
+<p class="col-md-2"><i class="fa fa-thumb-tack fa-fw"></i>Posts</p>
+<p class="col-md-2"><i class="fa fa-reply fa-fw"></i>Replies</p>
+<p class="col-md-3"><i class="fa fa-calendar fa-fw"></i>Date Created</b></p>
+
+<?php foreach($topic as $tpc) 
+{
+if($cat["forumCatID"] == $tpc["forumCatID"])
+	{
+		echo '';
+		echo '<p class="col-md-5"><a href="?control=topic&func=display&topicid='.$tpc["topicID"].'"><i class="fa fa-link fa-fw"></i>'.$tpc["topicTitle"].'</p></a>';	
+		include_once "../controller/forumcategory/queries.php";
+		$q = new query;
+		$post = $tpc["topicID"];
+		$post = $q->posts($post);
+		$reply = $tpc["topicID"];
+		$reply = $q->replies($reply);
+		echo '<p class="col-md-2" ><i class="fa fa-thumb-tack fa-fw"></i>&nbsp;&nbsp;&nbsp;'.$post.' </p>';
+		echo '<p class="col-md-2"><i class="fa fa-reply fa-fw"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$reply.'</p>';
+		echo '<p class="col-md-3">&nbsp;'.$tpc["dateCreated"].'</p>';
+	}
+} 
+?>		
+	</div>
+	</div>
+	</div>
+<?php } ?>			
+</div>
+</div>
+</div></div>
+
+	
+
