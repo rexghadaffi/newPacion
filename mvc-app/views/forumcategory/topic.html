@@ -49,7 +49,7 @@ if($t["topicID"] == $p["topicID"])
 		echo '<p class="col-md-3">Posted By : '.$user.' ';	
 		echo '<p class="col-md-4">&nbsp;<a href="?control=post&func=display&postid='.$p["postID"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
 		echo '<p class="col-md-3">&nbsp;'.date_format($date, "M-d-Y g:ia").'</p>';
-		echo '<p class="col-md-2"><a href="forum_record.php?control=edit_post&func=edit&id='.$p["postID"].'"><i class="fa fa-pencil-square fa-lg pull-right"></i></a></p>';
+		echo '<p class="col-md-2"><a href="forum_record.php?control=edit_post&func=edit&id='.$p["postID"].'&topicid='.$_GET["topicid"].'"><i class="fa fa-pencil-square fa-lg pull-right"></i></a></p>';
 	}		
 } 
 ?>
