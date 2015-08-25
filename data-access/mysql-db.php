@@ -496,6 +496,14 @@ class DataAccessLayer
 		return $count;
 	}
 	
+	public function selectColumn($col, $table, $columnparam, $id)
+	{
+		$sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
+		$result = $this->query($sql);
+		$row = mysqli_fetch_array($result);
+		return $row["userFirstName"];
+	}
+	
 	
 
 }

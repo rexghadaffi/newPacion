@@ -29,6 +29,14 @@ class query extends CategoryViewClass
 		{
 			return $result;
 		}
-	}  	
+	}  
+
+	function getUser($val)
+	{
+		include_once "../../data-access/mysql-db.php";
+		$obj=new DataAccessLayer;
+		$result = $obj->selectColumn("userFirstName", "tblclientuser", "userID", $val);
+		return $result;		
+	}
 }
 ?>
