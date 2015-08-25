@@ -7,7 +7,7 @@ class page extends CategoryViewClass
 		$obj=new DataAccessLayer;
 		$this->assign("forumcategory", $obj->select("tblforumcategory"));
 		$this->assign("topic", $obj->select("tbltopic"));
-		$this->assign("latest",$obj->select("tbltopic limit 8"));
+		$this->assign("category",$obj->select("tblforumcategory"));
 	}      
 }
 ?>

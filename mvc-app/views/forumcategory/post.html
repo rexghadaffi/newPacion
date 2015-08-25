@@ -1,7 +1,7 @@
 <?php
 include '../shared-layouts/_Layout.php';
-//include "modal/post.php";
- //include "controller/forum/modal_controller.php";
+include "modals/reply.php";
+include "../controller/forumcategory/modal_controller.php";
 ?>
 
 <section id="content">
@@ -9,11 +9,9 @@ include '../shared-layouts/_Layout.php';
 <div class="">
 
 <div class="col-md-4">
-<?php foreach($user as $u)
-{
-	echo '<img src="shared-resources/img/daniel.png" class="img-circle" style="width: 85px; height:85px" />';
-}
-?>
+
+	<img src="../../client/shared-resources/img/daniel.png" class="img-circle" style="width: 85px; height:85px" />
+
 </div>
 
 <div class="col-md-8">
@@ -23,4 +21,4 @@ include '../shared-layouts/_Layout.php';
 </div>
 </section>
 	
-<?php include 'shared-layouts\footer.php'; ?>
+

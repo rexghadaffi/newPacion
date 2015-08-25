@@ -1,5 +1,7 @@
-
 <?php
+date_default_timezone_set("Asia/Manila"); 
+$date = date('Y-m-d H:i:s');
+
 	include_once "post.php";
 	if (isset($_POST['btnpost']))
 		{	
@@ -9,26 +11,27 @@
 				"postDesc" => $_POST['desc'],
 				"userID" => $_SESSION['id'],
 				"topicID" => $_GET['topicid'],
-				"datePosted" => "",
+				"datePosted" => $date,
 				"postStatus" => 1,
 				);		
 				$query = new post;
 				$query->create("tblpost", $param);
 		}
-
-
+		
+		
 	include_once "topic.php";
 	if (isset($_POST['btntopic']))
 		{	
 		$param = array(
 				"topicID" => "null",
 				"topicTitle" => $_POST['title'],
-				"topicDesc" => $_POST['desc'],
-				"dateCreated" => "",
-				"forumCatID" => $_GET["catid"],
+				"topicDesc" => "",
+				"dateCreated" => $date,
+				"forumCatID" => $_POST["cbocategory"],
 				"topicStatus" => 1,
 				);		
-				$query = new post;
+				$query = new topic;
 				$query->create("tbltopic", $param);
 		}
+		
 ?>

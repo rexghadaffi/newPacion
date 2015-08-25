@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header custom-header" >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create New Forum Category</h4>
+        <h4 class="modal-title" id="myModalLabel">Add New Forum Category</h4>
       </div>
 			<form method="post">
 		  <div class="modal-body">
@@ -35,7 +35,7 @@
 		echo "<script>					
 												  { 
 										 			    						
-	 													window.location.href='forum_record.php?control=view_record&func=listall';
+	 													window.location.href='forum_record.php?control=page&func=display';
 											
 		
 												  }
