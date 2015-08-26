@@ -38,5 +38,13 @@ class query extends CategoryViewClass
 		$result = $obj->selectColumn("userFirstName", "tblclientuser", "userID", $val);
 		return $result;		
 	}
+	
+	function getImage($val, $table)
+	{
+		include_once "../../data-access/mysql-db.php";
+		$obj=new DataAccessLayer;
+		$result = $obj->selectColumnImage("userImage", $table, "userID", $val);
+		return $result;		
+	}
 }
 ?>

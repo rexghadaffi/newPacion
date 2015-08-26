@@ -4,17 +4,74 @@ include "modals/reply.php";
 include "../controller/forumcategory/modal_controller.php";
 ?>
 
-<section id="content">
+<section id="content">	
 <div class="col-md-10">
+	<div class="panel panel-info" id="lazygaming" style="">
+	<!-- max-height: 1000px; overflow: hidden; -->
+		<div class="panel-heading clearfix">
+			<h1 class="panel-title pull-left"><big><big><big><b></b></big></big></big></h1>
+		</div>
 
-<div class="col-md-2">
+
+<div class="panel-body">
+<?php foreach($postresult as $post) { 
+include_once "../controller/forumcategory/queries.php";
+$q = new query;
+$pic = $post["userID"];
+$pic = $q->getImage($pic, "tblclientuser");
+?>
+<div class="col-md-2">			
+<p class="col-md-12"><img src="../../client/shared-resources/img/<?php echo $pic;?>" class="img-circle" style="width: 65px; height:65px" /></p>	
 </div>
-
-<div class="col-md-10">
+<div class="col-md-10" style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3;	-webkit-box-shadow: 1px 1px 3px 2px #d3d3d3; box-shadow: 1px 1px 3px 2px #d3d3d3;">
+<p class="col-md-12"><?php echo $post["postDesc"]; ?> </p>
+<p class="pull-right"><b>
+<?php 
+$date = date_create($post["datePosted"]);
+echo date_format($date, "M-d-Y g:ia"); 
+?></b></p>	
 </div>
+<hr/>
+<?php } ?>		
 
+<?php foreach($replies as $rep)	{?>			
+			<div class="col-md-2 col-md-offset-1">		
+			<p class="col-md-12">
+			<?php
+			include_once "../controller/forumcategory/queries.php";
+			$q = new query;
+			$user = $rep["userID"];
+			$pic = $rep["userID"];
+			$pic = $q->getImage($pic, "tblclientuser");
+			echo '<img src="../../client/shared-resources/img/'.$pic.'" class="img-circle" style="width: 65px; height:65px" />';
+			echo 'Added by: ';
+			echo $user = $q->getUser($user);
+			?></b>
+			</div>		
+			<div class="col-md-9" style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3; -webkit-box-shadow: 1px 1px 3px 2px #d3d3d3;	box-shadow: 1px 1px 3px 2px #d3d3d3;">
+			<p class="col-md-12"><?php echo $rep["replyContent"]; ?>
+			<p class="pull-right"><?php echo '<a href="forum_record.php?control=edit_comment&func=edit&id='.$rep["replyID"].'&postid='.$_GET["postid"].'"><i class="fa fa-pencil-square fa-lg pull-right"></i></a>'; ?></p>
+			
+			</p>							
+			<p class="pull-right"><b><?php
+			$date = date_create($rep["datePosted"]);
+			echo date_format($date, "M-d-Y g:ia"); 
+			?></b></p>
+			</div>
+			<hr/>
+<?php } ?>
 
-</div>
+		</div>	
+		
+		<div class="panel-footer clearfix">
+		<div class="pull-right">
+		<a href="javascript:history.go(-1)" class="btn btn-sm btn-default"><i class="fa fa-reply fa-fw"></i>Go Back</a>			
+		<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#replyModal"><i class="fa fa-comment-o fa-fw"></i>Respond to post</button>
+		</div>
+		</div>
+	</div>
+</div>	
+
 </section>
-<!--	<img src="../../client/shared-resources/img/daniel.png" class="img-circle" style="width: 85px; height:85px" /> -->	
+
 

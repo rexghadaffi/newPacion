@@ -34,4 +34,18 @@ $date = date('Y-m-d H:i:s');
 				$query->create("tbltopic", $param);
 		}
 		
+	include_once "post.php";
+	if (isset($_POST['btnreply']))
+		{	
+		$param = array(
+				"replyID" => "null",
+				"replyContent" => $_POST['message'],
+				"postID" => $_GET["postid"],
+				"userID" => $_SESSION["id"],
+				"dateposted" => $date,
+				);		
+				$query = new post;
+				$query->add("tblreply", $param);
+		}
+		
 ?>
