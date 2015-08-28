@@ -496,12 +496,19 @@ class DataAccessLayer
 		return $count;
 	}
 	
-	public function selectColumn($col, $table, $columnparam, $id)
+	public function selectColumn($col, $table, $columnparam, $id, $level)
 	{
 		$sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
 		$result = $this->query($sql);
 		$row = mysqli_fetch_array($result);
-		return $row["userFirstName"];
+		if($level == 1)
+		{	
+		return $row["userName"];
+		}
+		else
+		{
+		return $row["userFirstName"];				
+		}
 	}
 	
 	public function selectColumnImage($col, $table, $columnparam, $id)

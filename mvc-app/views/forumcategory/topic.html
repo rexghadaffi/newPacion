@@ -4,8 +4,7 @@ include "modals/post.php";
 include "../controller/forumcategory/modal_controller.php";
 ?>
 	<!-- start slider -->
-	<div class="container">
-		<div class="row">
+
 
 <?php foreach($topic as $t) { ?> 	
 <div class="col-md-10">
@@ -44,7 +43,8 @@ if($t["topicID"] == $p["topicID"])
 		include_once "../controller/forumcategory/queries.php";
 		$q = new query;
 		$user = $p["userID"];
-		$user = $q->getUser($user);		
+		$level = 1;
+		$user = $q->getUser($user, $level);		
 		
 		echo '<p class="col-md-3"><i class="fa fa-thumb-tack fa-fw"></i>Posted By : '.$user.' ';	
 		echo '<p class="col-md-4">&nbsp;<a href="?control=post&func=display&postid='.$p["postID"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
@@ -65,9 +65,6 @@ if($t["topicID"] == $p["topicID"])
 </div>	
 <?php } ?>	
 
-
-</div>
-</div>
 
 	
 

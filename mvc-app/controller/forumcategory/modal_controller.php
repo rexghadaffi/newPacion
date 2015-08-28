@@ -13,6 +13,7 @@ $date = date('Y-m-d H:i:s');
 				"topicID" => $_GET['topicid'],
 				"datePosted" => $date,
 				"postStatus" => 1,
+				"postLevel" => $_SESSION['level'],				
 				);		
 				$query = new post;
 				$query->create("tblpost", $param);
@@ -43,6 +44,8 @@ $date = date('Y-m-d H:i:s');
 				"postID" => $_GET["postid"],
 				"userID" => $_SESSION["id"],
 				"dateposted" => $date,
+				"replyLevel" => $_SESSION["level"],		
+				"replyStatus" => 1,					
 				);		
 				$query = new post;
 				$query->add("tblreply", $param);
