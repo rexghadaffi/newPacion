@@ -12,19 +12,23 @@
 
 	    	<div class="form-group">
 				<label for="txtnewstitle">News Title</label>
-				<input type="text"  class="form-control" name="txtnewstitle">
+				<input type="text"  class="form-control"required name="txtnewstitle" placeholder="Enter the title here..">
 			</div>
-
-
-	    	<div class="form-group">
-				<label for="txtnewsdesc">News Description</label>
-				<input type="text"  class="form-control" name="txtnewsdesc">
-			</div>
-
+            <?php
+                   		        date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+								?>
 
 	    	<div class="form-group">
 				<label for="txtdate">Date</label>
-				<input type="text"  class="form-control" name="txtdate">
+				<input type="text"  class="form-control" name="txtdate" readonly value="<?php echo $timestamp; ?>">
+			</div>
+
+			<div>
+				<label for="txtnewsdesc">News Description</label>
+				<textarea name="txtnewsdesc" cols="50" style="height:300px; padding:100px"></textarea>';
 			</div>
 						
 		  <div class="modal-footer">

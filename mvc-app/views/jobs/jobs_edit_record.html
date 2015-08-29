@@ -16,21 +16,21 @@ include '../views/modals/add_jobs.php';
  		     </strong> 
  		     </h4>
  		    </legend>
-	    	<div class="form-group col-md-4">
+	    	<div class="form-group ">
 				<label for="txttypename">Job Title</label>
 				<input type="hidden" class="form-control" name="txtjobid" value="<?php echo $job["jobID"]; ?>" />
 				<input type="text" class="form-control" name="txtjobtitle" value="<?php echo $job["jobTitle"]; ?>" />
 			</div>
 
-			<div class="form-group col-md-4">
-				<label for="txtjobtitle">Job Description</label>
-				<input type="text" class="form-control" name="txtjobdesc" value="<?php echo $job["jobDesc"]; ?>" />
-			</div>
-
-			<div class="form-group col-md-4">
+			<div class="form-group">
 				<label for="txtdate">Date</label>
 				<input type="text" class="form-control" name="txtdate" value="<?php echo $job["datePosted"]; ?>" />
-			</div>	    
+			</div>	   
+
+			<div>
+				<label for="txtjobdesc">Job Description</label>
+				<textarea name="txtjobdesc" cols="50" style="height:300px; padding:100px"><?php echo $job["jobDesc"]; ?></textarea>;
+			</div> 
 	    		
 <?php } ?>
 		
@@ -75,5 +75,18 @@ include '../views/modals/add_jobs.php';
     </div>
     </form>	
 </div>
+<script type="text/javascript">
+	tinymce.init({
+    selector: "textarea",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar2: "print preview media | forecolor backcolor emoticons", });
+</script>
 </body>
 </html>

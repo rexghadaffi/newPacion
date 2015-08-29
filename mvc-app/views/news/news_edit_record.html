@@ -11,7 +11,7 @@ include '../views/modals/add_news.php';
 <?php foreach($news as $n)
  {	?>		
 
- 			<legend><h4>Update Record:  <strong>
+ 			<legend><h4>Update News Post:  <strong>
  		     	<?php
  		     	echo $n["newsTitle"];;
  		     	?>
@@ -24,17 +24,19 @@ include '../views/modals/add_news.php';
 				<input type="text" class="form-control" name="txtnewstitle" value="<?php echo $n["newsTitle"]; ?>" />
 			</div>
 
-			<div class="form-group col-md-4">
-				<label for="txtnewsdesc">News Description</label>
-				<input type="text" class="form-control" name="txtnewsdesc" value="<?php echo $n["newsDesc"]; ?>" />
-			</div>
-
-			
+				
 			<div class="form-group col-md-4">
 				<label for="txtdate">Date Posted</label>
 				<input type="text" class="form-control" name="txtdate" value="<?php echo $n["datePosted"]; ?>" />
-			</div>	    
-	    				
+			</div>
+            
+			</div>
+	         
+	    	<div>
+				<label for="txtnewsdesc">News Description</label>
+				<textarea name="txtnewsdesc" cols="50" style="height:300px; padding:100px"><?php echo $n["newsDesc"]; ?></textarea>';
+			</div>
+		    
 			
 		
 <?php } ?>
@@ -66,7 +68,7 @@ include '../views/modals/add_news.php';
               
 		
             
-        </div>
+        
          <div class="panel-footer clearfix">
 		   <div class="pull-right">
 				<button type="button" class="btn btn-sm btn-default">
@@ -80,5 +82,19 @@ include '../views/modals/add_news.php';
         </form>	
     </div>
 </div>
+<script type="text/javascript">
+	tinymce.init({
+    selector: "textarea",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar2: "print preview media | forecolor backcolor emoticons", });
+</script>
+
 </body>
 </html>
