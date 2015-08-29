@@ -41,3 +41,18 @@ function(){
   
 }
 
+function wrongPasswords(){
+  
+
+swal("Ooooops!", "Password and Retype Password doesnt match.", "error")
+  
+}
+
+function regisSuccess(){
+  
+
+swal("Success!", "Please check your email for confirmation.", "success")
+  
+}
+
+

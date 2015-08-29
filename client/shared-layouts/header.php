@@ -9,6 +9,8 @@
 	?>
 	 <?php		  
  include "controller/Login_Controller.php";
+    include "controller/Registration_Controller.php";
+ 
  ?>	
 	<header>
         <div class="navbar navbar-default navbar-static-top">

@@ -496,6 +496,14 @@ class DataAccessLayer
 		return $count;
 	}
 	
+
+
+    public function InsertUserDetails($username, $password, $FirstName, $Lastname, $gender, $Contact, $address, $email, $course, $year)
+    {
+      $sql = "INSERT INTO tblclientuser (userName, userPassword, userFirstName, userLastName, userGender, userContactNum, userAddress, userEmail, userCourse, userYearGrad, userStatus, userTypeID) VALUES ('".$username."', '".$password."', '".$FirstName."', '".$Lastname."', '".$gender."', '".$Contact."', '".$address."', '".$email."', '".$course."', '".$year."', '0', '1')";
+
+     
+    }
 	
 
 }
