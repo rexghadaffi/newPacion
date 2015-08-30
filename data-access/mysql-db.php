@@ -496,39 +496,30 @@ class DataAccessLayer
 		return $count;
 	}
 	
-// <<<<<<< HEAD
 
+    public function selectColumn($col, $table, $columnparam, $id, $level)
+    {
+        $sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
+        $result = $this->query($sql);
+        $row = mysqli_fetch_array($result);
+        if($level == 1)
+        {   
+        return $row["userName"];
+        }
+        else
+        {
+        return $row["userFirstName"];               
+        }
+    }
 
-//     public function InsertUserDetails($username, $password, $FirstName, $Lastname, $gender, $Contact, $address, $email, $course, $year)
-//     {
-//       $sql = "INSERT INTO tblclientuser (userName, userPassword, userFirstName, userLastName, userGender, userContactNum, userAddress, userEmail, userCourse, userYearGrad, userStatus, userTypeID) VALUES ('".$username."', '".$password."', '".$FirstName."', '".$Lastname."', '".$gender."', '".$Contact."', '".$address."', '".$email."', '".$course."', '".$year."', '0', '1')";
-
-     
-//     }
-// =======
-//     public function selectColumn($col, $table, $columnparam, $id, $level)
-//     {
-//         $sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
-//         $result = $this->query($sql);
-//         $row = mysqli_fetch_array($result);
-//         if($level == 1)
-//         {   
-//         return $row["userName"];
-//         }
-//         else
-//         {
-//         return $row["userFirstName"];               
-//         }
-//     }
-// >>>>>>> rexghadaffi/master
     
-//     public function selectColumnImage($col, $table, $columnparam, $id)
-//     {
-//         $sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
-//         $result = $this->query($sql);
-//         $row = mysqli_fetch_array($result);
-//         return $row["userImage"];
-//     }   
+    public function selectColumnImage($col, $table, $columnparam, $id)
+    {
+        $sql = "SELECT ".$col." from ".$table." where ".$columnparam." = ".$id." ";
+        $result = $this->query($sql);
+        $row = mysqli_fetch_array($result);
+        return $row["userImage"];
+    }   
 
-// }
+}
 ?>
