@@ -29,7 +29,7 @@
 							{
 
 											
-											$_SESSION['clientid'] = $array[0];
+											$_SESSION['id'] = $array[0];
 
 											$_SESSION['level'] = $array[4];											
 

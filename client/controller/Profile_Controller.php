@@ -18,7 +18,7 @@
 		$year =	$_POST['txtYear'];
 		$address = $_POST['txtaddress'];
 
-		$sql = "UPDATE tblclientuser SET userName = '".$username."', userFirstName = '".$FirstName."', userLastName = '".$Lastname."', userGender = '".$gender."', userContactNum = '".$Contact."', userAddress = '".$address."', userEmail = '".$email."', userCourse = '".$course."', userYearGrad = '".$year."' where userID = ".$_SESSION['clientid']." ";
+		$sql = "UPDATE tblclientuser SET userName = '".$username."', userFirstName = '".$FirstName."', userLastName = '".$Lastname."', userGender = '".$gender."', userContactNum = '".$Contact."', userAddress = '".$address."', userEmail = '".$email."', userCourse = '".$course."', userYearGrad = '".$year."' where userID = ".$_SESSION['id']." ";
 				$result = mysqli_query($con,$sql);
 		if ($result)
 		{

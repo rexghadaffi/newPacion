@@ -62,3 +62,33 @@ swal("Success!", "Profile Updated.", "success")
   
 }
 
+
+function wronginput(){
+  
+ swal({   title: "Ooooops",  
+ text: "Password doesnt match.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#changepwModal').modal('toggle');
+});
+  
+  }
+
+  function wronginputpass(){
+  
+ swal({   title: "Ooooops",  
+ text: "New Password doesnt match.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#changepwModal').modal('toggle');
+});
+  
+ } 
+
+  

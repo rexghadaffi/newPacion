@@ -2,11 +2,10 @@
 <body>
 <div id="wrapper">
 
-	<!-- start header -->
-	
 	 <?php		  
  include "controller/Login_Controller.php";
     include "controller/Registration_Controller.php";
+
  
  ?>	
 	<header>

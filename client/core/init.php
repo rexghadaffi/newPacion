@@ -6,7 +6,7 @@ $connect_error = "Sorry were unable to connect to server";
 
 function logged_in ()
 {
-	if (isset($_SESSION['clientid']))
+	if (isset($_SESSION['id']))
 	{
 		return true;
 

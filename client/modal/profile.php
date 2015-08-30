@@ -1,5 +1,6 @@
 <?php
 include "controller/Profile_Controller.php";
+
 ?>
 <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -17,12 +18,12 @@ include "controller/Profile_Controller.php";
 						<li class="col-lg-5 design" data-id="id-0" data-type="web">
 						<div class="item-thumbs">
 						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" style=""  title="Profile Picture" href="shared-resources/img/default.gif">
+						<a class="hover-wrap fancybox" style=""  title="Profile Picture" href="shared-resources/img/default.png">
 
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-						<img src="shared-resources/img/default.gif" alt="">
+						<img src="shared-resources/img/default.png" alt="">
 
 						</div>
 						<a href="">Upload an Image</a>
@@ -58,7 +59,8 @@ include "controller/Profile_Controller.php";
 			<div class="col-md-7">
 				<label>Password</label>
 				<input type="text" class="form-control" readonly value="<?php echo $row['userPassword']?>">
-					<a href="">Change Password</a>
+				<a href="#changepwModal" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-keyboard="false">Change Password</a>
+					
 			</div>
 
 			<div class="col-md-5"></div>

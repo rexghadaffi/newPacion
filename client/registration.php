@@ -1,7 +1,6 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
-include "modal/confirmationModal.php";
 ?>
 	<!-- end header -->
 	
@@ -101,7 +100,7 @@ include "modal/confirmationModal.php";
 				<br>
 	
 				
-				<a href="#registrationModal" class="btn btn-success btn-lg" data-toggle="modal" data-backdrop="static" data-keyboard="false">Sign Up</a>
+				<button type="submit" class="btn btn-success btn-lg" name="btnregister">Sign Up</button>
 				
 				</div>
 	
