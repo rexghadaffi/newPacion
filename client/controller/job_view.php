@@ -5,7 +5,7 @@ class view_record extends JobViewClass
 	{
 		include_once "../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("cont", $obj->select("tbljob"));		
+		$this->assign("cont", $obj->select("tbljob order by datePosted Desc"));		
 	}           
 }
 ?>

@@ -5,7 +5,7 @@ class view_record extends NewsViewClass
 	{
 		include_once "../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("cont", $obj->select("tblnews"));		
+		$this->assign("cont", $obj->select("tblnews order by datePosted desc"));		
 	}           
 }
 ?>
