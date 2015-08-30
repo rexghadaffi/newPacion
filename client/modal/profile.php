@@ -1,4 +1,6 @@
-
+<?php
+include "controller/Profile_Controller.php";
+?>
 <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -26,36 +28,36 @@
 						<a href="">Upload an Image</a>
 
 						</li>
-<div class="col-md-5"></div>
+						<div class="col-md-5"></div>
 						</ul>
 
 			<div class="col-md-7">
 				<label>Firstname</label>
-				<input type="text" class="form-control" required>
+				<input type="text" name="txtFname" class="form-control" required value="<?php echo $row['userFirstName']?>">
 			</div>
 			<div class="col-md-7">
 				<label>Lastname</label>
-				<input type="text" class="form-control" required>
+				<input type="text" name="txtLname" class="form-control" required value="<?php echo $row['userLastName']?>">
 			</div>
 			<div class="col-md-7">
 				<label>Email Adress</label>
-				<input type="text" class="form-control" required>
+				<input type="text" name="txtEmail" class="form-control" required value="<?php echo $row['userEmail']?>">
 			</div>
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Contact Number</label>
-				<input type="text" class="form-control" required>
+				<input type="text" name="txtContact" class="form-control" required value="<?php echo $row['userContactNum']?>">
 			</div>
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Username</label>
-				<input type="text" class="form-control" required>
+				<input type="text" name="txtUsername" class="form-control" required value="<?php echo $row['userName']?>">
 			</div>
 
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Password</label>
-				<input type="text" class="form-control" readonly>
+				<input type="text" class="form-control" readonly value="<?php echo $row['userPassword']?>">
 					<a href="">Change Password</a>
 			</div>
 
@@ -63,28 +65,48 @@
 			<div class="col-md-7">
 				<label for="txtGender">Gender</label>				
 				<select class="form-control" name="txtGender" required>
-				<option selected="selected" value="" disabled>Please select Gender</option>
-				<option>Male</option>
+				<?php
+					if ($row['userGender'] == "Male")
+					{
+						echo '
+						<option>'.$row['userGender'].'</option>
+				
 				<option>Female</option>
 
+						';
+
+
+					}
+					else
+					{
+
+						echo '
+						<option>'.$row['userGender'].'</option>		
+						<option>Male</option>
+
+						';
+
+					}
+				?>
+				
 				</select>
 			</div>
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Course</label>
-				<input type="text" class="form-control" required>
+				<input type="text" class="form-control" name="txtCourse" required value="<?php echo $row['userCourse']?>">
 					
 			</div>
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Year of Graduate</label>
-				<input type="text" class="form-control" required>
+				<input type="text" class="form-control" name="txtYear" required  value="<?php echo $row['userYearGrad']?>">
 					
 			</div>
 					<div class="col-md-12">
 				
 					<label for="txtaddress" required>Address</label>	<br>
-					<textarea name="txtaddress" class="form-control" rows="8"></textarea>
+					<textarea name="txtaddress" class="form-control" rows="8" required><?php echo $row['userAddress']?></textarea>
 			</div>
 
 

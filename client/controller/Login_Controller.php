@@ -27,8 +27,8 @@
 							}
 						else
 							{
-											session_start();
-											$_SESSION['id'] = $array[0];
+											
+											$_SESSION['clientid'] = $array[0];
 									
 											echo '<script type="text/javascript">window.location="index.php"</script>';
 							

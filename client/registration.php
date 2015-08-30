@@ -89,8 +89,8 @@ include "shared-layouts/header.php";
 				</div>
 				<div class="col-lg-12">
 					<br>
-					<label for="txtaddress" required>Address</label>	<br>
-					<textarea name="txtaddress" class="form-control" rows="8"></textarea>
+					<label for="txtaddress" >Address</label>	<br>
+					<textarea name="txtaddress" class="form-control" rows="8" required></textarea>
 				</div>
 			
 				<div class="col-md-4">

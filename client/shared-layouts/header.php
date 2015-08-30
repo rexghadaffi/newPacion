@@ -3,10 +3,7 @@
 <div id="wrapper">
 
 	<!-- start header -->
-	<?php 	
-	include "modal/login.php";
-	include "modal/profile.php";
-	?>
+	
 	 <?php		  
  include "controller/Login_Controller.php";
     include "controller/Registration_Controller.php";

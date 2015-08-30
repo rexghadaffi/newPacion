@@ -55,4 +55,10 @@ swal("Success!", "Please check your email for confirmation.", "success")
   
 }
 
+function updateSuccess(){
+  
+
+swal("Success!", "Profile Updated.", "success")
+  
+}
 

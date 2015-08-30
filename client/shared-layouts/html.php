@@ -24,5 +24,9 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <?php 	
+	include "modal/login.php";
+	include "modal/profile.php";
+	?>
 
 </head>
