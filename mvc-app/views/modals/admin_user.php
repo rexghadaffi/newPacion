@@ -9,7 +9,7 @@
 	   <form method="post">
 		  <div class="modal-body">
 	    	<div class="form-group">
-				<label for="txtusername">Userdasdasdasdas</label>
+				<label for="txtusername">Username</label>
 				<input type="text" class="form-control" name="txtusername" placeholder="Username">
 			</div>
 			
@@ -18,17 +18,7 @@
 				<input type="password" class="form-control" name="txtpassword" placeholder="Password">
 			</div>
 						
-			<div class="form-group">
-				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">				
-				<?php 
-                foreach($type as $t)
-                { ?>
-				<option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
-				<?php } ?>	
-				</select>
-			</div>						
-		
+				
 			<div class="form-group">
 				<label for="exampleInputFile">Browse Profile Picture</label>
 				<input type="file" id="exampleInputFile">
@@ -52,7 +42,7 @@
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => 1,
-		"userTypeID" =>  $_POST["cbousertype"]
+		"userTypeID" =>  1
 		);
 		
 		$obj = new admin_edit_record;

@@ -1,7 +1,7 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
-include "modal/post.php";
+include "modal/reply.php";
 include "controller/forum/modal_controller.php";
 ?>
 
@@ -51,7 +51,7 @@ include "controller/forum/modal_controller.php";
 					<li><a href="index.php"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
 					<li class="active"><a href="forum.php?page=page&action=display">Forum</a></li>
 					<li class="active"><a href="forum.php?page=topic&action=display&topicid=<?php echo $_GET["topicid"]?>">Topics</a></li>
-					<li class="active"><a href="forum.php?page=post&action=display&topicid=<?php echo $_GET["topicid"]?>">Post</a></li>					
+					<li class="active"><a href="forum.php?page=post&action=display&postid=<?php echo $_GET["postid"]?>">Post</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -61,21 +61,82 @@ include "controller/forum/modal_controller.php";
 	
 <section id="content">
 <div class="col-md-12">
-<div class="">
+	<div class="panel panel-info" id="lazygaming" style="">
+	<!-- max-height: 1000px; overflow: hidden; -->
+		<div class="panel-heading clearfix">
+			<h1 class="panel-title pull-left"><big><big><big><b></b></big></big></big></h1>
+		</div>
 
-<div class="col-md-4">
-<?php foreach($user as $u)
-{
-	echo '<img src="shared-resources/img/'.$u["userImage"].'">';
-}
+
+<div class="panel-body">
+<div class="container">
+<?php foreach($postresult as $post) { 
+include_once "controller/forum/queries.php";
+$q = new query;
+$pic = $post["userID"];
+$level = $post["postLevel"];
+$pic = $q->getImage($pic, $level);
 ?>
+<div class="col-md-2">			
+<p class="col-md-12"><img src="shared-resources/img/<?php echo $pic;?>" class="img-circle" style="width: 85px; height:85px" /></p>	
 </div>
 
-<div class="col-md-8">
+<div class="col-md-10" style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3;	-webkit-box-shadow: 1px 1px 3px 2px #d3d3d3; box-shadow: 1px 1px 3px 2px #d3d3d3;">
+<p class="col-md-12"><?php echo $post["postDesc"]; ?> </p>
+<p class="pull-right"><b>
+<?php 
+$date = date_create($post["datePosted"]);
+echo date_format($date, "M-d-Y g:ia"); 
+?></b></p>	
 </div>
 
+
+
+<?php } ?>		
 </div>
-</div>
+<hr/>
+<?php foreach($replies as $rep)	{?>		
+<div class="container">	
+<div class="row">
+			<div class="col-md-2">		
+			<p class="col-md-12">
+			<?php
+			include_once "controller/forum/queries.php";
+			$q = new query;
+			$user = $rep["userID"];
+			$pic = $rep["userID"];
+			$level = $rep["replyLevel"];
+			$pic = $q->getImage($pic, $level);
+			echo '<center><img src="shared-resources/img/'.$pic.'" class="img-circle" style="width: 85px; height:85px" /></center>';
+			$user = $q->getUser($user, $level);
+			echo '<center>'.$user.'</center>';
+			?>
+			</p>
+			</div>	
+			
+			<div class="col-md-9" style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3; -webkit-box-shadow: 1px 1px 3px 2px #d3d3d3;	box-shadow: 1px 1px 3px 2px #d3d3d3;">
+			<p class="col-md-12"><?php echo $rep["replyContent"]; ?></p>								
+			<p class="pull-right"><b><?php
+			$date = date_create($rep["datePosted"]);
+			echo date_format($date, "M-d-Y g:ia"); 
+			?></b></p>			
+			</div>
+</div>			
+</div>	
+<hr/>		
+<?php } ?>
+		</div>		
+		</div>		
+</div>		
 </section>
-	
+
+
+<section id="container">
+		<div class="panel-footer clearfix">
+		<div class="col-md-3 pull-right">
+		<a href="javascript:history.go(-1)" class="btn btn-sm btn-default"><i class="fa fa-reply fa-fw"></i>Go Back</a>			
+		<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#replyModal"><i class="fa fa-comment-o fa-fw"></i>Respond to post</button>
+		</div>
+		</div>
+</section>	
 <?php include 'shared-layouts\footer.php'; ?>

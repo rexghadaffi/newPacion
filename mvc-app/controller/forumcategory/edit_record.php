@@ -1,5 +1,5 @@
 <?php
-class edit_category extends CategoryViewClass
+class edit_record extends CategoryViewClass
 {
 	function edit()
 	{

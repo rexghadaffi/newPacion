@@ -1,0 +1,58 @@
+﻿<?php 
+include '../shared-layouts/_Layout.php'; 
+?>
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">		  
+			<legend><h3>Edit Topic</h2></legend>
+<form method="post">
+	
+<?php foreach($topic as $tpc)
+ {	?>		
+			<input type="hidden" class="form-control" name="txtid" value="<?php echo $tpc["topicID"]; ?>" />
+	    	<div class="form-group col-md-8">
+				<label for="txttopictitle">Topic Title</label>			
+				<input type="text" class="form-control" name="txttopictitle" value="<?php echo $tpc["topicTitle"]; ?>" />
+			</div>	
+			
+			<div class="form-group col-md-8">				
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</div>			
+			
+<?php } ?>
+
+        </div>
+		 <div class="panel-footer clearfix">
+		   <div class="pull-right">
+				<a href="javascript:history.go(-1)" class="btn btn-sm btn-default">&nbsp;Cancel</a>	
+                <button type="submit" name="btn-edit" class="btn btn-sm btn-success">
+                  <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
+                </button>               
+            </div>         
+		 </div>
+    </div><?php
+ if(isset($_POST["btn-edit"]))
+ {		
+		include_once '../controller/forumcategory/edit_topic.php';
+		$array = array(
+		"topicTitle" => $_POST["txttopictitle"],
+		"topicStatus" => $_POST["cbostatus"],
+		);
+		$obj = new edit_topic;
+		$obj->updateinfo($array, "topicID", $_POST["txtid"]);
+
+		echo "<script>					
+												  { 
+										 			    						
+	 													window.location.href='forum_record.php?control=page&func=display';
+											
+		
+												  }
+	 												   </script>";		
+ }
+?>
+</form>	

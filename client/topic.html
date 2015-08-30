@@ -69,32 +69,50 @@ include "modal/post.php";
 		</div>
 	
 		<div class="panel-body">
-			<div class="col-md-3">
+			<div class="col-md-2">
 			<b>Added by: Admin</b>
 			</div>		
-			<div class="col-md-6">
+			<div class="col-md-10" style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3;
+										-webkit-box-shadow: 1px 1px 3px 2px #d3d3d3;
+										box-shadow: 1px 1px 3px 2px #d3d3d3;">
 			<p><b><?php echo $t["topicDesc"] ?></b></p>
+			<p class="pull-right"><b>
+			<?php 
+			$date = date_create($t["dateCreated"]);
+			echo date_format($date, "M-d-Y g:ia"); 
+			?></b></p>
 			</div>
-			<div class="col-md-3">
-			<p class="pull-right"><b><?php echo $t["dateCreated"] ?></b></p>
+
+			<div class="col-md-12">
+			<p class="col-md-12 col-md-offset-5"></p>
 			</div>
 			<div class="col-md-12">
-			<p class="col-md-12 col-md-offset-5"><b>Posts</b></p>
+			<p class="col-md-12 col-md-offset-5"><b>Related Post</b></p>
 			</div>
+			<hr/>
 <?php foreach($posts as $p) 
 {
 if($t["topicID"] == $p["topicID"])
 	{
-		echo '<p class="col-md-3">Posted By : '.$p["userID"].'';	
-		echo '<p class="col-md-6">&nbsp;<a href="?page=post&action=display&postid='.$p["postID"].'&uid='.$_SESSION["id"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
-		echo '<p class="col-md-3 pull-right">&nbsp;'.$p["datePosted"].'</p>';
+		$date = date_create($p["datePosted"]);
+		include_once "controller/forum/queries.php";
+		$q = new query;
+		$user = $p["userID"];
+		$level = 1;
+		$user = $q->getUser($user, $level);		
+		
+		echo '<p class="col-md-3"><i class="fa fa-thumb-tack fa-fw"></i>Posted By : '.$user.' ';	
+		echo '<p class="col-md-4">&nbsp;<a href="?page=post&action=display&postid='.$p["postID"].'&topicid='.$_GET["topicid"].'"><i class="fa fa-link fa-fw"></i>'.$p["postTitle"].'</p></a></p>';
+		echo '<p class="col-md-3"><i class="fa fa-calendar fa-fw"></i>'.date_format($date, "M-d-Y g:ia").'</p>';
 	}		
 } 
 ?>
-		</div>	
-		
+		</div>		
 		<div class="panel-footer clearfix">
-		<button class="btn btn-info pull-right" data-toggle="modal" data-target="#postModal"><i class="fa fa-plus-square"></i> &nbsp;New Post</button>
+		<p class="pull-right">
+		<a href="forum_record.php?control=page&func=display" class="btn btn-sm btn-default"><i class="fa fa-reply fa-fw"></i>Go Back</a>			
+		<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#postModal"><i class="fa fa-plus-square"></i> &nbsp;New Post</button>
+		</p>
 		</div>
 	</div>
 </div>	

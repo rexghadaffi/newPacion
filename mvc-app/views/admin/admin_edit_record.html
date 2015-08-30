@@ -28,15 +28,14 @@ include '../shared-layouts/_Layout.php';
 				<input type="text" class="form-control" name="txtpassword" value="<?php echo $client["userPassword"]; ?>">
 			</div>		
 
-	    	<div class="form-group col-md-6">
-				<label for="txtfname">User Status</label>
-				<input type="text" class="form-control" name="userstatus" value="<?php echo $client["userStatus"]; ?>">
+	    	<div class="form-group col-md-4">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
 			</div>	
-	    		
-	    	<div class="form-group col-md-6">
-				<label for="cbousertype">User Type</label>
-				<input type="text" class="form-control" name="cbousertype">
-			</div>	
+	    	
 			
 	    	
 
@@ -51,8 +50,7 @@ include '../shared-layouts/_Layout.php';
 		$array = array(
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
-		"userStatus" => $_POST["userstatus"],
-		"userTypeID" => $_POST["cbousertype"]
+		"userStatus" => $_POST["cbostatus"]
 		);
 		$obj = new admin_edit_record;
 		$obj->updateinfo($array, "userID", $_POST["txtid"]);

@@ -9,29 +9,29 @@ include '../shared-layouts/_Layout.php';
 		
 <?php foreach($activities as $act)
  {	?>		
- 			 <legend><h4>Update Record:  <strong>
+ 			 <legend><h4>Update Activity Post:  <strong>
  		     	<?php
- 		     	echo $act["activityDescription"];;
+ 		     	echo $act["activityTitle"];;
  		     	?>
  		     </strong> 
  		     </h4>
 
  		    </legend>
 	    	<div class="form-group col-md-6">
-				<label for="txtactdesc">Description</label>
+				<label for="txtacttitle">Title</label>
 				<input type="hidden" class="form-control" name="txtid" value="<?php echo $act["activityID"]; ?>" />
-				<input type="text" class="form-control" name="txtactdesc" value="<?php echo $act["activityDescription"]; ?>" />
+				<input type="text" class="form-control" name="txtacttitle" value="<?php echo $act["activityTitle"]; ?>">
 			</div>
 			
-	    	<div class="form-group col-md-6">
-				<label for="txtacttitle">Title</label>
-				<input type="text" class="form-control" name="txtacttitle" value="<?php echo $act["activityTitle"]; ?>">
-			</div>		
-
-	    	<div class="form-group col-md-6">
+			<div class="form-group col-md-6">
 				<label for="txtactimg">Image name</label>
 				<input type="text" class="form-control" name="txtactimg" value="<?php echo $act["activityImage"]; ?>">
 			</div>	
+
+			<div>
+				<label for="txtactdesc">Description</label>
+				<textarea name="txtactdesc" cols="50" style="height:300px; padding:100px"><?php echo $act["activityDescription"]; ?></textarea>';
+			</div>
 <?php } ?>	
 
 <?php
@@ -71,3 +71,17 @@ include '../shared-layouts/_Layout.php';
     </div>
     </form>	
 </div>
+
+<script type="text/javascript">
+	tinymce.init({
+    selector: "textarea",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar2: "print preview media | forecolor backcolor emoticons", });
+</script>

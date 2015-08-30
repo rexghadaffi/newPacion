@@ -10,19 +10,20 @@
 		  <div class="modal-body">
 	    	<div class="form-group">
 				<label for="txtTitle">Title</label>
-				<input type="text" class="form-control" name="txtTitle" placeholder="Enter the title here..">
+				<input type="text" class="form-control" name="txtTitle" required placeholder="Enter the title here..">
 			</div>
 			
-			<div class="form-group">
-				<label for="txtDescription">Description</label>
-				<input type="text" class="form-control" name="txtDescription" placeholder="Enter description here..">
-			</div>	
 			<div class="form-group">
 				<label for="exampleInputFile">Browse Image</label>
 				<input type="file" id="fileActivityImage">
 				<p class="help-block">Example block-level help text here.</p>
 			</div>
 			
+			<div>
+				<label for="txtDescription">News Description</label>
+				<textarea name="txtDescription" cols="50" style="height:300px; padding:100px"></textarea>';
+			</div>
+
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -35,9 +36,10 @@
 		include_once '../controller/activities/activities_edit_record.php';
 		$array = array(
 		"activityID" => "null",
-		"activityDescription" => $_POST["txtDescription"],
 		"activityTitle" => $_POST["txtTitle"],
-		"activityImage" => "none"
+		"activityDescription" => $_POST["txtDescription"],
+		"activityImage" => "none",
+		"userID" => 0
 		);
 		
 		$obj = new activities_edit_record;

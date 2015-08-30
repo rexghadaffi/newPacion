@@ -23,7 +23,7 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="">About Us</a></li>
+                            <li><a href="about.php">About Us</a></li>
                         <li class="dropdown">
                             <a href="forum.php?page=page&action=display">Forum<b class=" icon-angle-down"></b></a>
                      <!--   <a href="forum.php?page=page&action=display" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Forum<b class=" icon-angle-down"></b></a>	-->										
@@ -33,7 +33,7 @@
                         </li>
                         <li><a href="">Gallery</a></li>
                     
-                        <li><a href="">Contact</a></li>
+                        <li><a href="contact.php">Contact</a></li>
 						<?php
 						if (logged_in() === false)
 							{

@@ -1,46 +1,27 @@
-﻿<?php include '../shared-layouts/_Layout.php'; ?>
+﻿<?php 
+include '../shared-layouts/_Layout.php'; 
+?>
 <div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-body">		  
 			<legend><h3>Edit Category Title</h2></legend>
 <form method="post">
-<!-- BS FORM -->		
+	
 <?php foreach($forumcategory as $category)
  {	?>		
 			<input type="hidden" class="form-control" name="txtid" value="<?php echo $category["forumCatID"]; ?>" />
 	    	<div class="form-group col-md-8">				
 				<input type="text" class="form-control" name="txtcattitle" value="<?php echo $category["forumCatTitle"]; ?>" />
 			</div>	
-<!--			
-	    	<div class="form-group col-md-8">
-				<label for="txtcatdesc">Deccription</label>			
-				<textarea rows="4" name="txtcatdesc" class="form-control">
-				<?php // echo $category["forumCatDesc"]; ?>
-				</textarea>
-			</div>	
--->				
-<!--
-			<div class="form-group col-md-4">
-				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">
-					<option><?php // echo $client["userTypeID"]; ?></option>
-					<option value="0">Company User</option>
-					<option value="1">Alumni</option>
-				</select>
-			</div>				
--->
 <?php } ?>
 
                 </tbody>
             </table>
-		
-            <!-- End Data Table-->
+
         </div>
 		 <div class="panel-footer clearfix">
 		   <div class="pull-right">
-				<button type="button" class="btn btn-sm btn-default">
-                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
-                </button> 				
+				<a href="javascript:history.go(-1)" class="btn btn-sm btn-default">&nbsp;Cancel</a>					
                 <button type="submit" name="btn-edit" class="btn btn-sm btn-success">
                   <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
                 </button>               
@@ -49,17 +30,17 @@
     </div><?php
  if(isset($_POST["btn-edit"]))
  {		
-		include_once '../controller/forumcategory/edit_category.php';
+		include_once '../controller/forumcategory/edit_record.php';
 		$array = array(
 		"forumCatTitle" => $_POST["txtcattitle"],
 		);
-		$obj = new edit_category;
+		$obj = new edit_record;
 		$obj->updateinfo($array, "forumCatID", $_POST["txtid"]);
 
 		echo "<script>					
 												  { 
 										 			    						
-	 													window.location.href='forum_record.php?control=view_record&func=listall';
+	 													window.location.href='forum_record.php?control=page&func=display';
 											
 		
 												  }
