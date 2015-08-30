@@ -91,4 +91,16 @@ function(){
   
  } 
 
+  function wrongemail(){
   
+ swal({   title: "Ooooops",  
+ text: "Your email is not in our database.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#forgotModal').modal('toggle');
+});
+  
+  }

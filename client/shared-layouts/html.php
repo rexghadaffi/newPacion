@@ -30,6 +30,7 @@
 	include "modal/login.php";
 	include "modal/profile.php";
 	include "modal/changepw.php";
+	include "modal/forgot.php";
 	?>
 
 
