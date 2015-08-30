@@ -27,12 +27,15 @@
 							}
 						else
 							{
+
 											
 											$_SESSION['clientid'] = $array[0];
+
+											$_SESSION['level'] = $array[4];											
+
 									
 											echo '<script type="text/javascript">window.location="index.php"</script>';
-							
-							
+
 							}							
 
 					
