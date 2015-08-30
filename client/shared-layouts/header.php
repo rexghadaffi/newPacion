@@ -43,6 +43,7 @@
 							}
 						else
 							{
+                                echo '<li><a href="users.php">Users</a></li>';
 								echo '<li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><i class="fa fa-cog"></i><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">

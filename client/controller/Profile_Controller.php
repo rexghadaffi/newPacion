@@ -2,7 +2,7 @@
 <?php
 	if (logged_in() ===true)
 	{
-	$profiledetails = mysqli_query($con, "SELECT * FROM tblclientuser where userID = '".$_SESSION['clientid']."'");
+	$profiledetails = mysqli_query($con, "SELECT * FROM tblclientuser where userID = '".$_SESSION['id']."'");
 	$row = mysqli_fetch_array($profiledetails);
 	}
 	if (isset($_POST['btnupdate']))

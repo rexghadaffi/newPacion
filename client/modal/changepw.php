@@ -1,7 +1,13 @@
 
 <?php
-$password = mysqli_query($con, "SELECT * FROM tblclientuser where userID = ".$_SESSION['clientid']."");
+if (logged_in() ===true)
+{
+
+$password = mysqli_query($con, "SELECT * FROM tblclientuser where userID = ".$_SESSION['id']."");
 $rowpass = mysqli_fetch_array($password);
+
+	
+}
 
 ?>
 

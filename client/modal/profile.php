@@ -58,7 +58,7 @@ include "controller/Profile_Controller.php";
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Password</label>
-				<input type="text" class="form-control" readonly value="<?php echo $row['userPassword']?>">
+				<input type="password" class="form-control" readonly value="<?php echo $row['userPassword']?>">
 				<a href="#changepwModal" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-keyboard="false">Change Password</a>
 					
 			</div>
