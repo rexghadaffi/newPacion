@@ -1,7 +1,6 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
-include "modal/confirmationModal.php";
 ?>
 	<!-- end header -->
 	
@@ -27,69 +26,81 @@ include "modal/confirmationModal.php";
 				<div class="col-md-6">
 				<br>
 				<label for="txtFname">Firstname</label>				
-				<input type="text"  class="form-control" name="txtFname" placeholder="Enter Firstname">
+				<input type="text"  class="form-control" name="txtFname" placeholder="Enter Firstname" required>
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtLname">Lastname</label>
-				<input type="password" class="form-control" name="txtLname" placeholder="Enter Lastname">
+				<input type="text" class="form-control" name="txtLname" placeholder="Enter Lastname" required>
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtUsername">Username</label>				
-				<input type="text"  class="form-control" name="txtUsername" placeholder="Enter Username">
+				<input type="text"  class="form-control" name="txtUsername" placeholder="Enter Username" required>
+				</div>
+				<div class="col-md-6">
+				<br>
+				<label for="txtEmail">Email</label>				
+				<input type="text"  class="form-control" name="txtEmail" placeholder="Enter Email address" required>
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtPassword">Password</label>				
-				<input type="text"  class="form-control" name="txtPassword" placeholder="Enter Password">
+				<input type="password"  class="form-control" name="txtPassword" placeholder="Enter Password" required>
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtRetypePassword">Re-Type Password</label>				
-				<input type="text"  class="form-control" name="txtRetypePassword" placeholder="Re-Type Password">
+				<input type="password"  class="form-control" name="txtRetypePassword" placeholder="Re-Type Password">
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtContact">Contact Number</label>				
-				<input type="text"  class="form-control" name="txtContact" placeholder="Enter Contact Number">
+				<input type="text"  class="form-control" name="txtContact" placeholder="Enter Contact Number" required>
 				
+				</div>
+				<div class="col-md-6">
+				<br>
+				<label for="txtGender">Gender</label>				
+				<select class="form-control" name="txtGender" required>
+				<option selected="selected" value="" disabled>Please select Gender</option>
+				<option>Male</option>
+				<option>Female</option>
+
+				</select>
 				</div>
 				
 					<div class="col-md-6">
 				<br>
 				<label for="txtCourse">Course</label>				
-					<select class="form-control" name="txtCourse" >
-				<option selected="selected" disabled>Please select Course</option>
+
+				<input type="text"  class="form-control" name="txtCourse" placeholder="Enter Course" required>
 				
 				
 				
-				</select>
+			
 				</div>
 				<div class="col-md-6">
 				<br>
 				<label for="txtYeargrad">Year Graduated</label>				
-				<select class="form-control" name="txtYeargrad" >
-				<option selected="selected" disabled>Please select year</option>
 				
-				
-				
-				</select>
-				
+								<input type="text"  class="form-control" name="txtYeargrad" placeholder="Enter Year of Graduation" required>
+			
+				</div>
+				<div class="col-lg-12">
+					<br>
+					<label for="txtaddress" >Address</label>	<br>
+					<textarea name="txtaddress" class="form-control" rows="8" required></textarea>
 				</div>
 			
 				<div class="col-md-4">
 				</div>
-				<div class="col-md-4">
-				<br>
-				<label for="txtEmail">Email</label>				
-				<input type="text"  class="form-control" name="txtEmail" placeholder="Enter Email address">
-				</div>
+				
 				<div class="col-lg-12" align="center">
 				<br>
 	
 				
-				<a href="#registrationModal" class="btn btn-success btn-lg" data-toggle="modal" data-backdrop="static" data-keyboard="false">Sign Up</a>
+				<button type="submit" class="btn btn-success btn-lg" name="btnregister">Sign Up</button>
 				
 				</div>
 	

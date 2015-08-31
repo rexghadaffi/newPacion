@@ -9,8 +9,9 @@
 <meta name="author" content="http://bootstraptaste.com" />
 <!-- css -->
 <link href="shared-resources/css/bootstrap.min.css" rel="stylesheet" />
-
 <link href="shared-resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="shared-resources/media/css/jquery.dataTables.css">
+
 <link href="shared-resources/css/jcarousel.css" rel="stylesheet" />
 <link href="shared-resources/css/flexslider.css" rel="stylesheet" />
 <link href="shared-resources/css/style.css" rel="stylesheet" />
@@ -25,5 +26,13 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <?php 	
+	include "modal/login.php";
+	include "modal/profile.php";
+	include "modal/changepw.php";
+	include "modal/forgot.php";
+	?>
+
+
 
 </head>
