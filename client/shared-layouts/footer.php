@@ -1,27 +1,4 @@
-<section class="callaction">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="big-cta">
-					<div class="cta-text">
-						<h2><span>STI</span> College Cubao</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
 
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="solidline">
-				</div>
-			</div>
-		</div>
-
-	</section>
-	
 	<footer>
 	<div class="container">
 		<div class="row">
@@ -99,6 +76,8 @@
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="shared-resources/js/jquery.js"></script>
+<script type="text/javascript" src="shared-resources/media/js/jquery.dataTables.js"></script>
+
 <script src="shared-resources/js/jquery.easing.1.3.js"></script>
 <script src="shared-resources/js/bootstrap.min.js"></script>
 <script src="shared-resources/js/jquery.fancybox.pack.js"></script>
@@ -109,5 +88,12 @@
 <script src="shared-resources/js/jquery.flexslider.js"></script>
 <script src="shared-resources/js/animate.js"></script>
 <script src="shared-resources/js/custom.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+    $('#example').DataTable();   
+   
+});
+</script>
+
 </body>
 </html>

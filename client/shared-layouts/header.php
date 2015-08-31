@@ -2,13 +2,11 @@
 <body>
 <div id="wrapper">
 
-	<!-- start header -->
-	<?php 	
-	include "modal/login.php";
-	include "modal/profile.php";
-	?>
 	 <?php		  
  include "controller/Login_Controller.php";
+    include "controller/Registration_Controller.php";
+
+ 
  ?>	
 	<header>
         <div class="navbar navbar-default navbar-static-top">
@@ -45,9 +43,11 @@
 							}
 						else
 							{
+
 								echo '<li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><i class="fa fa-cog"></i><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
+                             <li><a href="users.php">Users</a></li>
                                 <li><a href="#profileModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">My Profile</a></li>
 								 <li><a href="controller/logout.php">Logout</a></li>
                           

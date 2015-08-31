@@ -1,0 +1,28 @@
+[33mcommit 38055cdfc7377791ad648518577f2933a088ca1e[m
+Author: unratedgasti <danieltinao@gmail.com>
+Date:   Sun Aug 30 16:16:15 2015 +0800
+
+    footer
+
+[1mdiff --git a/client/shared-layouts/footer.php b/client/shared-layouts/footer.php[m
+[1mindex 246d120..681d8e0 100644[m
+[1m--- a/client/shared-layouts/footer.php[m
+[1m+++ b/client/shared-layouts/footer.php[m
+[36m@@ -1,16 +1,4 @@[m
+[31m-<section class="callaction">[m
+[31m-	<div class="container">[m
+[31m-		<div class="row">[m
+[31m-			<div class="col-lg-12">[m
+[31m-				<div class="big-cta">[m
+[31m-					<div class="cta-text">[m
+[31m-						<h2><span>STI</span> College Cubao</h2>[m
+[31m-					</div>[m
+[31m-				</div>[m
+[31m-			</div>[m
+[31m-		</div>[m
+[31m-	</div>[m
+[31m-	</section>[m
+[32m+[m
+ 	<section id="content">[m
+ [m
+ 		<div class="row">[m
