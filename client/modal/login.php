@@ -16,8 +16,13 @@
 			<div class="form-group">
 				<label for="txtpassword">Password</label>
 				<input type="password" class="form-control" name="password" placeholder="Enter Password">
+
 			</div>
-			
+			<div class="form-group">
+				
+				<a href="#forgotModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-dismiss="modal" class="pull-right">Forgot Password?</a>
+				<br>
+			</div>
 			
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">Cancel</button>

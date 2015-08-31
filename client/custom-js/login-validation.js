@@ -41,3 +41,66 @@ function(){
   
 }
 
+function wrongPasswords(){
+  
+
+swal("Ooooops!", "Password and Retype Password doesnt match.", "error")
+  
+}
+
+function regisSuccess(){
+  
+
+swal("Success!", "Please check your email for confirmation.", "success")
+  
+}
+
+function updateSuccess(){
+  
+
+swal("Success!", "Profile Updated.", "success")
+  
+}
+
+
+function wronginput(){
+  
+ swal({   title: "Ooooops",  
+ text: "Password doesnt match.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#changepwModal').modal('toggle');
+});
+  
+  }
+
+  function wronginputpass(){
+  
+ swal({   title: "Ooooops",  
+ text: "New Password doesnt match.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#changepwModal').modal('toggle');
+});
+  
+ } 
+
+  function wrongemail(){
+  
+ swal({   title: "Ooooops",  
+ text: "Your email is not in our database.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+   $('#forgotModal').modal('toggle');
+});
+  
+  }
