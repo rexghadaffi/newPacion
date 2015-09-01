@@ -31,6 +31,7 @@
 	include "modal/profile.php";
 	include "modal/changepw.php";
 	include "modal/forgot.php";
+	include "modal/uploadimage.php";
 	?>
 
 

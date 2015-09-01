@@ -13,25 +13,37 @@ include "controller/Profile_Controller.php";
 		  <div class="modal-body">
 		  <div class="row">
 		  <div class="col-lg-12">
-						<ul id="thumbs" class="portfolio">
+		  	<?php
+		  		if (logged_in() === true)
+		  		{
+
+
+		  			echo '
+		  					<ul id="thumbs" class="portfolio">
 						<!-- Item Project and Filter Name -->
 						<li class="col-lg-5 design" data-id="id-0" data-type="web">
 						<div class="item-thumbs">
 						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" style=""  title="Profile Picture" href="shared-resources/img/default.png">
+						<a class="hover-wrap fancybox" style=""  title="Profile Picture" href="shared-resources/img/Profile/'.$row['userImage'].'">
 
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-						<img src="shared-resources/img/default.png" alt="">
+						<img src="shared-resources/img/Profile/'.$row['userImage'].'" alt="">
 
 						</div>
-						<a href="">Upload an Image</a>
+						<a href="#uploadImage" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-dismiss="modal">Upload an Image</a>
 
 						</li>
 						<div class="col-md-5"></div>
 						</ul>
 
+
+		  			';
+
+		  		}
+		  	?>
+						
 			<div class="col-md-7">
 				<label>Firstname</label>
 				<input type="text" name="txtFname" class="form-control" required value="<?php echo $row['userFirstName']?>">

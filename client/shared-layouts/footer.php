@@ -9,22 +9,19 @@
 					<strong>STI College Cubao Alumni</strong><br>
 					 P. Tuazon<br>
 					 Cubao, Quezon City, Philippines </address>
-					<p>
-						<i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-						<i class="icon-envelope-alt"></i> email@domainname.com
-					</p>
+					
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
 					<h5 class="widgetheading">Pages</h5>
 					<ul class="link-list">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="#">Gallery</a></li>
-						<li><a href="#">Forum</a></li>
+	
 						<li><a href="#">Career center</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
 					</ul>
 				</div>
 			</div>
@@ -32,32 +29,17 @@
 				<div class="widget">
 					<h5 class="widgetheading">Links</h5>
 					<ul class="link-list">
-					<a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
+					<a href="https://www.facebook.com/STICollegeCubao?fref=ts" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i> STI College Cubao</a>
+						<li><a href="http://www.i-cares.com/Alumni_Register.aspx">I-cares</a></li>
+						<li><a href="#">SIAA</a></li>
 					</ul>
 				</div>
 			</div>
-			
-		</div>
-	</div>
-	<div id="sub-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
+			<div class="copyright">
 						<p>
 							<span>&copy; STI College Cubao</span>
 						</p>
 					</div>
-				</div>
-				<div class="col-lg-6">
-					<ul class="social-network">
-						<li></li>
-						
-					</ul>
-				</div>
-			</div>
 		</div>
 	</div>
 	</footer>

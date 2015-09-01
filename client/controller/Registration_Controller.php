@@ -31,7 +31,7 @@
 		}
 		else
 		{
- $sql = "INSERT INTO tblclientuser (userName, userPassword, userFirstName, userLastName, userGender, userContactNum, userAddress, userEmail, userCourse, userYearGrad, userStatus, userTypeID) VALUES ('".$username."', '".$password."', '".$FirstName."', '".$Lastname."', '".$gender."', '".$Contact."', '".$address."', '".$email."', '".$course."', '".$year."', '0', '1')";
+ $sql = "INSERT INTO tblclientuser (userName, userPassword, userFirstName, userLastName, userGender, userContactNum, userAddress, userEmail, userCourse, userYearGrad, userImage, userStatus, userTypeID) VALUES ('".$username."', '".$password."', '".$FirstName."', '".$Lastname."', '".$gender."', '".$Contact."', '".$address."', '".$email."', '".$course."', '".$year."', 'default.PNG', '0', '1')";
 		$result = mysqli_query($con,$sql);
 		if ($result)
 		{

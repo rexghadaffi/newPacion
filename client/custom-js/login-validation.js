@@ -104,3 +104,32 @@ function(){
 });
   
   }
+
+
+function imageSuccess(){
+  
+ swal({   title: "Success",  
+ text: "Image Uploaded.",  
+ type: "success",   showCancelButton: false,  
+   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+ window.location.href="index.php";
+});
+  
+  }
+
+    function wrongimage(){
+  
+ swal({   title: "Ooooops",  
+ text: "Something went wrong.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+     $('#uploadImage').modal('toggle');
+});
+  
+  }
