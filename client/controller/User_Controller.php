@@ -32,6 +32,26 @@ echo "<script>wrongInputs();</script>";
 
 }
 
+public function wrongPasswords()
+{
+echo "<script>wrongPasswords();</script>";
+
+
+
+
+}
+
+
+public function regisSuccess()
+{
+echo "<script>regisSuccess();</script>";
+
+
+
+
+}
+
+
 
 
 }
