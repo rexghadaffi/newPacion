@@ -1,9 +1,7 @@
 <?php
-
 /**
 * 
 */
-
 include_once "overall_class.php";
 
 class forumClass
