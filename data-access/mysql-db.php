@@ -112,6 +112,8 @@ class DataAccessLayer
           
             return $this->query($sql);
     }
+	
+	
  
     public function selectByIdOrder($table, $idName, $idValue, $order) {
             $sql = 'select * from '
@@ -135,6 +137,22 @@ class DataAccessLayer
             . $idValue;   
             return $this->query($sql);
     }
+	
+	
+    public function selectColumnWhereStatus($table, $idName, $idValue, $status) {
+            $sql = 'select * from '
+            . $table
+            . ' where '
+            . $idName
+            . ' = '
+            . $idValue
+			. ' and '
+			. $status
+			. ' = '
+			. 1;
+			
+            return $this->query($sql);
+    }	
 	
     public function selectWhere($table, $parameters, $where) {
             $sql = 'select ';

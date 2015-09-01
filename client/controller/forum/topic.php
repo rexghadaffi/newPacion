@@ -6,7 +6,7 @@ class topic extends ForumViewClass
 		include_once "../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
 		$this->assign("topic", $obj->selectById("tbltopic", "topicID", $_GET["topicid"]));
-		$this->assign("posts", $obj->select("tblpost"));		
+		$this->assign("posts", $obj->selectColumnWhere("tblpost", "postStatus", 1));		
 	}  
 
 	function create($tablename, $param)

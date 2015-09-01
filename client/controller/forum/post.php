@@ -5,7 +5,7 @@ class post extends ForumViewClass
 	{
 		include_once "../data-access/mysql-db.php";
 		$obj=new DataAccessLayer;
-		$this->assign("replies", $obj->selectColumnWhere("tblreply", "postID", $_GET["postid"]));
+		$this->assign("replies", $obj->selectColumnWhereStatus("tblreply", "postID", $_GET["postid"], "replyStatus"));
 		$this->assign("postresult", $obj->selectById("tblpost", "postID", $_GET["postid"]));		
 	}  
 
