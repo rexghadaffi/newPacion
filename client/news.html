@@ -3,45 +3,98 @@ include "shared-layouts/html.php";
 include "shared-layouts/header.php";
 ?>
 	<!-- end header -->
-	<section class="callaction">
+	<div id="wrapper">
+
+	<section id="inner-headline">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				
-						<h2><span style="color:#4791FF;">News</span> Posts</h2>
-
-
-
-
-				<?php
-
-				foreach($cont as $c)
-					{
-						 $time = strtotime($c["datePosted"]);
-       				   $newDate = date("F d, Y", $time); 
-				?>
-     				  	<div class="panel panel-warning">
-  						<div class="panel-heading"><h4><?php  echo  $c["newsTitle"]; ?></h4></div>
-  						<div class="panel-body"><p><?php  echo  $c["newsDesc"]; ?> </br> 
-  							</br>
-  							<?php  echo  $newDate; ?></p></div>
-						</div>
-
-     				  
-				<?php	   
-                      
-	                }
-
-				?>
-		
+				<ul class="breadcrumb">
+					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+					<li class="active">News</li>
+				</ul>
 			</div>
 		</div>
-	</div>	
+	</div>
+	</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4" >
+				<aside class="right-sidebar">
+				<div class="widget">
+					<h5 class="widgetheading">Categories</h5>
+					<ul class="cat">
+						<li><i class="icon-angle-right"></i><a href="news_record.php?control=view_record&func=listall">News</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="activities_record.php?control=view_record&func=listall">Activities</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="job_record.php?control=view_record&func=listall">Jobs Offers</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="#">Forum</a><span> </span></li>
+					</ul>
+				</div>
+				<!--<div class="widget">
+					<h5 class="widgetheading">Latest posts</h5>
+					<ul class="recent">
+						<li>
+						<img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
+						<h6><a href="#">Lorem ipsum dolor sit</a></h6>
+						<p>
+							 Mazim alienum appellantur eu cu ullum officiis pro pri
+						</p>
+						</li>
+					</ul>
+				</div>-->
 
+				</aside>
+			</div>
+	<?php foreach($cont as $c) 
+ 	{?> 
+
+ 	<?php 
+ 		$time = strtotime($c["datePosted"]);
+        $newDate = date("M d, Y", $time); 
+ 	?>
+ 		<div class="col-lg-4" >
+				
+					
+				</div>
 	
-	
+			<div class="col-lg-8">
+				<article>
+						<div class="post-image">
+							<div class="post-heading">
+								<h3><?php  echo  $c["newsTitle"]; ?></h3>
+							</div>
+							<img src="shared-resources/img/activity/<?php echo $c["activityImage"]; ?>" />
+						</div>
+						<p>
+							 <?php  echo  $c["newsDesc"]; ?>
+						</p>
+						<div class="bottom-article">
+							<ul class="meta-post">
+								<li><i class="icon-calendar"></i><?php echo $newDate; ?></li>
+								<li><i class="icon-user"></i><a href="#"> Admin</a></li>
+							</ul>
+							<!--<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>-->
+						</div>
+
+				</article>
+
+
+
+
+			</div>
+			<?php } ?>
+			
+
+		</div>
+
+
+	</div>
 
 	</section>
+
+</div>
+</section>
 	<?php
 include "shared-layouts/footer.php";
 	?>

@@ -4,7 +4,7 @@ include "shared-layouts/header.php";
 ?>
 
 <div id="wrapper">
-<?php foreach($activities as $c) {?> 
+
 	<section id="inner-headline">
 	<div class="container">
 		<div class="row">
@@ -17,6 +17,13 @@ include "shared-layouts/header.php";
 		</div>
 	</div>
 	</section>
+	<?php foreach($activities as $c) 
+ 	{?> 
+
+ 	<?php 
+ 		$time = strtotime($c["datePosted"]);
+        $newDate = date("M d, Y", $time); 
+ 	?>
 	<section id="content">
 	<div class="container">
 		<div class="row">
@@ -33,28 +40,29 @@ include "shared-layouts/header.php";
 						</p>
 						<div class="bottom-article">
 							<ul class="meta-post">
-								<li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
+								<li><i class="icon-calendar"></i><?php echo $newDate; ?></li>
 								<li><i class="icon-user"></i><a href="#"> Admin</a></li>
 							</ul>
-							<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+							<!--<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>-->
 						</div>
+
 				</article>
 
 
 
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4" >
 				<aside class="right-sidebar">
 				<div class="widget">
 					<h5 class="widgetheading">Categories</h5>
 					<ul class="cat">
-						<li><i class="icon-angle-right"></i><a href="#">News</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Activities</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Jobs Offers</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="news_record.php?control=view_record&func=listall">News</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="activities_record.php?control=view_record&func=listall">Activities</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="job_record.php?control=view_record&func=listall">Jobs Offers</a><span> </span></li>
 						<li><i class="icon-angle-right"></i><a href="#">Forum</a><span> </span></li>
 					</ul>
 				</div>
-				<div class="widget">
+				<!--<div class="widget">
 					<h5 class="widgetheading">Latest posts</h5>
 					<ul class="recent">
 						<li>
@@ -65,7 +73,7 @@ include "shared-layouts/header.php";
 						</p>
 						</li>
 					</ul>
-				</div>
+				</div>-->
 
 				</aside>
 			</div>
