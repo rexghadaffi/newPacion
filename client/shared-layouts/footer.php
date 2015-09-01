@@ -30,22 +30,15 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Developers</h5>
+					<h5 class="widgetheading">Links</h5>
 					<ul class="link-list">
-						<li><a href="#"></a></li>
+					<a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
 						<li><a href="#"></a></li>
 						<li><a href="#"></a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Team photos</h5>
-
-					<div class="clear">
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 	<div id="sub-footer">
@@ -60,11 +53,8 @@
 				</div>
 				<div class="col-lg-6">
 					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+						<li></li>
+						
 					</ul>
 				</div>
 			</div>
