@@ -6,4 +6,5 @@
 <script src="../shared-resources/bootstrap-3/js/bootstrap.min.js"></script>
 <script src="../shared-scripts/custom-js/form-validation.js"></script>
 <script src="../shared-scripts/custom-js/notification.js"></script>
+<script src="../shared-scripts/custom-js/jquery-1.9.1.min.js"></script>
 <script src="../shared-resources/tinymce/tinymce.min.js"></script>
