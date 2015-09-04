@@ -31,6 +31,14 @@
 				<label for="txtjobdesc">Job Description</label>
 				<textarea name="txtjobdesc" cols="50" style="height:300px; padding:100px"></textarea>';
 			</div>
+
+			<div class="form-group col-md-4">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</div>	
 						
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -44,7 +52,8 @@
 		"jobID" => "null",
 		"jobTitle" => $_POST["txtjobname"],	
 		"jobDesc" => $_POST["txtjobdesc"],	
-		"datePosted" => $_POST["txtdate"]	
+		"datePosted" => $_POST["txtdate"],
+		"jobStatus" => $_POST["cbostatus"]	
 		);
 		$obj = new jobs_edit_record;
 		$obj->create($array);	

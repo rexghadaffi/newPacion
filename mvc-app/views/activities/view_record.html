@@ -22,7 +22,7 @@ include '../views/modals/activity.php';
                     <tr>                      
                         <th>Title</th>
                         <th>Description</th>						
-                        <th>Image Directory</th>    
+                        <th>Status</th>    
                         <th></th>                          
                     </tr>
                 </thead>
@@ -33,7 +33,12 @@ include '../views/modals/activity.php';
 		echo '<tr>';
 		echo '<td> '.$act["activityTitle"].' </td>';
 		echo '<td> '.$act["activityDescription"].' </td>';
-		echo '<td> '.$act["activityImage"].' </td>';		
+		if ($act["activityStatus"] == 1) {
+        echo '<td><label class="label label-success">Active</label></td>';  
+        }
+        else {
+        echo '<td><label class="label label-danger">InActive</label></td>';             
+        }		
     echo '<td><a href="edit_activity.php?control=activities_edit_record&func=edit&id='.$act["activityID"].'"><big>Edit</a></td>'; 
 		echo '</tr>';		
 	}

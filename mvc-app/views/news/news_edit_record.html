@@ -1,6 +1,5 @@
 ﻿<?php 
 include '../shared-layouts/_layout.php';
-include '../views/modals/add_news.php';
 ?>
 <div class="col-md-10">
     <div class="panel panel-default">
@@ -36,6 +35,18 @@ include '../views/modals/add_news.php';
 				<label for="txtnewsdesc">News Description</label>
 				<textarea name="txtnewsdesc" cols="50" style="height:300px; padding:100px"><?php echo $n["newsDesc"]; ?></textarea>';
 			</div>
+
+			<div class="form-group" style="width:200px;">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</div>	
+			<div>
+			     <a class="btn btn-sm btn-default" href="newsupload.php?id=<?php echo $_GET["id"];?> "  ><span class="fa fa-times fa-fw"></span>Upload Image</a> 
+			</div>
+		</br>
 		    
 			
 		
@@ -49,7 +60,8 @@ include '../views/modals/add_news.php';
 		$array = array(
 		"newsTitle" => $_POST["txtnewstitle"],
 		"newsDesc" => $_POST["txtnewsdesc"],
-		"datePosted" => $_POST["txtdate"]
+		"datePosted" => $_POST["txtdate"],
+		"newsStatus" => $_POST["cbostatus"]
 		);
 		$obj = new news_edit_record;
 		$obj->updateinfo($array, "newsID", $_POST["txtnewsid"]);

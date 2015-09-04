@@ -24,6 +24,7 @@ include '../views/modals/add_jobs.php';
                         <th>Job Title</th>
                         <th>Job Description</th>
                         <th>Date Posted</th>
+                        <th>Status</th>
                         <th>Action</th>				
                     </tr>
                 </thead>               
@@ -37,6 +38,12 @@ include '../views/modals/add_jobs.php';
 		echo '<td> '.$c["jobTitle"].' </td>';
         echo '<td> '.$c["jobDesc"].' </td>';
         echo '<td> '. $newDate .' </td>';
+        if ($c["jobStatus"] == 1) {
+        echo '<td><label class="label label-success">Active</label></td>';  
+        }
+        else {
+        echo '<td><label class="label label-danger">InActive</label></td>';             
+        }
 		echo '<td><a href="edit_jobs.php?control=jobs_edit_record&func=edit&id='.$c["jobID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		
 	}

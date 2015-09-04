@@ -20,18 +20,33 @@ include '../shared-layouts/_Layout.php';
 	    	<div class="form-group col-md-6">
 				<label for="txtacttitle">Title</label>
 				<input type="hidden" class="form-control" name="txtid" value="<?php echo $act["activityID"]; ?>" />
-				<input type="text" class="form-control" name="txtacttitle" value="<?php echo $act["activityTitle"]; ?>">
+				<input type="text" class="form-control" name="txtacttitle" value="<?php echo $act["activityTitle"]; ?>"/>
 			</div>
-			
-			<div class="form-group col-md-6">
-				<label for="txtactimg">Image name</label>
-				<input type="text" class="form-control" name="txtactimg" value="<?php echo $act["activityImage"]; ?>">
-			</div>	
-
-			<div>
+			    
+           </div>
+			<div class="form-group">
 				<label for="txtactdesc">Description</label>
 				<textarea name="txtactdesc" cols="50" style="height:300px; padding:100px"><?php echo $act["activityDescription"]; ?></textarea>';
 			</div>
+
+			<div >
+				<label for="txtdate">Date</label>
+				<input type="text" class="form-control" name="txtdate" readonly value="<?php echo $act["datePosted"]; ?>" />
+			</div>	
+
+
+			<div class="form-group">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</br>
+			</br>
+			     <a class="btn btn-sm btn-default" href="activityupload.php?id=<?php echo $_GET["id"];?> "  ><span class="fa fa-times fa-fw"></span>Upload Image</a> 
+			</div>
+			
+			
 <?php } ?>	
 
 <?php
@@ -39,9 +54,11 @@ include '../shared-layouts/_Layout.php';
  {		
 		include_once '../controller/activities/activities_edit_record.php';
 		$array = array(
-		"activityDescription" => $_POST["txtactdesc"],
 		"activityTitle" => $_POST["txtacttitle"],
-		"activityImage" => $_POST["txtactimg"]
+		"activityDescription" => $_POST["txtactdesc"],
+		"datePosted" => $_POST["txtdate"],
+		"activityStatus" => $_POST["cbostatus"]
+
 		);
 		$obj = new activities_edit_record;
 		$obj->updateinfo($array, "activityID", $_POST["txtid"]);
@@ -85,3 +102,5 @@ include '../shared-layouts/_Layout.php';
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     toolbar2: "print preview media | forecolor backcolor emoticons", });
 </script>
+
+

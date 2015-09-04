@@ -30,6 +30,14 @@
 				<label for="txtnewsdesc">News Description</label>
 				<textarea name="txtnewsdesc" cols="50" style="height:300px; padding:100px"></textarea>';
 			</div>
+
+			<div class="form-group col-md-4">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</div>	
 						
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -43,7 +51,8 @@
 		"newsID" => "null",
 		"newsTitle" => $_POST["txtnewstitle"],
 		"newsDesc" => $_POST["txtnewsdesc"],
-		"datePosted" => $_POST["txtdate"]	
+		"datePosted" => $_POST["txtdate"],
+		"newsStatus" => $_POST["cbostatus"]	
 		);
 		$obj = new news_edit_record;
 		$obj->create($array);

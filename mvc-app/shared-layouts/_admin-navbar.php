@@ -26,18 +26,9 @@
                 echo $_SESSION['user']; 
               
                 ?></strong></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<i class="fa fa-cog fa-fw"></i> Settings 
-					<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Home.php">Profile</a></li>
-                        <li><a href="Home.php">Account Settings</a></li>
-                        <li><a href="Home.php">System Settings</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="../shared-layouts/logout.php">Logout</a></li>
-                    </ul>
-                </li>
+                <li>
+                   		<a href="../shared-layouts/logout.php"><i class="fa fa-cog fa-fw"></i>&nbsp; Logout</a> 
+				</li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

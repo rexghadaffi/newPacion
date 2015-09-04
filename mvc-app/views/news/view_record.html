@@ -24,6 +24,7 @@ include '../views/modals/add_news.php';
                         <th>News Title</th>
                         <th>News Description</th>
                         <th>Date Posted</th>
+                        <th>Status</th>
                         <th>Action</th>						
                     </tr>
                 </thead>              
@@ -38,6 +39,12 @@ include '../views/modals/add_news.php';
 		echo '<td> '.$c["newsTitle"].' </td>';
         echo '<td> '.$c["newsDesc"].' </td>';
         echo '<td> '. $newDate .' </td>';
+         if ($c["newsStatus"] == 1) {
+        echo '<td><label class="label label-success">Active</label></td>';  
+        }
+        else {
+        echo '<td><label class="label label-danger">InActive</label></td>';             
+        }
 		echo '<td><a href="edit_news.php?control=news_edit_record&func=edit&id='.$c["newsID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		
 	}

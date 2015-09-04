@@ -18,17 +18,38 @@
 				<input type="file" id="fileActivityImage">
 				<p class="help-block">Example block-level help text here.</p>
 			</div>
+			<?php
+                   		        date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+								?>
+
+	    	<div class="form-group">
+				<label for="txtdate">Date</label>
+				<input type="text"  class="form-control" name="txtdate" readonly value="<?php echo $timestamp; ?>">
+			</div>
 			
 			<div>
 				<label for="txtDescription">News Description</label>
 				<textarea name="txtDescription" cols="50" style="height:300px; padding:100px"></textarea>';
 			</div>
 
+			<div class="form-group col-md-4">
+				<label for="cbostatus">Status</label>
+				<select type="" class="form-control" name="cbostatus" >
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+				</select>
+			</div>	
+
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			<button type="submit" class="btn btn-success" name="btnadd">Add New</button>
 		  </div>
+
+
 <?php		  
  if(isset($_POST["btnadd"]))
  {		
@@ -39,6 +60,8 @@
 		"activityTitle" => $_POST["txtTitle"],
 		"activityDescription" => $_POST["txtDescription"],
 		"activityImage" => "none",
+		"activityStatus" => $_POST["cbostatus"],
+		"datePosted" => $_POST["txtdate"],
 		"userID" => 0
 		);
 		
