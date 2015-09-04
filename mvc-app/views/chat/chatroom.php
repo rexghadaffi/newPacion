@@ -12,8 +12,11 @@
 <link rel="stylesheet" type="text/css" href="../../shared-resources/notifyme-master/assets/css/notifyme.css">
 <script src="../../shared-resources/notifyme-master/assets/js/modernizr.js"></script>
 <style>
-
-
+#testing::-webkit-scrollbar {display:none;}
+#testing::-moz-scrollbar {display:none;}
+#testing::-o-scrollbar {display:none;}
+#testing::-google-ms-scrollbar {display:none;}
+#testing::-khtml-scrollbar {display:none;}
 </style>
 </head>
 <script type="text/javascript" src="../../shared-resources/notifyme-master/assets/js/jquery.js"></script>	
@@ -27,31 +30,33 @@
 <script src="../../shared-scripts/custom-js/jquery-1.9.1.min.js"></script>
 <script src="../../shared-resources/tinymce/tinymce.min.js"></script>
 <body>
-<div class="container">  
-<div class="col-md-10 col-md-offset-1" >
+<div class="container" style="margin-top:20px;">  
+<div class="col-md-12">
 <div class="panel panel-primary">
 <!-- Panel Heading -->
   <div class="panel-heading">
-    <h3 class="panel-title">Alumni Chat</h3>
+    <h3 class="panel-title"><i class="fa fa-comments-o fa-fw fa-2x"></i>Alumni Chat</h3>
   </div>
 <!-- End of Panel Heading --> 
 
 <!-- Panel Body -->
-  <div class="panel-body"  style="height: 500px;">
+  <div class="panel-body"  style="height: 450px; margin-top:30px; background-image: url('../../../client/shared-resources/img/');">
 	<!-- Side Content -->
-	<div class="col-md-2">Side content</div>
+	<div class="col-md-2" style="height: 100%;"><h5 style="color: red;"><i class="fa fa-graduation-cap" style="color: red;"></i>Chat Room(s)</h5></div>
 	<!-- End of Side Content -->
 	
 	<!-- Chat body -->
-	<div class="col-md-8" style="max-height: 450px; overflow-hidden;">
-	<table width="100%">
+	<div class="col-md-8" id="subok">
+	<div class="col-md-12" id="testing" style="background-color: #FFFACD; max-height: 400px; border-left: thin solid grey; border-right: thin solid grey; border-radius: 5px; overflow: hidden; overflow-y: auto;">
+	<div id="ibigaymo">
 	
-	</table>
+	</div>
+	</div>
 	</div>
 	<!-- End of Chat body -->
 	
 	<!-- Right content -->
-	<div class="col-md-2">Online User(s)</div>  
+	<div class="col-md-2"><h5 style="color: green;"><i class="fa fa-user fa-fw" style="color: green;"></i>Online User(s)</h5></div>  
 	<!-- End of right Content -->
 	</div>
 <!-- End of Panel Body -->
@@ -62,7 +67,7 @@
 		</input>
 		</p>
 		<p class="col-md-1">
-		<button class="btn btn-success btn-sm" name="btnsend" id="btnsend">Send</button>
+		<button class="btn btn-success btn-sm" name="btnsend" id="btnsend">Send</button><span id="loading"><img src="../../../client/shared-resources/img/loading.gif" width="45px" height="30px"></span>
 		</p>
 	</div>
  
@@ -76,10 +81,19 @@
 
 <script>
 $(document).ready( function() {
+$("#testing").animate({ scrollTop: 1000 }, 1000);
+return false;
+});
+</script>
+
+<script>
+$(document).ready( function() {
 done();
 
+$("#loading").hide();
 $("#btnsend").click( function(){
 $("#btnsend").hide();
+$("#loading").show();
 $.ajax({
   type: "POST",
   url: url,
@@ -93,14 +107,14 @@ function done(){
 	setTimeout( function(){
 		updates();
 		done();
-		}, 200);
+		}, 200);	
 }
 	
 function updates(){
 	$.getJSON("fetch.php", function(data) {
-	$("table").empty();	
+	$("#ibigaymo").empty();	
 	$.each(data.result, function(){
-		$("table").append("<div class='col-md-12' style='background-color:silver; margin: 2px; padding: 5px; border-radius:5px; width: 100%;'><tr><td>"+this['id']+" </td><td>"+this['username']+" </td></tr></div>");
+		$("#ibigaymo").append("<div class='col-md-12' style='border-bottom: thin solid silver; margin: 2px; padding: 5px; width: 100%;'>"+this['id']+" "+this['username']+"</div>");
 		});
 		});
 	}
