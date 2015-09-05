@@ -1,3 +1,6 @@
+<?php
+include "../core/database.php";
+?>
 <nav class="navbar navbar-default navbar-fixed-top" >
     <div class="container-fluid" style="background-color:#CCCCF5">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,6 +22,27 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <?php
+                          
+                            $result = mysqli_query($con,"Select * from tblclientuser where userStatus=0");
+                            $count=mysqli_num_rows($result);
+                            if($count>=1)
+                            {
+                             echo '<li>';
+                             echo '<a href="validatereg.php" style="color:red; font-weight:bold" >('.$count.')<i class="fa fa-bell fa-fw" ></i>Notification</a>';
+                             echo '</li>';   
+                            }
+                            else
+                            {
+                             echo '<li>';
+                             echo '<a href="#" style="color:grey; font-weight:bold" >('.$count.')<i class="fa fa-bell fa-fw" ></i>Notification</a>';
+                             echo '</li>';   
+                            }
+
+                           
+                ?>
+
+                
                 <li><a href="#">Welcome, <strong><?php 
                if (session_status() == PHP_SESSION_NONE) {
                     session_start();
