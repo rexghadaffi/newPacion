@@ -6,7 +6,7 @@ redirect();
 <?php include '../shared-layouts/_Layout.php'; ?>
 
 <div class="col-md-10">
-    <img src="../shared-resources/images/sorry.jpg">
+    <img src="../shared-resources/images/STICAMP.jpg" >
 </div>
 <?php
  include '/modals/client_user.php';
