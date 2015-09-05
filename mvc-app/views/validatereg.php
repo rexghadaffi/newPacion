@@ -9,58 +9,65 @@ include '../shared-layouts/_layout.php';
 <div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">           
-                   <h3>Upload Activity Image</h3>
-                   
+           
+                   <h3>Alumni Clients</h3>
+                
             
         </div>
+        
         <div class="panel-body">
         <form method="post" enctype="multipart/form-data">
-            <font color="red">*note the file name of the image must be unique</font>
-            <div class="form-group">
-                <label for="fileToUpload">Image</label>
-                <input type="file" name="fileToUpload" id="fileToUpload">           
-            </div>
-
-
-          <div class="modal-footer">
-            <a class="btn btn-default" href="edit_activity.php?control=activities_edit_record&func=edit&id=<?php echo $_GET["id"];?>">Cancel</a>
-            <button type="submit" class="btn btn-success" name="btnadd">Add New</button>
-
-            <?php         
- if(isset($_POST["btnadd"]))
- {                      
-    if(!empty($_FILES['fileToUpload']['tmp_name']))
-        {
-        $target_dir = "../../client/shared-resources/img/activityimage/";                                       
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if($check !== false) 
-            {
-                echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-            } 
-            else
-                {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
+            <!-- Data Table Goes Here-->
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>                    
+                        <th>First Name</th>
+                        <th>Last Name</th> 
+                        <th>Course</th> 
+                        <th>Year Graduated</th>                          
+                        <th style="text-align:center">Action</th>
+                    </tr>
+                </thead>               
+                
+<?php 
+              $result5 = mysqli_query($con, "SELECT * FROM tblclientuser where userStatus=0 ");
+              while($row5 = mysqli_fetch_array($result5))
+    {
+        echo '<tr>';        
+        echo '<td> '.$row5["userFirstName"].' </td>';
+        echo '<td> '.$row5["userLastName"].' </td>';
+        echo '<td> '.$row5["userCourse"].' </td>';
+        echo '<td> '.$row5["userYearGrad"].' </td>';
+        echo '<td align="center"><button type="submit" class="btn btn-success" name="A'.$row5["userID"].'">Approve</button>&nbsp;&nbsp;<button type="submit" class="btn btn-danger" name="D'.$row5["userID"].'">Deny</button></td>';  
+        echo '</tr>';
+       
+        if(isset($_POST['A'.$row5['userID']]))
+                {    
+                  $result1 = mysqli_query($con,"UPDATE tblclientuser SET userStatus='1'where userID=".$row5['userID']."");
+                echo "<script>                  
+                {                                                       
+                    window.location.href='validatereg.php';                                    
                 }
-                $id = $_GET['id'];
-                $name = basename($_FILES["fileToUpload"]["name"]);
-                $result= mysqli_query($con,"INSERT INTO tblactivityimage (activityID, activityImage, status) VALUES ($id,'$name',1)");          
-                                            
+                </script>";
+                } 
 
-            }
-     }
-?>  
-          
-          </div>
-          </form>
+        if(isset($_POST['D'.$row5['userID']]))
+                {    
+                  $result1 = mysqli_query($con,"UPDATE tblclientuser SET userStatus='3'where userID=".$row5['userID']."");
+                echo "<script>                  
+                {                                                       
+                    window.location.href='validatereg.php';                                    
+                }
+                </script>";
+                } 
+    }
+       
+?> 
+            
+            </table>
+            <!-- End Data Table-->
+            </form>
         </div>
-         
     </div>
-</div>
-</div>
+ </div>
 
