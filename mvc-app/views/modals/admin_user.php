@@ -18,13 +18,7 @@
 				<input type="password" class="form-control" name="txtpassword" placeholder="Password">
 			</div>
 						
-				
-			<div class="form-group">
-				<label for="exampleInputFile">Browse Profile Picture</label>
-				<input type="file" id="exampleInputFile">
-				<p class="help-block">Example block-level help text here.</p>
-			</div>
-			
+								
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -42,7 +36,8 @@
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => 1,
-		"userTypeID" =>  1
+		"userTypeID" =>  1,
+		"userImage" =>  "Administrator.png"
 		);
 		
 		$obj = new admin_edit_record;

@@ -22,7 +22,7 @@ include '../shared-layouts/_layout.php';
             </div>
 
 
-          <div class="modal-footer">
+          <div class="panel-footer">
             <a class="btn btn-default" href="edit_news.php?control=news_edit_record&func=edit&id=<?php echo $_GET["id"];?>">Cancel</a>
             <button type="submit" class="btn btn-success" name="btnadd">Add New</button>
 
