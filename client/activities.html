@@ -1,6 +1,8 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
+include "core/database.php";
+
 ?>
 
 <div id="wrapper">
@@ -17,40 +19,9 @@ include "shared-layouts/header.php";
 		</div>
 	</div>
 	</section>
-	<?php foreach($activities as $c) 
- 	{?> 
-
- 	<?php 
- 		$time = strtotime($c["datePosted"]);
-        $newDate = date("M d, Y", $time); 
- 	?>
 	<section id="content">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8">
-				<article>
-						<div class="post-image">
-							<div class="post-heading">
-								<h3><?php  echo  $c["activityTitle"]; ?></h3>
-							</div>
-							<img src="shared-resources/img/activity/<?php echo $c["activityImage"]; ?>" />
-						</div>
-						<p>
-							 <?php  echo  $c["activityDescription"]; ?>
-						</p>
-						<div class="bottom-article">
-							<ul class="meta-post">
-								<li><i class="icon-calendar"></i><?php echo $newDate; ?></li>
-								<li><i class="icon-user"></i><a href="#"> Admin</a></li>
-							</ul>
-							<!--<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>-->
-						</div>
-
-				</article>
-
-
-
-			</div>
 			<div class="col-lg-4" >
 				<aside class="right-sidebar">
 				<div class="widget">
@@ -62,27 +33,92 @@ include "shared-layouts/header.php";
 						<li><i class="icon-angle-right"></i><a href="#">Forum</a><span> </span></li>
 					</ul>
 				</div>
-				<!--<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="recent">
-						<li>
-						<img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-						<h6><a href="#">Lorem ipsum dolor sit</a></h6>
-						<p>
-							 Mazim alienum appellantur eu cu ullum officiis pro pri
-						</p>
-						</li>
-					</ul>
-				</div>-->
 
-				</aside>
-			</div>
+					</aside>
+				</div>
+				
+					
+
+				<?php foreach($activities as $c) 
+ 	{?> 
+
+ 	<?php 
+ 		$time = strtotime($c["datePosted"]);
+        $newDate = date("M d, Y", $time); 
+
+ 	?>
+ 	<div class="col-lg-4" >
+ 		</div>
+			<div class="col-lg-8">
+				<article>
+						<div class="post-image">
+							<div class="post-heading">
+								<h3><?php  echo  $c["activityTitle"]; ?></h3>
+							</div>
+						</div>	
+						<p>
+							 <?php  echo  $c["activityDescription"]; ?>
+						</p>
+						
+						
+						<div class="clearfix">
+						</div>
+							<div class="row">
+					<section id="projects">
+						<ul id="thumbs" class="portfolio">
+<?php
+						$id=$c["activityID"];
+						$result = mysqli_query($con, "SELECT * FROM tblactivity where activityID=$id");
+						while($row3 = mysqli_fetch_array($result))
+						{
+						$time = strtotime($row3["datePosted"]);
+       					$newDate = date("M d, Y", $time);
+     					$id=$row3['activityID'];
+						$result1 = mysqli_query($con, "SELECT * FROM tblactivityimage where activityID = $id and status=1");
+						while($row = mysqli_fetch_array($result1))
+						{
+						echo '<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="">
+						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="shared-resources/img/activityimage/'.$row['activityImage'].'">
+						<span class="overlay-img"></span>
+						<span class="overlay-img-thumb font-icon-plus"></span>
+						</a>
+						<img src="shared-resources/img/activityimage/'.$row['activityImage'].'" alt="'.$row3['activityDescription'].'"">
+						</li>';
+
+					}
+					}  
+					?>
+					</ul>
+					</section>
+					
+				
+						</div>
+
+						<div class="bottom-article">
+							<ul class="meta-post">
+								<li><i class="icon-calendar"></i><?php echo $newDate; ?></li>
+								<li><i class="icon-user"></i><a href="#"> Admin</a></li>
+							</ul>
+							<!--<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>-->
+						</div>
+
+				</article>
+
+		
 		</div>
+			<?php } ?>
+			
+
+		</div>
+
+
 	</div>
+
 	</section>
-<?php } ?>
+
 </div>
 </section>
-<?php
+	<?php
 include "shared-layouts/footer.php";
-?>
+	?>

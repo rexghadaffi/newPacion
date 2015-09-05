@@ -1,6 +1,7 @@
 <?php
 include "shared-layouts/html.php";
 include "shared-layouts/header.php";
+include "core/database.php";
 ?>
 	<section id="featured">
 	<!-- start slider -->
@@ -73,7 +74,6 @@ include "shared-layouts/header.php";
 							<div class="box-gray aligncenter" style="display:block; height:400px; overflow:scroll;">
 								<h4>News</h4>
 								<?php
-								$con = mysqli_connect('localhost','root','','db_alumni') or die ($connect_error);
 								$result = mysqli_query($con,"SELECT * FROM tblnews order by datePosted desc limit 1 ");
 								$row  = mysqli_fetch_array($result);
 								$time = strtotime($row["datePosted"]);

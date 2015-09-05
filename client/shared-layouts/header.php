@@ -30,7 +30,7 @@
                                 <li><a href="">Chat</a></li>
 							</ul>
                         </li>
-                        <li><a href="">Gallery</a></li>
+                        <li><a href="allgallery.php">Gallery</a></li>
                     
                         <li><a href="contact.php">Contact</a></li>
 						<?php

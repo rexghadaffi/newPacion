@@ -18,16 +18,33 @@ include "shared-layouts/header.php";
 		</div>
 	</div>
 	</section>
-	<?php foreach($cont as $c) 
+	
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4" >
+				<aside class="right-sidebar">
+				<div class="widget">
+					<h5 class="widgetheading">Categories</h5>
+					<ul class="cat">
+						<li><i class="icon-angle-right"></i><a href="news_record.php?control=view_record&func=listall">News</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="activities_record.php?control=view_record&func=listall">Activities</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="job_record.php?control=view_record&func=listall">Jobs Offers</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="#">Forum</a><span> </span></li>
+					</ul>
+				</div>
+
+					</aside>
+				</div>
+				<?php foreach($cont as $c) 
  	{?> 
 
  	<?php 
  		$time = strtotime($c["datePosted"]);
         $newDate = date("M d, Y", $time); 
  	?>
-	<section id="content">
-	<div class="container">
-		<div class="row">
+				<div class="col-lg-4" >
+ 		</div>
 			<div class="col-lg-8">
 				<article>
 						<div class="post-image">
@@ -46,39 +63,17 @@ include "shared-layouts/header.php";
 
 				</article>
 
+</div>
+			<?php } ?>
+			
 
-
-			</div>
-			<div class="col-lg-4" >
-				<aside class="right-sidebar">
-				<div class="widget">
-					<h5 class="widgetheading">Categories</h5>
-					<ul class="cat">
-						<li><i class="icon-angle-right"></i><a href="news_record.php?control=view_record&func=listall">News</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="activities_record.php?control=view_record&func=listall">Activities</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="job_record.php?control=view_record&func=listall">Jobs Offers</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Forum</a><span> </span></li>
-					</ul>
-				</div>
-				<!--<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="recent">
-						<li>
-						<img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-						<h6><a href="#">Lorem ipsum dolor sit</a></h6>
-						<p>
-							 Mazim alienum appellantur eu cu ullum officiis pro pri
-						</p>
-						</li>
-					</ul>
-				</div>-->
-
-				</aside>
-			</div>
 		</div>
+
+
 	</div>
+
 	</section>
-<?php } ?>
+
 </div>
 </section>
 	<?php

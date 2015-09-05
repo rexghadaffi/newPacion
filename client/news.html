@@ -64,11 +64,44 @@ include "shared-layouts/header.php";
 							<div class="post-heading">
 								<h3><?php  echo  $c["newsTitle"]; ?></h3>
 							</div>
-							<img src="shared-resources/img/activity/<?php echo $c["activityImage"]; ?>" />
+							
 						</div>
 						<p>
 							 <?php  echo  $c["newsDesc"]; ?>
 						</p>
+						<div class="clearfix">
+				</div>
+				<div class="row">
+					<section id="projects">
+						<ul id="thumbs" class="portfolio">
+<?php
+						$id=$c["newsID"];
+						$result2 = mysqli_query($con, "SELECT * FROM tblnews where newsID = $id");
+						while($row4 = mysqli_fetch_array($result2))
+						{
+						$time = strtotime($row4["datePosted"]);
+       					$newDate = date("M d, Y", $time);
+						$id=$row4['newsID'];
+						$result5 = mysqli_query($con, "SELECT * FROM tblnewsimage where newsID = $id and status=1");
+						while($row5 = mysqli_fetch_array($result5))
+						{
+						echo '<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="">
+						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="'.$newDate.'" href="shared-resources/img/activityimage/'.$row5['newsImage'].'">
+						<span class="overlay-img"></span>
+						<span class="overlay-img-thumb font-icon-plus"></span>
+						</a>
+						<img src="shared-resources/img/newsimage/'.$row5['newsImage'].'" alt="'.$row4['newsDesc'].'"">
+						</li>';
+					
+					}
+					}
+					?>
+		
+						
+					</ul>
+					</section>
+				</div>
 						<div class="bottom-article">
 							<ul class="meta-post">
 								<li><i class="icon-calendar"></i><?php echo $newDate; ?></li>

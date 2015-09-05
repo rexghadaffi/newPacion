@@ -18,9 +18,7 @@
 					<ul class="link-list">
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="#">Gallery</a></li>
-	
-						<li><a href="#">Career center</a></li>
+						<li><a href="allgallery.php">Gallery</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 					</ul>
 				</div>
@@ -31,7 +29,7 @@
 					<ul class="link-list">
 					<a href="https://www.facebook.com/STICollegeCubao?fref=ts" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i> STI College Cubao</a>
 						<li><a href="http://www.i-cares.com/Alumni_Register.aspx">I-cares</a></li>
-						<li><a href="#">SIAA</a></li>
+						<li><a href="http://www.alumni.sti.edu">SIAA</a></li>
 					</ul>
 				</div>
 			</div>
