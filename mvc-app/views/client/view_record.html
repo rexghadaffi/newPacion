@@ -11,8 +11,7 @@ include '../views/modals/client_user.php';
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="#" data-toggle="modal" data-target="#clientModal">Add Record</a></li>
-                    <li><a href="#">Import Records</a></li>
-                    <li><a href="#">Export Records</a></li>                   
+                               
                 </ul>
             </div>
         </div>
@@ -26,7 +25,6 @@ include '../views/modals/client_user.php';
 						<th>First Name</th>
 						<th>Last Name</th>							
                         <th>Status</th>
-                        <th>User type</th>
                         <th>Action</th>
                     </tr>
                 </thead>               
@@ -44,10 +42,7 @@ include '../views/modals/client_user.php';
         else {
         echo '<td><label class="label label-danger">InActive</label></td>';             
         }
- foreach($type as $t)	
-{ 		if($c["userTypeID"] == $t["typeID"]){
-		echo '<td> '.$t["typeName"].' </td>'; }
-}		
+
 		echo '<td><a href="edit_info.php?control=user_edit_record&func=edit&id='.$c["userID"].'"><big>Edit</a></td>';	
 		echo '</tr>';		
 	

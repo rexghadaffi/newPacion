@@ -59,17 +59,7 @@
 				</select>
 			</div>	
 
-			<div class="form-group col-md-4">
-				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">
-				<?php foreach($type as $t)
-				{
-					echo '<option value="'.$t["typeID"].'">'.$t["typeName"].'</option>';
-				}	
-				?>
-				</select>
-			</div>				
-		
+					
 <?php } ?>              
 		
             <!-- End Data Table-->
@@ -97,7 +87,6 @@
 		"userAddress" => $_POST["txtaddress"],
 		"userEmail" => $_POST["txtemail"],
 		"userStatus" => $_POST["cbostatus"],
-		"userTypeID" => $_POST["cbousertype"],
 		"userImage" => ""
 		);
 		$obj = new user_edit_record;

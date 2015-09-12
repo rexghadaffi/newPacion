@@ -45,17 +45,6 @@
 			</div>
 
 			<div class="form-group">
-				<label for="cbousertype">User Type</label>
-				<select type="" class="form-control" name="cbousertype">				
-				<?php 
-                foreach($type as $t)
-                { ?>
-				<option value="<?php echo $t["typeID"];?>"><?php echo $t["typeName"];?> </option> 
-				<?php } ?>	
-				</select>
-			</div>
-
-			<div class="form-group">
 				<label for="fileToUpload">Profile Picture</label>
     			<input type="file" name="fileToUpload" id="fileToUpload">			
 			</div>
@@ -98,7 +87,7 @@
 				"userAddress" => $_POST["txtaddress"],
 				"userEmail" => $_POST["txtemail"],	
 				"userStatus" => 1,
-				"userTypeID" => $_POST["cbousertype"],
+				"userTypeID" => 2,
 				"userImage" => $name
 				);				
 					$obj = new user_edit_record;
