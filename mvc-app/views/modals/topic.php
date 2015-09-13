@@ -15,6 +15,11 @@
 				<input type="text" class="form-control" name="title" required>
 			</div>
 			
+			<div class="col-md-11">
+				<label>Content</label>
+				<textarea class="form-control" rows="3" name="content"></textarea>
+			</div>
+			
 			<div class="form-group col-md-11">
 				<label for="cboucategory">Forum Category</label>
 				<select type="" class="form-control" name="cbocategory">

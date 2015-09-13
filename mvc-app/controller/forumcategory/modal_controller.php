@@ -26,7 +26,7 @@ $date = date('Y-m-d H:i:s');
 		$param = array(
 				"topicID" => "null",
 				"topicTitle" => $_POST['title'],
-				"topicDesc" => "",
+				"topicDesc" => $_POST['content'],
 				"dateCreated" => $date,
 				"forumCatID" => $_POST["cbocategory"],
 				"topicStatus" => 1,
@@ -43,7 +43,7 @@ $date = date('Y-m-d H:i:s');
 				"replyContent" => $_POST['message'],
 				"postID" => $_GET["postid"],
 				"userID" => $_SESSION["id"],
-				"dateposted" => $date,
+				"datePosted" => $date,
 				"replyLevel" => $_SESSION["level"],		
 				"replyStatus" => 1,					
 				);		

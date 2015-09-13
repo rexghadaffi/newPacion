@@ -1,5 +1,3 @@
-<!-- Employee Form Sample -->
-
 <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -23,21 +21,20 @@
  if(isset($_POST["btnadd"]))
  {	
 		$date = "";
-		include_once '../controller/forumcategory/edit_category.php';
+		include_once '../controller/forumcategory/edit_record.php';
 		$array = array(
 		"forumCatID" => "null",
 		"forumCatTitle" => $_POST["txtcategory"],
-		"dateCreated" => $date
+		"forumCatDesc" => "",
+		"dateCreated" => $date,
+		"forumCatStatus" => 1		
 		);
-		$obj = new edit_category;
+		$obj = new edit_record;
 		$obj->create($array);
 
 		echo "<script>					
 												  { 
-										 			    						
-	 													window.location.href='forum_record.php?control=page&func=display';
-											
-		
+	 													window.location.href='forum_record.php?control=page&func=display';		
 												  }
 	 												   </script>";	
 					
