@@ -64,6 +64,7 @@ include "core/database.php";
 		</div>
 	</div>
 	</section>
+	
 	<section id="content">
 	<div class="container" >
 		<div class="row">
@@ -127,8 +128,7 @@ include "core/database.php";
 						<div class="box">
 							<div class="box-gray aligncenter" style="display:block; height:400px; overflow:scroll;">
 								<h4>Job offers</h4>
-									<?php
-								
+								<?php								
 								$result = mysqli_query($con,"SELECT * FROM tbljob order by datePosted desc limit 1 ");
 								$row2  = mysqli_fetch_array($result);
 								$time = strtotime($row["datePosted"]);
