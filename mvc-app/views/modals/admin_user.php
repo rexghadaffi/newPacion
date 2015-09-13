@@ -36,12 +36,22 @@
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => 1,
-		"userTypeID" =>  1,
+		"userTypeID" =>  2,
 		"userImage" =>  "Administrator.png"
 		);
 		
 		$obj = new admin_edit_record;
-		$obj->create($array);	
+		$obj->create($array);
+			include "../core/database.php";
+
+
+		 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'add admin <span style="color:green;font-weight:bold;">"'.$_POST["txtusername"].'"</span>';
+        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");	
 
 		echo "<script>					
 												  { 

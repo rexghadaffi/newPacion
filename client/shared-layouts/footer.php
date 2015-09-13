@@ -29,7 +29,7 @@
 					<ul class="link-list">
 					<a href="https://www.facebook.com/groups/1504138379830932/?fref=ts" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i> STI College Cubao</a>
 						<li><a href="http://www.i-cares.com/Alumni_Register.aspx">I-cares</a></li>
-						<li><a href="http://www.alumni.sti.edu">SIAA</a></li>
+						<li><a href="http://www.alumni.sti.edu">STIAA</a></li>
 					</ul>
 				</div>
 			</div>

@@ -54,6 +54,17 @@ include '../shared-layouts/_Layout.php';
 		);
 		$obj = new admin_edit_record;
 		$obj->updateinfo($array, "userID", $_POST["txtid"]);
+
+			include "../core/database.php";
+
+
+		 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'edit admin <span style="color:red;font-weight:bold;">"'.$_POST["txtusername"].'"</span>';
+        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");
 		echo "<script>					
 												  { 
 										 			    						

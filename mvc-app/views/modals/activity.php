@@ -13,11 +13,6 @@
 				<input type="text" class="form-control" name="txtTitle" required placeholder="Enter the title here..">
 			</div>
 			
-			<div class="form-group">
-				<label for="exampleInputFile">Browse Image</label>
-				<input type="file" id="fileActivityImage">
-				<p class="help-block">Example block-level help text here.</p>
-			</div>
 			<?php
                    		        date_default_timezone_set('Asia/Manila');  
 								$currentdate = date("Y/m/d"); 
@@ -59,14 +54,23 @@
 		"activityID" => "null",
 		"activityTitle" => $_POST["txtTitle"],
 		"activityDescription" => $_POST["txtDescription"],
-		"activityImage" => "none",
 		"activityStatus" => $_POST["cbostatus"],
 		"datePosted" => $_POST["txtdate"],
 		"userID" => 0
 		);
 		
 		$obj = new activities_edit_record;
-		$obj->create($array);	
+		$obj->create($array);
+			include "../core/database.php";
+
+
+		 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'add activity post <span style="color:green;font-weight:bold;">"'.$_POST["txtTitle"].'"</span>';
+        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");	
 
 		echo "<script>					
 												  { 

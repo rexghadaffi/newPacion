@@ -10,7 +10,7 @@ include "core/database.php";
 			<div class="col-lg-12">
 				<ul class="breadcrumb">
 					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li class="active">Portfolio</li>
+					<li class="active">Gallery</li>
 				</ul>
 			</div>
 		</div>

@@ -56,6 +56,16 @@
 		);
 		$obj = new news_edit_record;
 		$obj->create($array);
+			include "../core/database.php";
+
+
+		 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'add news post <span style="color:green;font-weight:bold;">"'.$_POST["txtnewstitle"].'"</span>';
+        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");
 
 		echo "<script>					
 												  { 

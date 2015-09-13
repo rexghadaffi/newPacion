@@ -25,7 +25,7 @@ include "shared-layouts/header.php";
 						<p style="text-align: justify; color:black;">Through annual membership dues, STIAA is able to conduct various activities for the benefit of its members. In fact, this is what makes our association distinct. It exists not for the institution but rather for its members. STIAA management tries to ensure that each and every program must have a positive result for the members. On the average, nine thousand (9,000) STI graduates in a year are added to our membership list.</p>
 						<p style="text-align: justify; color:black;">The STI Alumni Association, Inc. is guided by the Board of Trustees and overseen by an Executive Director.</p>
                         
-                        <h3 style="color:#4791FF;"><span>Our</span> Vison</h3>
+                        <h3 style="color:#4791FF;"><span>Our</span> Vision</h3>
                         <p style="text-align: justify; color:black;">The STI Alumni Association envisions a strong community of STI Alumni who are constantly and actively dedicated to professional growth, personal excellence and social consciousness through our various activities.</p>
 
                          <h3 style="color:#4791FF;"><span>Our</span> Mission</h3>

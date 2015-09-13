@@ -124,7 +124,6 @@ include "../controller/Login/login_controller.php";
             <br />
             <div class="form-actions">
                 <button type="submit" id="btnlogin" name="btnlogin" class="button rounded large-button loading-pulse lighten primary">Sign In</button>
-                <button type="button" class="button link">Forgot Password?</button>
             </div>
 
         </form>

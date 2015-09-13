@@ -91,7 +91,17 @@
 				"userImage" => $name
 				);				
 					$obj = new user_edit_record;
-					$obj->create($array);			
+					$obj->create($array);	
+						include "../core/database.php";
+
+
+		 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'add alumni <span style="color:green;font-weight:bold;">"'.$_POST["txtusername"].'"</span>';
+        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");		
 		echo "<script>					
 				{ 				 			    						
 					window.location.href='user_record.php?control=view_record&func=listall';									
