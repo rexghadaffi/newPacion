@@ -1,6 +1,6 @@
 
-	<footer>
-	<div class="container">
+	<footer style="background-color: black;">
+	<div class="container" >
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="widget">

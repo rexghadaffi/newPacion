@@ -8,10 +8,10 @@
 
  
  ?>	
-	<header>
-        <div class="navbar navbar-default navbar-static-top">
+	<header style="background-color: black;">
+        <div class="navbar navbar-default navbar-static-top"  style="background-color: #FFFF00;">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header" >
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
