@@ -31,8 +31,9 @@
 							</ul>
                         </li>
                         <li><a href="allgallery.php">Gallery</a></li>
-                    
+                   <li> <a href="users.php">Search Alumni</a></li>
                         <li><a href="contact.php">Contact</a></li>
+
 						<?php
 						if (logged_in() === false)
 							{
@@ -47,7 +48,7 @@
 								echo '<li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><i class="fa fa-cog"></i><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                             <li><a href="users.php">Users</a></li>
+                             <li>   <a href="#changepwModal" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-keyboard="false">Change Password</a></li>
                                 <li><a href="#profileModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">My Profile</a></li>
 								 <li><a href="controller/logout.php">Logout</a></li>
                           

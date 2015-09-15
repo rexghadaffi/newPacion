@@ -24,10 +24,11 @@ function(){
   
 }
 
+
 function wrongInputs(){
 	
  swal({   title: "Ooooops",  
- text: "Username and Password doesnt match.",  
+ text: "Username and Password does not match.",  
  type: "error",   showCancelButton: false,  
  confirmButtonColor: "#DD6B55",   
  confirmButtonText: "OK",   
@@ -44,7 +45,7 @@ function(){
 function wrongPasswords(){
   
 
-swal("Ooooops!", "Password and Retype Password doesnt match.", "error")
+swal("Ooooops!", "Password and Retype Password does not match.", "error")
   
 }
 
@@ -66,7 +67,7 @@ swal("Success!", "Profile Updated.", "success")
 function wronginput(){
   
  swal({   title: "Ooooops",  
- text: "Password doesnt match.",  
+ text: "Password does not match.",  
  type: "error",   showCancelButton: false,  
  confirmButtonColor: "#DD6B55",   
  confirmButtonText: "OK",   
@@ -80,7 +81,7 @@ function(){
   function wronginputpass(){
   
  swal({   title: "Ooooops",  
- text: "New Password doesnt match.",  
+ text: "New Password does not match.",  
  type: "error",   showCancelButton: false,  
  confirmButtonColor: "#DD6B55",   
  confirmButtonText: "OK",   
@@ -133,3 +134,20 @@ function(){
 });
   
   }
+
+
+function wrongUser(){
+  
+swal({   title: "Ooooops",  
+ text: "Sorry, Account does not exist.",  
+ type: "error",   showCancelButton: false,  
+ confirmButtonColor: "#DD6B55",   
+ confirmButtonText: "OK",   
+ closeOnConfirm: true}, 
+function(){  
+  $('#loginModal').modal('toggle');
+});
+  
+  
+}
+ 

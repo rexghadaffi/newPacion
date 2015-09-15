@@ -61,19 +61,9 @@ include "controller/Profile_Controller.php";
 				<label>Contact Number</label>
 				<input type="text" name="txtContact" class="form-control" required value="<?php echo $row['userContactNum']?>">
 			</div>
-			<div class="col-md-5"></div>
-			<div class="col-md-7">
-				<label>Username</label>
-				<input type="text" name="txtUsername" class="form-control" required value="<?php echo $row['userName']?>">
-			</div>
+		
+		
 
-			<div class="col-md-5"></div>
-			<div class="col-md-7">
-				<label>Password</label>
-				<input type="password" class="form-control" readonly value="<?php echo $row['userPassword']?>">
-				<a href="#changepwModal" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-keyboard="false">Change Password</a>
-					
-			</div>
 
 			<div class="col-md-5"></div>
 			<div class="col-md-7">

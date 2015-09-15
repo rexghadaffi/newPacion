@@ -12,17 +12,16 @@ echo "<script>stoploadingBar();</script>";
 
 }
 
-public function inactiveStatus ()
+public function inactiveStatus()
 {
 	echo "<script>inactiveStatus();</script>";
 	echo "<script>stoploadingBar();</script>";
 }
 
-public function passSession()
+public function wrongUser()
 {
-
+echo "<script>wrongUser();</script>";
 }
-
 
 public function wrongInputs()
 {
@@ -50,6 +49,8 @@ echo "<script>regisSuccess();</script>";
 
 
 }
+
+
 
 
 
