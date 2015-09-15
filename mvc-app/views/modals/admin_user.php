@@ -9,6 +9,15 @@
 	   <form method="post">
 		  <div class="modal-body">
 	    	<div class="form-group">
+	    		<div class="form-group">
+				<label for="txtfirstname">First Name</label>
+				<input type="text" class="form-control" name="txtfirstname" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<label for="txtlastname">Last Name</label>
+				<input type="text" class="form-control" name="txtlastname" placeholder="Last Name">
+			</div>
+
 				<label for="txtusername">Username</label>
 				<input type="text" class="form-control" name="txtusername" placeholder="Username">
 			</div>
@@ -33,10 +42,12 @@
 
 		$array = array(
 		"userID" => "null",
+		"firstName" => $_POST["txtfirstname"],
+		"lastName" => $_POST["txtlastname"],
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => 1,
-		"userTypeID" =>  2,
+		"userTypeID" =>  3,
 		"userImage" =>  "Administrator.png"
 		);
 		

@@ -51,8 +51,7 @@
 						else if ($array[3] == 1)
 							{
 
-								if ($array[4] == 1)
-									{
+								
 											echo "<script>stoploadingBar();</script>";
 											session_start();
 											$_SESSION['id'] = $array[0];
@@ -61,13 +60,7 @@
 										echo '<script type="text/javascript">window.location="home.php"</script>';
 									// echo '<script>getData();</script>'; 
 										die();
-									}
-								else if ($array[4] == 2)
-									{
-
-										// need landing page
-
-									}
+							
 							}	
 					}	
 				}		

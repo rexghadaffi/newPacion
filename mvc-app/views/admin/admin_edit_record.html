@@ -17,9 +17,18 @@ include '../shared-layouts/_Layout.php';
  		     </h4>
 
  		    </legend>
+ 		    <div class="form-group col-md-6">
+				<label for="txtfirstname">First Name</label>
+				<input type="text" class="form-control" name="txtfirstname" value="<?php echo $client["firstName"]; ?>">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="txtlastname">Last Name</label>
+				<input type="text" class="form-control" name="txtlastname" value="<?php echo $client["lastName"]; ?>">
+			</div>
 	    	<div class="form-group col-md-6">
-				<label for="txtusername">Username</label>
+				
 				<input type="hidden" class="form-control" name="txtid" value="<?php echo $client["userID"]; ?>" />
+				<label for="txtusername">Username</label>
 				<input type="text" class="form-control" name="txtusername" value="<?php echo $client["userName"]; ?>" />
 			</div>
 			
@@ -48,6 +57,8 @@ include '../shared-layouts/_Layout.php';
  {		
 		include_once '../controller/admin/admin_edit_record.php';
 		$array = array(
+		"firstName" => $_POST["txtfirstname"],
+		"lastName" => $_POST["txtlastname"],
 		"userName" => $_POST["txtusername"],
 		"userPassword" => $_POST["txtpassword"],
 		"userStatus" => $_POST["cbostatus"]
@@ -79,9 +90,7 @@ include '../shared-layouts/_Layout.php';
    </div>
          <div class="panel-footer clearfix">
 		   <div class="pull-right">
-				<button type="button" class="btn btn-sm btn-default">
-                  <span class="fa fa-times fa-fw"></span>&nbsp;Cancel
-                </button> 				
+				<a  class="btn btn-sm btn-default" href="admin_record.php?control=view_record&func=listall"> <span class="fa fa-times fa-fw"></span></i>&nbsp; Cancel</a>				
                 <button type="submit" name="btnedit" class="btn btn-sm btn-success">
                   <span class="fa fa-floppy-o fa-fw"></span>&nbsp;Save
                 </button>               

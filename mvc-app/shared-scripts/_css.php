@@ -4,5 +4,7 @@
 <link rel="stylesheet" type="text/css" href="../shared-resources/media/css/jquery.dataTables.css">
 <link rel="stylesheet" type="text/css" href="../shared-resources/resources/syntax/shCore.css">
 <link rel="stylesheet" type="text/css" href="../shared-resources/resources/demo.css">
+<link rel="stylesheet" type="text/css" href="../shared-resources/resources/metisMenu/metisMenu/metisMenu.min.css">
+<link rel="stylesheet" type="text/css" href="../shared-resources/dataTables/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../shared-resources/notifyme-master/assets/css/notifyme.css">
 <script src="../shared-resources/notifyme-master/assets/js/modernizr.js"></script>
