@@ -9,11 +9,10 @@ redirect();
     <img src="../shared-resources/images/STICAMP.jpg" >
 </div>
 <?php
- include '/modals/client_user.php';
+ include 'modals/client_user.php';
 
 ?>
 
 
 </body>
-
 </html>

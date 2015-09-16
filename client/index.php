@@ -164,7 +164,7 @@ include "core/database.php";
 					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter"  style="height:280px;">
-								<h4>Alumni Events</h4>
+								<h4>Forum</h4>
 								<div class="icon">
 								<i class="fa fa-users fa-3x"></i>
 								</div>

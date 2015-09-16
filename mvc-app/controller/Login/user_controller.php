@@ -2,8 +2,8 @@
 
 class UserController
 {
-	public $urlclient =  "http://localhost/newPacion/mvc-app/login.php";
-	public	$urladmin = "http://localhost/newPacion/mvc-app/views/backend.php";
+	public $urlclient =  "http://stialumni.3eeweb.com/mvc-app/login.php";
+	public	$urladmin = "http://stialumni.3eeweb.com/mvc-app/views/backend.php";
 
  
 

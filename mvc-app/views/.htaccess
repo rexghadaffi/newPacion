@@ -3,7 +3,7 @@ Options -MultiViews
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /newPacion/mvc-app
+RewriteBase /stialumni.3eeweb.com/mvc-app/
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_FILENAME} !-d
