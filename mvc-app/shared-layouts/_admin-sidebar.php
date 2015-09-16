@@ -21,6 +21,6 @@
 		<a id="navNews" class="list-group-item" href="news_record.php?control=view_record&func=listall"><i class="fa fa-newspaper-o fa-fw"></i>&nbsp; News</a>     
         <a id="navJobs" class="list-group-item" href="job_record.php?control=view_record&func=listall"><i class="fa fa-suitcase fa-fw"></i>&nbsp; Jobs</a>          
         <a id="navActivities" class="list-group-item" href="activities_record.php?control=view_record&func=listall"><i class="fa fa-birthday-cake fa-fw"></i>&nbsp; Activities</a>   
-               
+          <a id="navContent" class="list-group-item" href="edit_content.php"><i class="fa fa-edit fa-fw"></i>&nbsp; Front-end Content</a>      
     </div>
 </div>
