@@ -66,12 +66,13 @@ echo '
 
 	}
 	}  
-	
-	
-	echo '<div class="container col-lg-11 col-lg-offset-8">';
-	echo paginate_function($item_per_page, $page_number, $get_total_rows[0], $total_pages);
+	echo '<div class="container">';	
+	echo '<div class="col-md-8">';
+	echo '</div>';
+	echo '<div class="col-md-4">paginate_function($item_per_page, $page_number, $get_total_rows[0], $total_pages)</div>';
 	echo '</div>';
 }
+
 
 function paginate_function($item_per_page, $current_page, $total_records, $total_pages)
 {

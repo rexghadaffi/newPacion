@@ -31,9 +31,7 @@ echo '
 	<div class="panel panel-default">
 	
 	<div class="panel-heading">
-		<h3 class="panel-title"> '.$row['forumCatTitle'].' </h3>
-
-		
+		<h3 class="panel-title"> '.$row['forumCatTitle'].' </h3>		
 	</div>
 	
 <div class="panel-body">
@@ -72,10 +70,13 @@ echo '
 	}  
 	
 	
-	echo '<div class="container col-lg-12">';
-	echo paginate_function($item_per_page, $page_number, $get_total_rows[0], $total_pages);
+
+	echo '<div class="col-md-9">';
 	echo '</div>';
-	echo '<br/>';
+	echo '<div class="col-md-3">';
+	echo paginate_function($item_per_page, $page_number, $get_total_rows[0], $total_pages);
+	echo '</div><br/><br/>';
+	
 }
 
 function paginate_function($item_per_page, $current_page, $total_records, $total_pages)
