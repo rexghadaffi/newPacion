@@ -44,6 +44,19 @@ include "core/database.php";
             </ul>
         </div>
 	<!-- end slider -->
+
+	<div class="navbar navbar-default navbar-static-top"  style="background-color: #FFFF00; ">
+            <div class="container" style="text-align:center;">
+                  <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav" style="text-align:center;" >
+                        <li><a href="news_record.php?control=view_record&func=listall">News</a></li>
+                        <li><a href="activities_record.php?control=view_record&func=listall">Activities</a></li>
+                        <li><a href="job_record.php?control=view_record&func=listall">Jobs</a></li>
+					</ul>
+                  </div>
+            </div>
+        </div>
+
 			</div>
 		</div>
 	</div>	
@@ -65,6 +78,8 @@ include "core/database.php";
 	</section>	
 	
 	<!-- end divider -->
+
+	
 	
 <!-- start content -->
 <section id="content" style="background-color: blue;">
@@ -75,7 +90,7 @@ include "core/database.php";
 					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter"  style="height:280px;">
-								<h4>News</h4>
+								<a href="news_record.php?control=view_record&func=listall"><h4>News<h4></a>
 								<div class="icon">
 								<i class="fa fa-desktop fa-3x"></i>
 								</div>
@@ -93,15 +108,15 @@ include "core/database.php";
 								<?php  echo  $newDate; } ?>
 								</p>
 							</div>
-							<div class="box-bottom" style="background-color: black;">
+							<!--<div class="box-bottom" style="background-color: black;">
 								<a href="news_record.php?control=view_record&func=listall">View News</a>
-							</div>
+							</div>-->
 						</div>
 					</div>
 					<div class="col-lg-6">  
 						<div class="box">
 							<div class="box-gray aligncenter"  style="height:280px;">
-								<h4>Alumni Events</h4>
+								<a href="activities_record.php?control=view_record&func=listall"><h4>Activities</h4></a>
 								<div class="icon">
 								<i class="fa fa-edit fa-3x"></i>
 								</div>
@@ -119,9 +134,6 @@ include "core/database.php";
 								<?php  echo  $newDate; } ?>
 								</p>
 							</div>							
-							<div class="box-bottom" style="background-color: black;">
-								<a href="activities_record.php?control=view_record&func=listall">View Events</a>
-							</div>
 						</div>
 					</div>
 
@@ -138,7 +150,7 @@ include "core/database.php";
 					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter"  style="height:280px;">
-								<h4>Job Offers</h4>
+								<a href="job_record.php?control=view_record&func=listall"><h4>Job Offers</h4></a>
 								<div class="icon">
 								<i class="fa fa-suitcase fa-3x"></i>
 								</div>
@@ -156,15 +168,12 @@ include "core/database.php";
 								<?php  echo  $newDate; } ?>
 								</p>
 							</div>
-							<div class="box-bottom" style="background-color: black;">
-								<a href="job_record.php?control=view_record&func=listall">View Jobs</a>
-							</div>
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="box">
 							<div class="box-gray aligncenter"  style="height:280px;">
-								<h4>Forum</h4>
+								<a href="forum.php?page=page&action=display"><h4>Forum</h4></a>
 								<div class="icon">
 								<i class="fa fa-users fa-3x"></i>
 								</div>
@@ -181,9 +190,6 @@ include "core/database.php";
 								<p class="col-md-6" style="text-align:right;">
 								<?php  echo  $newDate; } ?>
 								</p>
-							</div>
-							<div class="box-bottom" style="background-color: black;">
-								<a href="forum.php?page=page&action=display">View Forum</a>
 							</div>
 						</div>
 					</div>

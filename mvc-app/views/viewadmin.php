@@ -18,30 +18,21 @@ include '../shared-layouts/_Layout.php';
           <div class="col-lg-12">
         <form method="post" enctype="multipart/form-data">
           <?php     
-                  $id = $_GET['id'];
-        $result = mysqli_query($con, "SELECT * FROM tblclientuser where userID = $id");
+                  $id = $_SESSION['id'];
+        $result = mysqli_query($con, "SELECT * FROM tblcompanyuser where userID = $id");
         $row2 = mysqli_fetch_array($result)
         ?>
-                       
-                        <div class="col-lg-12" align="center">
-                       
-                        <img src="../../client/shared-resources/img/Profile/'.$row2['userImage'].'" alt="" height="200" width="200" >
-
-                               
-
-                        </div>
-                        <div class="col-lg-12"></div>
-                        
+                                               
              <div class="col-md-8">
-                <label>Student Number</label>
+                <label>Firstname</label>
                 <input type="text" name="txtSnum" class="form-control" readonly value="<?php echo $row2['userName']?>">
             </div>   
             <div class="col-md-8">
-                <label>Firstname</label>
+                <label>Lastname</label>
                 <input type="text" name="txtFname" class="form-control" readonly value="<?php echo $row2['userFirstName']?>">
             </div>
             <div class="col-md-8">
-                <label>Lastname</label>
+                <label>username</label>
                 <input type="text" name="txtLname" class="form-control" readonly value="<?php echo $row2['userLastName']?>">
             </div>
             <div class="col-md-8">

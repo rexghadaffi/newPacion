@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
-include '../shared-layouts/_layout.php';
+include '../shared-layouts/_Layout.php';
 ?>
 </head>
 <body>

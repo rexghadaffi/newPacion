@@ -16,7 +16,7 @@
     <link href="../shared-resources/Metro-UI/build/css/metro.css" rel="stylesheet">
     <link href="../shared-resources/Metro-UI/build/css/metro-icons.css" rel="stylesheet">
     <link href="../shared-resources/Metro-UI/build/css/metro-responsive.css" rel="stylesheet">
-      <link href="../shared-resources/Metro-UI/build/css/metro-schemes.css" rel="stylesheet">
+    <link href="../shared-resources/Metro-UI/build/css/metro-schemes.css" rel="stylesheet">
     <link href="../shared-resources/Metro-UI/build/css/docs.css" rel="stylesheet">
 
 
@@ -123,7 +123,7 @@ include "../controller/Login/login_controller.php";
             <br />
             <br />
             <div class="form-actions">
-                <button type="submit" id="btnlogin" name="btnlogin" class="button rounded large-button loading-pulse lighten primary">Sign In</button>
+                <button type="submit" id="btnlogin" name="btnlogin" class="button rounded large-button loading-pulse lighten primary">Log In</button>
             </div>
 
         </form>

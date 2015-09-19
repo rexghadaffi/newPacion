@@ -2,6 +2,7 @@
 <?php
 	include "../models/Login/loginModel.php";
 	include "user_controller.php";
+	include "../core/database.php";
 
 	if (isset($_POST['btnlogin']))
 		{	
@@ -57,7 +58,16 @@
 											$_SESSION['id'] = $array[0];
 											$_SESSION['user'] = $username;
 											$_SESSION['level'] = $array[4];
-										echo '<script type="text/javascript">window.location="home.php"</script>';
+
+						 date_default_timezone_set('Asia/Manila');  
+								$currentdate = date("Y/m/d"); 
+								$currentTime = date("g:i:s a");
+								$timestamp= date('Y-m-d G:i:s');
+			$id= $_SESSION['id'];				
+			$remark	= 'admin log-in <span style="color:blue;font-weight:bold;">"'.$_SESSION['user'].'"</span>';
+	        $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");
+	
+			echo '<script type="text/javascript">window.location="home.php"</script>';
 									// echo '<script>getData();</script>'; 
 										die();
 							

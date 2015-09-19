@@ -50,9 +50,10 @@ include "../core/database.php";
               
                 ?></strong></a></li>
                 <li>
-                   		<a href="../shared-layouts/logout.php"><i class="fa fa-cog fa-fw"></i>&nbsp; Logout</a> 
+                   		    <a href="../shared-layouts/logout.php"><i class="fa fa-cog fa-fw"></i>&nbsp; Logout</a> 
 				</li>
-            </ul>
+           
+        </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>

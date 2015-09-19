@@ -6,6 +6,15 @@ redirect();
 <?php
 include '../shared-layouts/_Layout.php';
 ?>
+<link rel="stylesheet" type="text/css" href="../shared-resources/media/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="../shared-resources/resources/metisMenu/metisMenu/metisMenu.min.css">
+
+<!--<script>
+    $(document).ready(function() {
+        $('#dataTables-example').dataTable();
+    });-->
+
+</script>
 <div class="col-md-10">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">          
@@ -14,7 +23,7 @@ include '../shared-layouts/_Layout.php';
         <div class="panel-body">
 
             <!-- Data Table Goes Here-->
-            <table id="example" class="display" cellspacing="0" width="100%">
+            <table class="table table-striped " id="dataTables-example" style="font-size:10px; padding:2px">
                 <thead>
                     <tr> 
                         <th style="text-align:center;">Audit ID</th>
@@ -47,3 +56,6 @@ include '../shared-layouts/_Layout.php';
         </div>
     </div>
 </div>
+<script type="text/javascript" src="../shared-resources/dataTables/jquery.dataTables.js"></script>
+<script src="../shared-resources/metisMenu/metisMenu.min.js"></script>
+<script src="../shared-resources/dataTables/dataTables.bootstrap.js"></script>

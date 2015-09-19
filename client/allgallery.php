@@ -22,7 +22,7 @@ include "core/database.php";
 			<div class="col-lg-12">
 				<ul class="portfolio-categ filter">
 					<li class="active"><a href="allgallery.php">All</a></li>
-					<li ><a href="activitygallery.php" title="">Events</a></li>
+					<li ><a href="activitygallery.php" title="">Activities</a></li>
 					<li ><a href="newsgallery.php" title="">News</a></li>
 					
 				</ul>
@@ -33,7 +33,7 @@ include "core/database.php";
 						<ul id="thumbs" class="portfolio">
 <?php
 						echo '<div class="col-lg-12" align="center">';
-						echo '<h1 style="color:#5CADFF;">Events</h1>';
+						echo '<h1 style="color:#5CADFF;">Activities</h1>';
 						echo '</div>';
 						$result = mysqli_query($con, "SELECT * FROM tblactivity where activityStatus = 1");
 						while($row3 = mysqli_fetch_array($result))

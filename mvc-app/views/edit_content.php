@@ -4,7 +4,7 @@ include "../core/database.php";
 redirect();
 ?>
 <?php
-include '../shared-layouts/_layout.php';
+include '../shared-layouts/_Layout.php';
 ?>
 <div class="col-md-10">
 
