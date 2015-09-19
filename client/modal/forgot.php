@@ -45,7 +45,40 @@ $emailforg = mysqli_query($con, "SELECT * FROM tblclientuser where userEmail = '
 	else
 	{
 
-		//email
+	$row = mysqli_fetch_array($emailforg);
+	$email = $row['userEmail'];
+	$user = $row['userName'];
+	$tempPass = str_shuffle(uniqid());
+	
+	$res = mysqli_query($con, "UPDATE tblclientuser SET userPassword ='".$tempPass."'");
+	
+
+$subject = "STI College Cubao Alumni";
+$from = 'danieltinao@gmail.com';
+$to =  $emailforgoty;
+
+$headers = "From: " . strip_tags($from) . "\r\n";
+$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+$body = '<html><body>';
+$body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
+$body .= '<p>Hello '.$user.', </p>
+<p>We received a request to reset the password associated with this email address. </p>
+<p>This is an auto generated password for you to be able to login.</p>
+<p>Auto generated password = '.$tempPass.'.</p>
+<p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
+<p>http://stialumni.3eeweb.com</p>
+
+<p>This is auto generated email from the server. Please dont reply to this email</p>
+
+';
+
+$body .= '</body></html>';
+
+mail($to, $subject, $body, $headers);
+
 	}
 	
 	

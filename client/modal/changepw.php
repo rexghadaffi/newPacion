@@ -71,7 +71,7 @@ echo "<script>wronginputpass();</script>";
 				$result = mysqli_query($con,$sql);
 		if ($result)
 		{
-			echo '<script>updateSuccess();</script>';
+			echo '<script>updateSuccess1();</script>';
 			
 		}
 		else
