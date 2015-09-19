@@ -23,5 +23,7 @@
         <a id="navActivities" class="list-group-item" href="activities_record.php?control=view_record&func=listall"><i class="fa fa-birthday-cake fa-fw"></i>&nbsp; Activities</a>   
           <a id="navContent" class="list-group-item" href="edit_content.php"><i class="fa fa-edit fa-fw"></i>&nbsp; Front-end Content</a>      
     <a id="navCourses" class="list-group-item" href="courses.php"><i class="fa fa-edit fa-fw"></i>&nbsp; Courses Maintenance</a>
+    <a id="navDenied" class="list-group-item" href="deniedalumni.php"><i class="fa fa-edit fa-fw"></i>&nbsp; Denied Alumni</a>
+
     </div>
 </div>
