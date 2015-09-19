@@ -47,7 +47,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="shared-resources/js/jquery.js"></script>
 <script type="text/javascript" src="shared-resources/media/js/jquery.dataTables.js"></script>
-
+<script src="shared-resources/js/2.1.3.min.js"></script>
 <script src="shared-resources/js/jquery.easing.1.3.js"></script>
 <script src="shared-resources/js/bootstrap.min.js"></script>
 <script src="shared-resources/js/jquery.fancybox.pack.js"></script>
@@ -62,7 +62,7 @@
 $(document).ready(function(){
     $('#example').DataTable();   
    
-});
+});jquery-
 </script>
 
 </body>

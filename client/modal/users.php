@@ -60,10 +60,7 @@
 				<label>Lastname</label>
 				<input type="text" name="txtLname" class="form-control" readonly value="<?php echo $row2['userLastName']?>">
 			</div>
-			<div class="col-md-7">
-				<label>Email Adress</label>
-				<input type="text" name="txtEmail" class="form-control" readonly value="<?php echo $row2['userEmail']?>">
-			</div>
+			
 			<div class="col-md-5"></div>
 			<div class="col-md-7">
 				<label>Contact Number</label>

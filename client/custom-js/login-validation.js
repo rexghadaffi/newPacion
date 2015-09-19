@@ -62,6 +62,13 @@ function updateSuccess(){
 swal("Success!", "Profile Updated.", "success")
   
 }
+function updateSuccess1(){
+  
+
+swal("Success!", "Password Updated.", "success")
+  
+}
+
 
 
 function wronginput(){
