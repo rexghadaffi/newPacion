@@ -55,7 +55,7 @@ $emailforg = mysqli_query($con, "SELECT * FROM tblclientuser where userEmail = '
 	$user = $row['userName'];
 	$tempPass = str_shuffle(uniqid());
 	
-	$res = mysqli_query($con, "UPDATE tblclientuser SET userPassword ='".$tempPass."'");
+	$res = mysqli_query($con, "UPDATE tblclientuser SET userPassword ='".$tempPass."' where userEmail = ".$email."");
 	
 
 $subject = "STI College Cubao Alumni";
