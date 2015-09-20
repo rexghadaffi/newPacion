@@ -89,7 +89,7 @@ class SMTP
      * @deprecated This is only ever used as a default value, so use the `DEFAULT_SMTP_PORT` constant instead
      * @see SMTP::DEFAULT_SMTP_PORT
      */
-    public $SMTP_PORT = 2525;
+    public $SMTP_PORT = 25;
 
     /**
      * SMTP reply line ending.
@@ -700,7 +700,7 @@ class SMTP
      * @access public
      * @return boolean
      */
-    public function hello($host = 'mx1.2freehosting.com')
+    public function hello($host = '')
     {
         //Try extended hello first (RFC 2821)
         return (boolean)($this->sendHello('EHLO', $host) or $this->sendHello('HELO', $host));

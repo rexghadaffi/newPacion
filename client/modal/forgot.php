@@ -29,6 +29,11 @@
   </div>
 </div>
 <?php
+
+
+
+
+
 if (isset($_POST['btnforgot']))
 {
 	$emailforgoty = $_POST['emailforgot'];
@@ -54,8 +59,8 @@ $emailforg = mysqli_query($con, "SELECT * FROM tblclientuser where userEmail = '
 	
 
 $subject = "STI College Cubao Alumni";
-$from = 'danieltinao@gmail.com';
-$to =  $emailforgoty;
+$from = 'sticollegecubaoalumni@gmail.com';
+$to =  $email;
 
 $headers = "From: " . strip_tags($from) . "\r\n";
 $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
