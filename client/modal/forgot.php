@@ -29,11 +29,6 @@
   </div>
 </div>
 <?php
-
-
-
-
-
 if (isset($_POST['btnforgot']))
 {
 	$emailforgoty = $_POST['emailforgot'];
@@ -49,40 +44,82 @@ $emailforg = mysqli_query($con, "SELECT * FROM tblclientuser where userEmail = '
 	}
 	else
 	{
-
+	
+	$from = 'sticollegecubaoalumni@gmail.com';
+	require 'PHPMailer/PHPMailerAutoload.php';
+	$mail = new PHPMailer();
 	$row = mysqli_fetch_array($emailforg);
 	$email = $row['userEmail'];
 	$user = $row['userName'];
 	$tempPass = str_shuffle(uniqid());
 	
-	$res = mysqli_query($con, "UPDATE tblclientuser SET userPassword ='".$tempPass."' where userEmail = ".$email."");
+	$res = mysqli_query($con, "UPDATE tblclientuser SET userPassword ='".$tempPass."' where userEmail = '".$email."'");
 	
+	//phpmailer functions
+	$mail->IsMail();
+	//$mail->SMTPAuth = true;
+	$mail->Host = gethostbyname('smtp.gmail.com');
+	//$mail->Host = gethostbyname('mx1.2freehosting.com');
+	//$mail->Port = 25;
+	$mail->SMTPDebug = 3;
+	$mail->Port = 587;
+	$mail->SMTPSecure = 'tls';
+	
+	$mail->IsHTML(true);
+	$mail->SingleTo = true;
+	$mail->Subject = "STI College Cubao Alumni";
+	$mail->addAddress($emailforgoty);
+	$mail->From = $from;
+	$mail->FromName = "STI College Cubao Alumni";
+	$mail->AddReplyTo($from);
+	
+	$mail->Username = "sticollegecubaoalumni@gmail.com";
+    $mail->Password = "stiadmin1234";
+	
+	$mail->Body .= '<html><body>';
+	$mail->Body .= '<img src="http://localhost/newPacion/client/shared-resources/img/stiaa.jpg">';
+	$mail->Body .= '<p>Hello '.$user.', </p>
+			<p>We received a request to reset the password associated with this email address. </p>
+			<p>This is an auto generated password for you to be able to login.</p>
+			<p>Auto generated password = '.$tempPass.'.</p>
+			<p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
+			<p>http://localhost/newPacion/client/</p>
 
-$subject = "STI College Cubao Alumni";
-$from = 'sticollegecubaoalumni@gmail.com';
-$to =  $email;
+			<p>This is auto generated email from the server. Please dont reply to this email</p>
 
-$headers = "From: " . strip_tags($from) . "\r\n";
-$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+			';
+	$mail->Body .= '</body></html>';
+	
+	//$subject = "STI College Cubao Alumni";
+	//$to = $email;
+	//ini_set(smtp_server,'');
+	//ini_set(smtp_port, '2525');
+	//ini_set(auth_username, 'sticollegecubaoalumni@gmail.com');
+	//ini_set(auth_password, 'stiadmin1234');
+	// $headers = "From: " . strip_tags($from) . "\r\n";
+	// $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+	// $headers .= "MIME-Version: 1.0\r\n";
+	// $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-$body = '<html><body>';
-$body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
-$body .= '<p>Hello '.$user.', </p>
-<p>We received a request to reset the password associated with this email address. </p>
-<p>This is an auto generated password for you to be able to login.</p>
-<p>Auto generated password = '.$tempPass.'.</p>
-<p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
-<p>http://stialumni.3eeweb.com</p>
+	// $body = '<html><body>';
+	// $body .= '<img src="http://localhost/newPacion/client/shared-resources/img/stiaa.jpg">';
+	// $body .= '<p>Hello '.$user.', </p>
+	// <p>We received a request to reset the password associated with this email address. </p>
+	// <p>This is an auto generated password for you to be able to login.</p>
+	// <p>Auto generated password = '.$tempPass.'.</p>
+	// <p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
+	// <p>http://localhost/newPacion/client/</p>
 
-<p>This is auto generated email from the server. Please dont reply to this email</p>
+	// <p>This is auto generated email from the server. Please dont reply to this email</p>
 
-';
+	// ';
 
-$body .= '</body></html>';
-
-mail($to, $subject, $body, $headers);
+	// $body .= '</body></html>';
+	if($mail->Send())
+	{
+		echo '<script>alert("Message sent!");</script>';
+	}
+	// mail($to, $subject, $body, $headers);
 
 	}
 	

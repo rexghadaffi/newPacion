@@ -53,45 +53,52 @@ include '../shared-layouts/_Layout.php';
             $id= $_SESSION['id'];               
             $remark = 'approve alumni <span style="color:green;font-weight:bold;">"'.$row5["userName"].'"</span>';
             $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");
-        
+        $email = $row5['userEmail'];
+
+    $from = 'sticollegecubaoalumni@gmail.com';
+    require 'PHPMailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer();
+    //phpmailer functions
+    $mail->IsMail();
+    //$mail->SMTPAuth = true;
+    $mail->Host = gethostbyname('smtp.gmail.com');
+    //$mail->Host = gethostbyname('mx1.2freehosting.com');
+    //$mail->Port = 25;
+    $mail->SMTPDebug = 3;
+    $mail->Port = 587;
+    $mail->SMTPSecure = 'tls';
+    
+    $mail->IsHTML(true);
+    $mail->SingleTo = true;
+    $mail->Subject = "STI College Cubao Alumni";
+    $mail->addAddress($email);
+    $mail->From = $from;
+    $mail->FromName = "STI College Cubao Alumni";
+    $mail->AddReplyTo($from);
+    
+    $mail->Username = "sticollegecubaoalumni@gmail.com";
+    $mail->Password = "stiadmin1234";
+    
+    $mail->Body .= '<html><body>';
+    $mail->Body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
+    $mail->Body .= '<p>Welcome,</p>
+<p>We are glad to welcome you as an alumni of Sti College Cubao</p>
+<p>You can now login in STI College Cubao Alumni.</p>
+<p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
+<p>http://stialumni.3eeweb.com</p>';
+$mail->Body .= '</body></html>';
+$mail->Send();
+
+
+
+
                 echo "<script>                  
                 {                                                       
                     window.location.href='validatereg.php';                                    
                 }
                 </script>";
 
-                    if ($result1)
-                    {
-
-
-$subject = "STI College Cubao Alumni";
-$from = 'sticollegecubaoalumni@gmail.com';
-$to =  $row5["userEmail"];
-
-$headers = "From: " . strip_tags($from) . "\r\n";
-$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-$body = '<html><body>';
-$body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
-$body .= '<p>Welcome,</p>
-<p>We are glad to welcome you as an alumni of Sti College Cubao</p>
-<p>You can now login in STI College Cubao Alumni.</p>
-<p>Click this link to redirect to Sti College Cubao Alumni Website.</p>
-<p>http://stialumni.3eeweb.com</p>
-
-
-';
-
-$body .= '</body></html>';
-
-mail($to, $subject, $body, $headers);
-
-
-
-
-                    }
+                    
 
                 } 
 
@@ -106,39 +113,51 @@ mail($to, $subject, $body, $headers);
                 $id= $_SESSION['id'];               
             $remark = 'deny alumni <span style="color:red;font-weight:bold;">"'.$row5["userName"].'"</span>';
             $result= mysqli_query($con,"INSERT INTO tblaudit (userID, auditDateTime, auditRemarks) VALUES ('$id','$timestamp', '$remark')");
-        
+                $declinedemail =  $row5['userEmail'];
+
+ $from = 'sticollegecubaoalumni@gmail.com';
+    require 'PHPMailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer();
+    //phpmailer functions
+    $mail->IsMail();
+    //$mail->SMTPAuth = true;
+    $mail->Host = gethostbyname('smtp.gmail.com');
+    //$mail->Host = gethostbyname('mx1.2freehosting.com');
+    //$mail->Port = 25;
+    $mail->SMTPDebug = 3;
+    $mail->Port = 587;
+    $mail->SMTPSecure = 'tls';
+    $mail->IsHTML(true);
+    $mail->SingleTo = true;
+    $mail->Subject = "STI College Cubao Alumni";
+    $mail->addAddress( $declinedemail);
+    $mail->From = $from;
+    $mail->FromName = "STI College Cubao Alumni";
+    $mail->AddReplyTo($from);
+    $mail->Username = "sticollegecubaoalumni@gmail.com";
+    $mail->Password = "stiadmin1234";
+    
+    $mail->Body .= '<html><body>';
+    $mail->Body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
+    $mail->Body .= '<p>Welcome,</p>
+<p>We are very sorry, we declined your request in registering in STI College Cubao Alumni. </p>
+<p>Pls contact us at Tel. nos.: 421-1029 / 911-1824 for manual verification </p>
+<p>Thank you. </p>
+';
+    $mail->Body .= '</body></html>';
+    $mail->Send();
+   
+
+
+
+
                 echo "<script>                  
                 {                                                       
                     window.location.href='validatereg.php';                                    
                 }
                 </script>";
 
-                if ($result1)
-                {
 
-$subject = "STI College Cubao Alumni";
-$from = 'sticollegecubaoalumni@gmail.com';
-$to =  $row5["userEmail"];
-
-$headers = "From: " . strip_tags($from) . "\r\n";
-$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-$body = '<html><body>';
-$body .= '<img src="http://stialumni.3eeweb.com/client/shared-resources/img/stiaa.jpg">';
-$body .= '<p>Welcome,</p>
-<p>We are very sorry, we declined your request in registering in STI College Cubao Alumni. </p>
-<p>Pls contact us at Tel. nos.: 421-1029 / 911-1824 for manual verification </p>
-<p>Thank you. </p>
-';
-
-$body .= '</body></html>';
-
-mail($to, $subject, $body, $headers);
-
-
-                }
                 } 
     }
        
