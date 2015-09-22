@@ -2,13 +2,13 @@
 date_default_timezone_set("Asia/Manila"); 
 $date = date('Y-m-d H:i:s');
 
-	include_once "post.php";
+
 	if (isset($_POST['btnpost']))
 		{	
+		include_once "post.php";
 		$param = array(
-				"postID" => "null",
-				"postTitle" => $_POST['title'],
-				"postDesc" => $_POST['desc'],
+				"postTitle" => $_POST["title"],
+				"postDesc" => $_POST["desc"],
 				"userID" => $_SESSION['id'],
 				"topicID" => $_GET['topicid'],
 				"datePosted" => $date,
@@ -20,13 +20,13 @@ $date = date('Y-m-d H:i:s');
 		}
 		
 		
-	include_once "topic.php";
+
 	if (isset($_POST['btntopic']))
 		{	
+		include_once "topic.php";
 		$param = array(
-				"topicID" => "null",
-				"topicTitle" => $_POST['title'],
-				"topicDesc" => $_POST['content'],
+				"topicTitle" => $_POST["title"],
+				"topicDesc" => $_POST["content"],
 				"dateCreated" => $date,
 				"forumCatID" => $_POST["cbocategory"],
 				"topicStatus" => 1,
@@ -35,12 +35,12 @@ $date = date('Y-m-d H:i:s');
 				$query->create("tbltopic", $param);
 		}
 		
-	include_once "post.php";
+
 	if (isset($_POST['btnreply']))
 		{	
+		include_once "post.php";
 		$param = array(
-				"replyID" => "null",
-				"replyContent" => $_POST['message'],
+				"replyContent" => $_POST["message"],
 				"postID" => $_GET["postid"],
 				"userID" => $_SESSION["id"],
 				"datePosted" => $date,
